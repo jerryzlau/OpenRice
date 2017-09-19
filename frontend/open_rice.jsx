@@ -1,16 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {signup, login, logout} from './util/session_api_util';
+// import {signup, login, logout} from './util/session_api_util';
 import configureStore from './store/store.js';
+import Root from './components/root';
 
-window.signup = signup;
-window.login = login;
-window.logout = logout;
+// window.signup = signup;
+// window.login = login;
+// window.logout = logout;
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser } };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  ReactDOM.render(<h1>Welcome to OpenRice</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
