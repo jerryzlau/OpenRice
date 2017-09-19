@@ -8,19 +8,31 @@
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  email           :string           not null
-#  professional    :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  owner           :boolean          default(FALSE), not null
+#  primary_city    :string           not null
 #
 
 class User < ApplicationRecord
   validates :first_name, :last_name, :email, :password_digest, presence: true
   validates :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  validates :professional, inclusion: {in: [true, false]}
+  validates :owner, inclusion: {in: [true, false]}
 
   attr_reader :password
   after_initialize :ensure_session_token
+
+  has_many :restaurants,
+  primary_key: :id,
+  foreign_key: :owner_id,
+  classname: :Restaurant
+
+  has_many :reservations,
+  primary_key: :id,
+  foreign_key: :customer_id,
+  classname: :Reservation
+
 
   def self.find_by_credential(username, password)
     user = User.find_by(username: username)

@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918232551) do
+ActiveRecord::Schema.define(version: 20170919003236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "restaurant_id", null: false
+    t.integer "customer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "restaurant_id", null: false
+    t.integer "num_ppl", null: false
+    t.time "book_time", null: false
+    t.time "book_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.integer "price_range", null: false
+    t.integer "capacity", null: false
+    t.string "address", null: false
+    t.string "cusine_type", null: false
+    t.string "phone_num", null: false
+    t.string "website", null: false
+    t.string "dining_style", null: false
+    t.text "description", null: false
+    t.time "open_time", null: false
+    t.time "close_time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.integer "restaurant_id", null: false
+    t.integer "rating", null: false
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false

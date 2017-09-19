@@ -8,9 +8,10 @@
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  email           :string           not null
-#  professional    :boolean          default(FALSE)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  owner           :boolean          default(FALSE), not null
+#  primary_city    :string           not null
 #
 
 require 'test_helper'
