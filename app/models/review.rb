@@ -13,5 +13,16 @@
 
 class Review < ApplicationRecord
   validates :author_id, :restaurant_id, :comment, presence: true
-  validates :rating, inclusion: {in: [1,2,3,4,5]}, presence: true 
+  validates :rating, inclusion: {in: [1,2,3,4,5]}, presence: true
+
+  belongs_to :author,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :User
+
+  belongs_to :restaurant,
+  primary_key: :id,
+  foreign_key: :restaurant_id,
+  class_name: :Restaurant
+
 end

@@ -15,7 +15,8 @@
 #
 
 class User < ApplicationRecord
-  validates :first_name, :last_name, :email, :password_digest, presence: true
+  validates :first_name, :last_name, :primary_city, :password_digest, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :owner, inclusion: {in: [true, false]}
@@ -26,16 +27,30 @@ class User < ApplicationRecord
   has_many :restaurants,
   primary_key: :id,
   foreign_key: :owner_id,
-  classname: :Restaurant
+  class_name: :Restaurant
 
   has_many :reservations,
   primary_key: :id,
   foreign_key: :customer_id,
-  classname: :Reservation
+  class_name: :Reservation
+
+  has_many :favorites,
+  primary_key: :id,
+  foreign_key: :customer_id,
+  class_name: :Favorite
+
+  has_many :reviews,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: :Review
+
+  has_many :favorite_restaurants,
+  through: :favorites,
+  source: :restaurant
 
 
-  def self.find_by_credential(username, password)
-    user = User.find_by(username: username)
+  def self.find_by_credential(email, password)
+    user = User.find_by(email: email)
     user && user.is_password?(password) ? user : nil
   end
 

@@ -18,11 +18,12 @@ class Reservation < ApplicationRecord
   belongs_to :customer,
   primary_key: :id,
   foreign_key: :customer_id,
-  classname: :User
+  class_name: :User
 
   belongs_to :restaurant,
   primary_key: :id,
   foreign_key: :restaurant_id,
-  classname: :Restaurant
-  
+  class_name: :Restaurant
+
+
 end
