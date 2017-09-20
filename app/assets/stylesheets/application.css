@@ -80,7 +80,7 @@ header h2{
   margin: 15px;
   display: flex;
   justify-content: space-between;
-  width: 170px;
+  width: 165px;
 }
 
 .login-signup .signup{
@@ -90,5 +90,9 @@ header h2{
 
 .login-signup .login{
   background-color: transparent;
+  color: black;
+}
+
+.login-signup .demo-login{
   color: black;
 }

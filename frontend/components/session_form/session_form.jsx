@@ -29,16 +29,21 @@ class SessionForm extends React.Component {
 
     };
 
+    //error handling
+    this.renderErrors = this.renderErrors.bind(this);
+
+    //form actions
     this.handleSubmit = this.handleSubmit.bind(this);
     this.signUpForm = this.signUpForm.bind(this);
     this.loginForm = this.loginForm.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
 
     //Modal stuff
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
+  //Set Modal State
   handleOpenModal(){
     this.setState({showModal: true});
   }
@@ -54,6 +59,7 @@ class SessionForm extends React.Component {
     }
   }
 
+  //handle form actions
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -76,6 +82,14 @@ class SessionForm extends React.Component {
     }
 
     this.props.processForm(user)
+    .then(() => this.props.history.push('/'));
+  }
+
+  handleDemo(e){
+    e.preventDefault();
+    let demo = {email: 'jerrylau321@hotmail.com', password: '123456'};
+    this.setState(demo);
+    this.props.processForm(demo)
     .then(() => this.props.history.push('/'));
   }
 
@@ -182,6 +196,13 @@ class SessionForm extends React.Component {
               className="button"
               type="submit"
               value="Sign In" />
+
+        <br />
+
+        <input onClick={this.handleDemo}
+               type="submit"
+               className="button demo-login"
+               value="Demo Login" />
       </div>
     );
   }
@@ -204,6 +225,7 @@ class SessionForm extends React.Component {
 
 
   render() {
+    // debugger
     return (
       <div className="session-page">
         <div className="session-form-border">
@@ -213,7 +235,7 @@ class SessionForm extends React.Component {
                 (this.props.formType === 'signup') ? (
                   <ReactModal
                       isOpen={this.state.showModal}
-                      contentLabel="onRequestClose Example"
+                      contentLabel="Sign up Form"
                       onRequestClose={this.handleCloseModal}
                       style={customStyles}
                   >
@@ -223,7 +245,7 @@ class SessionForm extends React.Component {
                 ) : (
                   <ReactModal
                       isOpen={this.state.showModal}
-                      contentLabel="onRequestClose Example"
+                      contentLabel="Login Form"
                       onRequestClose={this.handleCloseModal}
                       style={customStyles}
                   >

@@ -12,6 +12,7 @@ class Greeting extends React.Component {
   sessionLinks(){
     return(
       <nav className="login-signup">
+        {/* <button className="demo-login"><Link to="/demo-login">Demo Login</Link></button> */}
         <button className="signup"><Link to="/signup">Sign up</Link></button>
         <button className="login"><Link to="/login">Login</Link></button>
       </nav>

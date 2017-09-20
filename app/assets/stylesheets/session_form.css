@@ -63,6 +63,10 @@ blockquote dd div dl dt form h1 h2 h3 h4 h5 h6 li ol p pre td th ul{
   margin: 5px;
 }
 
+.demo-login{
+  background-color: #3F5FA4;
+}
+
 .isOwner{
   margin-left: 3px;
 }
