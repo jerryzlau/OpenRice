@@ -21,7 +21,7 @@
 class Restaurant < ApplicationRecord
   validates :owner_id, :price_range, :capacity, :address, :cusine_type, presence: true
   validates :phone_num, :website, :dining_style, :description, presence: true
-  validates :open_time, :close_time, presense: true
+  validates :open_time, :close_time, presence: true
 
   belongs_to :owner,
   primary_key: :id,
