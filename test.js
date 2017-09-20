@@ -164,3 +164,34 @@ class SessionForm extends React.Component {
 export default withRouter(SessionForm);
 
 // Please {this.props.formType} or {this.navLink()}
+
+<div className="session-form-border">
+  <div className='session-form'>
+    <form onSubmit={this.handleSubmit} className="login-form-box">
+      {/* {this.renderErrors()} */}
+      {
+        (this.props.formType === 'signup') ?
+        this.signUpForm() : this.loginForm()
+      }
+    </form>
+  </div>
+
+</div>
+
+const sessionLinks = () => (
+  <nav className="login-signup">
+    <button className="signup"><Link to="/signup">Sign up</Link></button>
+    <button className="login"><Link to="/login">Login</Link></button>
+  </nav>
+);
+
+const personalGreeting = (currentUser, logout) => (
+	<div className="header-group">
+    <button className="header-name">Hi, {currentUser.first_name}!</button>
+    <button className="header-button" onClick={logout}>Log Out</button>
+	</div>
+);
+
+const Greeting = ({ currentUser, logout }) => (
+  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+);

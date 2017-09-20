@@ -2,33 +2,38 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Modal from 'react-modal';
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // confirm_password: '', add confirm password function to auth later
+      // showModal: false
       email: '',
       password: '',
       first_name: '',
       last_name: '',
       owner: false,
-      primary_city: ''
+      primary_city: '',
+      showModal: false
+
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.signUpForm = this.signUpForm.bind(this);
     this.loginForm = this.loginForm.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+
+    //Modal stuff
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal(){
+    this.setState({showModal: true});
+  }
+
+  handleCloseModal(){
+    this.setState({showModal: false});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,86 +48,92 @@ class SessionForm extends React.Component {
     });
   }
 
-
-
   handleSubmit(e) {
     e.preventDefault();
     let user;
     if(this.props.formType === 'signup'){
-      user = this.state;
+      user = {first_name: this.state.first_name,
+              last_name: this.state.last_name,
+              password: this.state.password,
+              email: this.state.email,
+              owner: this.state.owner,
+              primary_city: this.state.primary_city};
     }else{
       user = {email: this.state.email, password: this.state.password};
     }
-    this.props.processForm(user);
+    this.props.processForm(user)
+              .then(() => this.props.history.push('/'));
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
-    }
-  }
+  // navLink() {
+  //   if (this.props.formType === 'login') {
+  //     return <Link to="/signup">sign up instead</Link>;
+  //   } else {
+  //     return <Link to="/login">log in instead</Link>;
+  //   }
+  // }
 
   signUpForm(){
     return(
       <div className="signup-form">
-      <label>First Name:
-        <input type="text"
-          value={this.state.first_name}
-          onChange={this.update('first_name')}
-          className="signup-input"
-        />
-      </label>
+      <h3>Welcome to OpenRice!</h3>
+
+      <hr />
+
+      <input type="text"
+        value={this.state.first_name}
+        onChange={this.update('first_name')}
+        className="signup-input"
+        placeholder="First Name:"
+      />
 
       <br/>
-      <label>Last Name:
-        <input type="text"
-          value={this.state.last_name}
-          onChange={this.update('last_name')}
-          className="signup-input"
-        />
-      </label>
+
+      <input type="text"
+        value={this.state.last_name}
+        onChange={this.update('last_name')}
+        className="signup-input"
+        placeholder="Last Name:"
+      />
+
 
       <br/>
-      <label>Enter Email:
-        <input type="text"
-          value={this.state.email}
-          onChange={this.update('email')}
-          className="signup-input"
-        />
-      </label>
+      <input type="text"
+        value={this.state.email}
+        onChange={this.update('email')}
+        className="signup-input"
+        placeholder="Enter Email:"
+      />
       <br/>
 
-      <label>Enter Password:
-        <input type="password"
-          value={this.state.password}
-          onChange={this.update('password')}
-          className="signup-input"
-        />
-      </label>
+      <input type="password"
+        value={this.state.password}
+        onChange={this.update('password')}
+        className="signup-input"
+        placeholder="Enter Password:"
+      />
+
       <br/>
 
-
-      <label>Primary Dining Location:
-        <input type="text"
-          value={this.state.primary_location}
-          onChange={this.update('primary_city')}
-          className="signup-input"
-        />
-      </label>
+      <input type="text"
+        value={this.state.primary_location}
+        onChange={this.update('primary_city')}
+        className="signup-input"
+        placeholder="Primary Dining Location:"
+      />
       <br/>
 
-      <label>Restaurant Owner?
+      <label className="isOwner">
         <input type="checkbox"
           value={!this.state.owner}
           onChange={this.update('owner')}
           checked={this.state.owner} >
         </input>
+        Restaurant Owner?
       </label>
       <br/>
 
-      <input type="submit" value="Create Account" />
+      <input className="button" type="submit" value="Create Account" />
     </div>
     );
   }
@@ -130,53 +141,62 @@ class SessionForm extends React.Component {
   loginForm(){
     return(
       <div className="login-form">
-        <br/>
-        <label>Email:
-          <input type="text"
-            value={this.state.email}
-            onChange={this.update('email')}
-            className="login-input"
-          />
-        </label>
+        <h3>Please sign in</h3>
+        <hr/>
+        <input type="text"
+          value={this.state.email}
+          onChange={this.update('email')}
+          className="signup-input"
+          placeholder="Email"
+        />
         <br/>
 
-        <label>Password:
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-          />
-        </label>
+        <input type="password"
+          value={this.state.password}
+          onChange={this.update('password')}
+          className="signup-input"
+          placeholder="Password"
+        />
+
 
         <br/>
-        <input type="submit" value="Sign In" />
+        <input className="button" type="submit" value="Sign In" />
       </div>
     );
   }
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors !== []){
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return;
+    }
   }
 
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.renderErrors()}
-          {
-            (this.props.formType === 'signup') ?
-            this.signUpForm() : this.loginForm()
-          }
-        </form>
+      <div className="session-page">
+        <div className="session-form-border">
+          <div className='session-form'>
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              {
+                (this.props.formType === 'signup') ?
+                this.signUpForm() : this.loginForm()
+              }
+              {this.renderErrors()}
+            </form>
+          </div>
+
+        </div>
       </div>
     );
   }
