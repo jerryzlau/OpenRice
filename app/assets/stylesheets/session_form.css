@@ -74,3 +74,14 @@ blockquote dd div dl dt form h1 h2 h3 h4 h5 h6 li ol p pre td th ul{
 .isOwner input{
   margin-right: 5px;
 }
+
+.session-errors{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.session-errors li{
+  padding: 5px;
+  color: red;
+}

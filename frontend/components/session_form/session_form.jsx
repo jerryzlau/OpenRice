@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // confirm_password: '', add confirm password function to auth later
       email: '',
       password: '',
       // confirm_password: '',
@@ -51,6 +50,10 @@ class SessionForm extends React.Component {
   handleCloseModal(){
     this.setState({showModal: false});
     this.props.history.goBack();
+  }
+
+  componentDidMount(){
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -88,7 +91,7 @@ class SessionForm extends React.Component {
   handleDemo(e){
     e.preventDefault();
     let demo = {email: 'demo@demo.com', password: '123456'};
-    this.setState(demo);
+    // this.setState(demo); //make an animation to input credentials
     this.props.processForm(demo)
     .then(() => this.props.history.push('/'));
   }
@@ -99,6 +102,7 @@ class SessionForm extends React.Component {
       <h3>Welcome to OpenRice!</h3>
 
       <hr />
+      {this.renderErrors()}
 
       <input type="text"
         value={this.state.first_name}
@@ -176,6 +180,7 @@ class SessionForm extends React.Component {
       <div className="login-form">
         <h3>Please sign in</h3>
         <hr/>
+        {this.renderErrors()}
         <input type="text"
           value={this.state.email}
           onChange={this.update('email')}
@@ -210,9 +215,9 @@ class SessionForm extends React.Component {
   renderErrors() {
     if (this.props.errors !== []){
       return(
-        <ul>
+        <ul className="session-errors">
           {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
+            <li key={`error-${i}`} >
               {error}
             </li>
           ))}
@@ -225,7 +230,6 @@ class SessionForm extends React.Component {
 
 
   render() {
-    // debugger
     return (
       <div className="session-page">
         <div className="session-form-border">
@@ -240,7 +244,6 @@ class SessionForm extends React.Component {
                       style={customStyles}
                   >
                   {this.signUpForm()}
-                  {this.renderErrors()}
                 </ReactModal>
                 ) : (
                   <ReactModal
@@ -250,7 +253,6 @@ class SessionForm extends React.Component {
                       style={customStyles}
                   >
                     {this.loginForm()}
-                    {this.renderErrors()}
                 </ReactModal>
                 )
               }
