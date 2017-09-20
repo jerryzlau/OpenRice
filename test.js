@@ -1,197 +1,38 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import SessionFormContainer from './session_form/session_form_container';
+import GreetingContainer from './greeting/greeting_container';
+import { Route } from 'react-router-dom';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
-class SessionForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // confirm_password: '', add confirm password function to auth later
-      email: '',
-      password: '',
-      first_name: '',
-      last_name: '',
-      owner: false,
-      primary_city: ''
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.signUpForm = this.signUpForm.bind(this);
-    this.loginForm = this.loginForm.bind(this);
-  }
+const App = () => (
+  <div>
+    <header>
+      <a href='/' >
+      <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1505869835/openrice_logo_qusua1.png" />
+      </a>
+      <h2><GreetingContainer/></h2>
+    </header>
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+    <AuthRoute path="/login" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
 
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
-  }
-
-  navLink() {
-    if (this.props.formType === 'login') {
-      return <Link to="/signup">sign up instead</Link>;
-    } else {
-      return <Link to="/login">log in instead</Link>;
-    }
-  }
-
-  signUpForm(){
-    return(
-      <div className="signup-form">
-      <label>First Name:
-        <input type="text"
-          value={this.state.first_name}
-          onChange={this.update('first_name')}
-          className="signup-input"
-        />
-      </label>
-
-      <br/>
-      <label>Last Name:
-        <input type="text"
-          value={this.state.last_name}
-          onChange={this.update('last_name')}
-          className="signup-input"
-        />
-      </label>
-
-      <br/>
-      <label>Enter Email:
-        <input type="text"
-          value={this.state.email}
-          onChange={this.update('email')}
-          className="signup-input"
-        />
-      </label>
-      <br/>
-
-      <label>Enter Password:
-        <input type="password"
-          value={this.state.password}
-          onChange={this.update('password')}
-          className="signup-input"
-        />
-      </label>
-      <br/>
-
-
-      <label>Primary Dining Location:
-        <input type="text"
-          value={this.state.primary_location}
-          onChange={this.update('primary_location')}
-          className="signup-input"
-        />
-      </label>
-      <br/>
-
-      <label>Restaurant Owner?
-        <input type="checkbox"
-          value={this.state.owner}
-          onClick={this.update('owner')} name="check" >
-        </input>
-      </label>
-      <br/>
-
-      <input type="submit" value="Create Account" />
-    </div>
-    );
-  }
-
-  loginForm(){
-    return(
-      <div className="login-form">
-        <br/>
-        <label>Email:
-          <input type="text"
-            value={this.state.email}
-            onChange={this.update('email')}
-            className="login-input"
-          />
-        </label>
-        <br/>
-
-        <label>Password:
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-          />
-        </label>
-
-        <br/>
-        <input type="submit" value="Sign In" />
-      </div>
-    );
-  }
-
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-
-  render() {
-    return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-
-          {this.renderErrors()}
-          {
-            (this.props.formType === 'signup') ?
-            this.signUpForm() : this.loginForm()
-          }
-        </form>
-      </div>
-    );
-  }
-}
-
-export default withRouter(SessionForm);
-
-// Please {this.props.formType} or {this.navLink()}
-
-<div className="session-form-border">
-  <div className='session-form'>
-    <form onSubmit={this.handleSubmit} className="login-form-box">
-      {/* {this.renderErrors()} */}
-      {
-        (this.props.formType === 'signup') ?
-        this.signUpForm() : this.loginForm()
-      }
-    </form>
+    {/* <ProtectedRoute path='/' component={GreetingContainer} /> */}
   </div>
-
-</div>
-
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <button className="signup"><Link to="/signup">Sign up</Link></button>
-    <button className="login"><Link to="/login">Login</Link></button>
-  </nav>
 );
 
-const personalGreeting = (currentUser, logout) => (
-	<div className="header-group">
-    <button className="header-name">Hi, {currentUser.first_name}!</button>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</div>
+export default App;
+
+import React from 'react';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import App from './App';
+
+const Root = ({ store }) => (
+  <Provider store={ store }>
+    <HashRouter>
+      <App />
+    </HashRouter>
+  </Provider>
 );
 
-const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+export default Root;
