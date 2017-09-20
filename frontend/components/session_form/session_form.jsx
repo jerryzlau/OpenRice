@@ -2,6 +2,17 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -9,11 +20,12 @@ class SessionForm extends React.Component {
       // confirm_password: '', add confirm password function to auth later
       email: '',
       password: '',
+      // confirm_password: '',
       first_name: '',
       last_name: '',
       owner: false,
       primary_city: '',
-      showModal: false
+      showModal: true
 
     };
 
@@ -33,6 +45,7 @@ class SessionForm extends React.Component {
 
   handleCloseModal(){
     this.setState({showModal: false});
+    this.props.history.goBack();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,15 +70,16 @@ class SessionForm extends React.Component {
               email: this.state.email,
               owner: this.state.owner,
               primary_city: this.state.primary_city};
+
     }else{
       user = {email: this.state.email, password: this.state.password};
     }
+
     this.props.processForm(user)
-              .then(() => this.props.history.push('/'));
+    .then(() => this.props.history.push('/'));
   }
 
   signUpForm(){
-    this.handleOpenModal();
     return(
       <div className="signup-form">
       <h3>Welcome to OpenRice!</h3>
@@ -105,6 +119,15 @@ class SessionForm extends React.Component {
         placeholder="Enter Password:"
       />
 
+      {/* <br/>
+
+      <input type="password"
+        value={this.state.confirm_password}
+        onChange={this.update('confirm_password')}
+        className="signup-input"
+        placeholder="Confirm Password:"
+      /> */}
+
       <br/>
 
       <input type="text"
@@ -125,13 +148,16 @@ class SessionForm extends React.Component {
       </label>
       <br/>
 
-      <input className="button" type="submit" value="Create Account" />
+      <input
+        onClick={this.handleSubmit}
+        className="button"
+        type="submit"
+        value="Create Account" />
     </div>
     );
   }
 
   loginForm(){
-    this.handleOpenModal();
     return(
       <div className="login-form">
         <h3>Please sign in</h3>
@@ -152,7 +178,10 @@ class SessionForm extends React.Component {
         />
 
         <br/>
-        <input className="button" type="submit" value="Sign In" />
+        <input onClick={this.handleSubmit}
+              className="button"
+              type="submit"
+              value="Sign In" />
       </div>
     );
   }
@@ -185,21 +214,24 @@ class SessionForm extends React.Component {
                   <ReactModal
                       isOpen={this.state.showModal}
                       contentLabel="onRequestClose Example"
-                      onRequestClose={this.handleCloseModal()}
+                      onRequestClose={this.handleCloseModal}
+                      style={customStyles}
                   >
                   {this.signUpForm()}
+                  {this.renderErrors()}
                 </ReactModal>
                 ) : (
                   <ReactModal
                       isOpen={this.state.showModal}
                       contentLabel="onRequestClose Example"
-                      onRequestClose={this.handleCloseModal()}
+                      onRequestClose={this.handleCloseModal}
+                      style={customStyles}
                   >
                     {this.loginForm()}
+                    {this.renderErrors()}
                 </ReactModal>
                 )
               }
-              {this.renderErrors()}
             </form>
           </div>
 
