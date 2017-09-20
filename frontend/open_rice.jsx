@@ -9,8 +9,7 @@ import Root from './components/root';
 // window.logout = logout;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
-  
+
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
@@ -20,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
