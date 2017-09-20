@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Modal from 'react-modal';
+import ReactModal from 'react-modal';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // confirm_password: '', add confirm password function to auth later
-      // showModal: false
       email: '',
       password: '',
       first_name: '',
@@ -65,15 +64,8 @@ class SessionForm extends React.Component {
               .then(() => this.props.history.push('/'));
   }
 
-  // navLink() {
-  //   if (this.props.formType === 'login') {
-  //     return <Link to="/signup">sign up instead</Link>;
-  //   } else {
-  //     return <Link to="/login">log in instead</Link>;
-  //   }
-  // }
-
   signUpForm(){
+    this.handleOpenModal();
     return(
       <div className="signup-form">
       <h3>Welcome to OpenRice!</h3>
@@ -139,6 +131,7 @@ class SessionForm extends React.Component {
   }
 
   loginForm(){
+    this.handleOpenModal();
     return(
       <div className="login-form">
         <h3>Please sign in</h3>
@@ -157,7 +150,6 @@ class SessionForm extends React.Component {
           className="signup-input"
           placeholder="Password"
         />
-
 
         <br/>
         <input className="button" type="submit" value="Sign In" />
@@ -189,8 +181,23 @@ class SessionForm extends React.Component {
           <div className='session-form'>
             <form onSubmit={this.handleSubmit} className="login-form-box">
               {
-                (this.props.formType === 'signup') ?
-                this.signUpForm() : this.loginForm()
+                (this.props.formType === 'signup') ? (
+                  <ReactModal
+                      isOpen={this.state.showModal}
+                      contentLabel="onRequestClose Example"
+                      onRequestClose={this.handleCloseModal()}
+                  >
+                  {this.signUpForm()}
+                </ReactModal>
+                ) : (
+                  <ReactModal
+                      isOpen={this.state.showModal}
+                      contentLabel="onRequestClose Example"
+                      onRequestClose={this.handleCloseModal()}
+                  >
+                    {this.loginForm()}
+                </ReactModal>
+                )
               }
               {this.renderErrors()}
             </form>
