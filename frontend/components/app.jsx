@@ -3,6 +3,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import { Route } from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import RestaurantContainer from './restaurant/restaurant_container';
 
 const App = () => (
   <div>
@@ -14,6 +15,7 @@ const App = () => (
       <h2><GreetingContainer/></h2>
     </header>
 
+    <RestaurantContainer />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </nav>

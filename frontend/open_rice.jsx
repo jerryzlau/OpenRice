@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
 import * as RestAPI from './util/restaurant_api_util';
+import restaurantReducer from './reducers/restaurant_reducer';
 
 
 window.createRestaurant = RestAPI.createRestaurant;
@@ -10,6 +11,7 @@ window.fetchRestaurant = RestAPI.fetchRestaurant;
 window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
 window.destroyRestaurant = RestAPI.destroyRestaurant;
 window.updateRestaurant = RestAPI.updateRestaurant;
+window.restaurantReducer = restaurantReducer;
 
 document.addEventListener('DOMContentLoaded', () => {
 
