@@ -3,7 +3,6 @@ import * as RestAPI from '../util/restaurant_api_util';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 export const RECEIVE_ALL_RESTAURANTS = 'RECEIVE_ALL_RESTAURANTS';
 export const REMOVE_RESTAURANT = 'REMOVE_RESTAURANT';
-export const UPDATE_RESTAURANT = 'UPDATE_RESTAURANT';
 export const CLEAR_RESTAURANT_ERRORS = 'CLEAR_RESTAURANT_ERRORS';
 export const RECEIVE_RESTAURANT_ERRORS = 'RECEIVE_RESTAURANT_ERRORS';
 
@@ -22,11 +21,6 @@ export const removeRestaurant = restaurant => ({
   type: REMOVE_RESTAURANT,
   restaurant
 });
-
-// export const updateRestaurant = restaurant => ({
-//   type: UPDATE_RESTAURANT,
-//   restaurant
-// });
 
 export const receiveRestaurantErrors = errors => ({
   type: RECEIVE_RESTAURANT_ERRORS,

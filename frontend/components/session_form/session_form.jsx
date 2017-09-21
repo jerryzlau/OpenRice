@@ -270,5 +270,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-
-// Please {this.props.formType} or {this.navLink()}
