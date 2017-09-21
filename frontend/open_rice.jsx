@@ -18,7 +18,7 @@ window.fetchRestaurant = RestAPI.fetchRestaurant;
 
 //test actions
 // window.receiveAllRestaurants = Actions.receiveAllRestaurants;
-// window.requestAllRestaurants = Actions.requestAllRestaurants;
+window.receiveRestaurant = Actions.receiveRestaurant;
 window.requestRestaurant = Actions.requestRestaurant;
 // window.createRestaurant = Actions.createRestaurant;
 // window.destroyRestaurant = Actions.destroyRestaurant;

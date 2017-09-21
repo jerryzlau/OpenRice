@@ -5,7 +5,7 @@ import {RECEIVE_RESTAURANT,
         REMOVE_RESTAURANT,
         UPDATE_RESTAURANT
       } from '../actions/restaurant_actions';
-import merge from 'redux';
+import merge from 'lodash/merge';
 
 
 // const initialRestaurantState = {};
@@ -16,15 +16,11 @@ const restaurantReducer = (state = {}, action) => {
   let newState;
   switch(action.type){
     case RECEIVE_RESTAURANT:
-      newState = {[action.restaurant.id]: action.restaurant};
+      let restaurant = action.restaurant.restaurant;
+      newState = {[restaurant.id]: restaurant};
+      // debugger
       return merge({}, state, newState);
     case RECEIVE_ALL_RESTAURANTS:
-      // newState = {};
-      // Object.keys(action.restaurants).forEach(idx => {
-      //   newState[idx] = action.restaurants[idx];
-      // });
-      // return newState;
-      debugger
       return action.restaurants;
     case REMOVE_RESTAURANT:
       newState = {};

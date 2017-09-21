@@ -46,14 +46,14 @@ export const requestAllRestaurants = () => dispatch => (
 
 // request one restaurant (show)
 export const requestRestaurant = (restaurantId) => dispatch => (
-  RestAPI.fetchRestaurant()
+  RestAPI.fetchRestaurant(restaurantId)
          .then(restaurant => (dispatch(receiveRestaurant(restaurant))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
 
 // make a new restaurant (create)
 export const createRestaurant = restaurant => dispatch => (
-  RestAPI.createRestaurant()
+  RestAPI.createRestaurant(restaurant)
          .then(newRestaurant => (dispatch(receiveRestaurant(newRestaurant))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
