@@ -7,22 +7,22 @@ import restaurantReducer from './reducers/restaurant_reducer';
 import * as Actions from './actions/restaurant_actions';
 
 // test ajax
-// window.createRestaurantajax = RestAPI.createRestaurant;
+window.createRestaurantajax = RestAPI.createRestaurant;
 window.fetchRestaurant = RestAPI.fetchRestaurant;
-// window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
-// window.destroyRestaurantajax = RestAPI.destroyRestaurant;
-// window.updateRestaurant = RestAPI.updateRestaurant;
+window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
+window.destroyRestaurantajax = RestAPI.destroyRestaurant;
+window.updateRestaurant = RestAPI.updateRestaurant;
 
 // test reducers
 // window.restaurantReducer = restaurantReducer;
 
 //test actions
-// window.receiveAllRestaurants = Actions.receiveAllRestaurants;
+window.receiveAllRestaurants = Actions.receiveAllRestaurants;
 window.receiveRestaurant = Actions.receiveRestaurant;
 window.requestRestaurant = Actions.requestRestaurant;
-// window.createRestaurant = Actions.createRestaurant;
-// window.destroyRestaurant = Actions.destroyRestaurant;
-// window.editRestaurant = Actions.editRestaurant;
+window.createRestaurant = Actions.createRestaurant;
+window.removeRestaurant = Actions.removeRestaurant;
+window.editRestaurant = Actions.editRestaurant;
 
 document.addEventListener('DOMContentLoaded', () => {
 

@@ -1,5 +1,6 @@
 json.restaurant do
   json.extract! @restaurant, :id,
+                             :name,
                              :owner_id,
                              :start_price,
                              :end_price,

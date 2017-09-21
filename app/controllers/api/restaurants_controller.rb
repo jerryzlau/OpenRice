@@ -12,7 +12,8 @@ class Api::RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.owner_id = current_user.id
+    #TODO: add this back when everything is working in restaurant
+    # @restaurant.owner_id = current_user.id
     if @restaurant.save
       render :show
     else
@@ -21,9 +22,10 @@ class Api::RestaurantsController < ApplicationController
   end
 
   def destroy
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy if @restaurant
-    #TODO: render something else later 
+    restaurant = Restaurant.find(params[:id])
+    restaurant.destroy if restaurant
+    render json: restaurant.id
+    #TODO: render something else later
     # render :index
   end
 

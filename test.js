@@ -81,7 +81,8 @@ Restaurant.create(restaurant)
 
 
 let restaurant = {
-  "name": "demo - restaurant",
+  "id": 6,
+  "name": "demo - restaurant6",
   "owner_id":1,
   "start_price":0,
   "end_price":100,

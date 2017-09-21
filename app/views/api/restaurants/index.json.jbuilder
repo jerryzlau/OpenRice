@@ -1,6 +1,7 @@
 @restaurants.each do |restaurant|
   json.set! restaurant.id do
     json.extract! restaurant, :id,
+                              :name,
                               :owner_id,
                               :start_price,
                               :end_price,

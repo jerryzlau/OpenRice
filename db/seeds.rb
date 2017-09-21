@@ -14,18 +14,19 @@ User.create(first_name: 'Demo',
          owner: false,
          primary_city: 'San Francisco')
 
-restaurant = {name: "demo - restaurant",
-             owner_id: 1,
-             start_price: 0,
-             end_price: 0,
-             capacity: 50,
-             address: "123 demo street",
-             cusine_type: "chinese",
-             phone_num: "000000000",
-             website: "www.demo.com",
-             dining_style: "demo style",
-             description: "demo about",
-             open_time: "09.30 AM",
-             close_time: "10:00 AM"}
-
-Restaurant.create(restaurant)           
+5.times do |i|
+  restaurant = {name: "demo - restaurant#{i}",
+               owner_id: 1,
+               start_price: 0,
+               end_price: 0,
+               capacity: 50,
+               address: "123 demo street",
+               cusine_type: "chinese",
+               phone_num: "000000000",
+               website: "www.demo.com",
+               dining_style: "demo style",
+               description: "demo about",
+               open_time: "09.30 AM",
+               close_time: "10:00 AM"}
+  Restaurant.create(restaurant)
+end        

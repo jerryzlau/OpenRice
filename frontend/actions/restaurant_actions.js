@@ -23,10 +23,10 @@ export const removeRestaurant = restaurant => ({
   restaurant
 });
 
-export const updateRestaurant = restaurant => ({
-  type: UPDATE_RESTAURANT,
-  restaurant
-});
+// export const updateRestaurant = restaurant => ({
+//   type: UPDATE_RESTAURANT,
+//   restaurant
+// });
 
 export const receiveRestaurantErrors = errors => ({
   type: RECEIVE_RESTAURANT_ERRORS,
@@ -60,14 +60,14 @@ export const createRestaurant = restaurant => dispatch => (
 
 // remove a restaurant (delete)
 export const destroyRestaurant = restaurantId => dispatch => (
-  RestAPI.destroyRestaurant()
-         .then(restaurant => (dispatch(removeRestaurant(restaurant))),
+  RestAPI.destroyRestaurant(restaurantId)
+         .then(id => (dispatch(removeRestaurant(id))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
 
 // edit a restaurant (update)
 export const editRestaurant = restaurant => dispatch => (
   RestAPI.updateRestaurant(restaurant)
-         .then(newRestaurant => (dispatch(updateRestaurant(newRestaurant))),
+         .then(newRestaurant => (dispatch(receiveRestaurant(newRestaurant))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
