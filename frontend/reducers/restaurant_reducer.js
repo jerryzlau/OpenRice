@@ -8,24 +8,10 @@ import {RECEIVE_RESTAURANT,
 import merge from 'redux';
 
 
-const initialRestaurantState = {
-  name: "",
-  owner_id: "",
-  start_price: "",
-  end_price: "",
-  capacity: "",
-  address: "",
-  cusine_type: "",
-  phone_num: "",
-  website: "",
-  dining_style: "",
-  description: "",
-  open_time: "",
-  close_time: ""
-};
+// const initialRestaurantState = {};
 
 // TODO: revisit this to make sure the state is what was expected
-const restaurantReducer = (state = initialRestaurantState, action) => {
+const restaurantReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
   switch(action.type){
@@ -38,7 +24,8 @@ const restaurantReducer = (state = initialRestaurantState, action) => {
       //   newState[idx] = action.restaurants[idx];
       // });
       // return newState;
-      return action.restaurnts;
+      debugger
+      return action.restaurants;
     case REMOVE_RESTAURANT:
       newState = {};
       Object.keys(state).forEach(idx => {

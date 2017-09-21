@@ -18,8 +18,8 @@ class Restaurant extends React.Component {
       open_time: "",
       close_time: ""
     };
-    debugger
   }
+
 
   componentDidMount(){
 

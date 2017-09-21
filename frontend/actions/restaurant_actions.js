@@ -39,8 +39,8 @@ export const clearRestaurantErrors = () => ({
 
 // request all restaurants (index)
 export const requestAllRestaurants = () => dispatch => (
-  RestAPI.requestAllRestaurants()
-            .then(restaurants => (dispatch(receiveAllRestaurants())),
+  RestAPI.fetchAllRestaurants()
+            .then(restaurants => (dispatch(receiveAllRestaurants(restaurants))),
              err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
 
@@ -66,8 +66,8 @@ export const destroyRestaurant = restaurantId => dispatch => (
 );
 
 // edit a restaurant (update)
-export const editRestaurant = restaurantId => dispatch => (
-  RestAPI.updateRestaurant()
-         .then(restaurant => (dispatch(updateRestaurant(restaurant))),
+export const editRestaurant = restaurant => dispatch => (
+  RestAPI.updateRestaurant(restaurant)
+         .then(newRestaurant => (dispatch(updateRestaurant(newRestaurant))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );

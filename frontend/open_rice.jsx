@@ -4,14 +4,25 @@ import configureStore from './store/store.js';
 import Root from './components/root';
 import * as RestAPI from './util/restaurant_api_util';
 import restaurantReducer from './reducers/restaurant_reducer';
+import * as Actions from './actions/restaurant_actions';
 
-
-window.createRestaurant = RestAPI.createRestaurant;
+// test ajax
+// window.createRestaurantajax = RestAPI.createRestaurant;
 window.fetchRestaurant = RestAPI.fetchRestaurant;
-window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
-window.destroyRestaurant = RestAPI.destroyRestaurant;
-window.updateRestaurant = RestAPI.updateRestaurant;
-window.restaurantReducer = restaurantReducer;
+// window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
+// window.destroyRestaurantajax = RestAPI.destroyRestaurant;
+// window.updateRestaurant = RestAPI.updateRestaurant;
+
+// test reducers
+// window.restaurantReducer = restaurantReducer;
+
+//test actions
+// window.receiveAllRestaurants = Actions.receiveAllRestaurants;
+// window.requestAllRestaurants = Actions.requestAllRestaurants;
+window.requestRestaurant = Actions.requestRestaurant;
+// window.createRestaurant = Actions.createRestaurant;
+// window.destroyRestaurant = Actions.destroyRestaurant;
+// window.editRestaurant = Actions.editRestaurant;
 
 document.addEventListener('DOMContentLoaded', () => {
 
