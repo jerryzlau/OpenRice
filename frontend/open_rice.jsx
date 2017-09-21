@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {signup, login, logout} from './util/session_api_util';
 import configureStore from './store/store.js';
 import Root from './components/root';
+import * as RestAPI from './util/restaurant_api_util';
 
-// window.signup = signup;
-// window.login = login;
-// window.logout = logout;
+
+window.createRestaurant = RestAPI.createRestaurant;
+window.fetchRestaurant = RestAPI.fetchRestaurant;
+window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
+window.destroyRestaurant = RestAPI.destroyRestaurant;
+window.updateRestaurant = RestAPI.updateRestaurant;
 
 document.addEventListener('DOMContentLoaded', () => {
 

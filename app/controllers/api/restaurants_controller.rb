@@ -23,7 +23,8 @@ class Api::RestaurantsController < ApplicationController
   def destroy
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy if @restaurant
-    render :index
+    #TODO: render something else later 
+    # render :index
   end
 
   def update
@@ -49,6 +50,8 @@ class Api::RestaurantsController < ApplicationController
                                        :dining_style,
                                        :description,
                                        :open_time,
-                                       :close_time)
+                                       :close_time,
+                                       :name,
+                                       :owner_id)
   end
 end

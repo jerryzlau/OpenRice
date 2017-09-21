@@ -77,7 +77,7 @@ restaurant = {name: "demo - restaurant",
               open_time: "09.30 AM",
               close_time: "10:00 AM"}
 
-Restaurant.create(restaurant)  
+Restaurant.create(restaurant)
 
 
 let restaurant = {
@@ -93,5 +93,5 @@ let restaurant = {
   "dining_style":"demo style",
   "description":"demo about",
   "open_time":"09:30 AM",
-  "end_time":"10:00 PM"
+  "close_time":"10:00 PM"
 }

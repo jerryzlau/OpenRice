@@ -26,3 +26,11 @@ export const destroyRestaurant = (restaurantId) => (
     url: `/api/restaurants/${restaurantId}`
   })
 );
+
+export const updateRestaurant = (restaurant) => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/restaurants/${restaurant.id}`,
+    data: {restaurant}
+  })
+);
