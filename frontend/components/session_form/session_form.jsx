@@ -9,8 +9,12 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+  },
+  overlay : {
+    background            : 'rgba(148,148,148, 0.75)'
   }
+
 };
 
 class SessionForm extends React.Component {
@@ -19,11 +23,11 @@ class SessionForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      // confirm_password: '',
+      //TODO: confirm_password: '',
       first_name: '',
       last_name: '',
       owner: false,
-      primary_city: '',
+      primary_city: '', //TODO: make this into a dropdown
       showModal: true
 
     };
