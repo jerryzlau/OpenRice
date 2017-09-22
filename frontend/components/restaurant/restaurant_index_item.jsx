@@ -39,19 +39,18 @@ class RestaurantIndexItem extends React.Component {
   }
 
   render(){
-    let {name, cusine_type, address, id} = this.restaurant;
+    let {name, cusine_type, address, id, image_url} = this.restaurant;
     return(
       <div className="rest-index-item">
         <div>
           <img
             className="rest-index-img"
-            src="http://img.taste.com.au/vD_zzEka/taste/2016/11/easy-fried-rice_1980x1320-118371-1.jpg"/>
+            src={image_url}/>
         </div>
 
         <div className="rest-index-info">
-          <Link to={`/restaurants/${id}`}
-                className="rest-index-item-link">
-            {name.capitalize()}
+          <Link to={`/restaurants/${id}`}>
+            <p className="rest-index-item-link">{name.capitalize()}</p>
           </Link><br/>
 
           <div className="rest-index-item-top">

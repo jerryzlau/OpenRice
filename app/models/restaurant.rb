@@ -19,9 +19,12 @@
 #
 
 class Restaurant < ApplicationRecord
+
+  DEFAULT = "https://www.deleci.com/assets/images/default-food-image.png"
+
   validates :owner_id, :capacity, :address, :cusine_type, presence: true
   validates :phone_num, :website, :dining_style, :description, presence: true
-  validates :start_price, :end_price, presence: true 
+  validates :start_price, :end_price, presence: true
   validates :name, presence: true, uniqueness: true
   validates :open_time, :close_time, presence: true
 
@@ -44,5 +47,11 @@ class Restaurant < ApplicationRecord
   primary_key: :id,
   foreign_key: :restaurant_id,
   class_name: :Review
+
+  after_initialize :ensure_image_url
+
+  def ensure_image_url
+    self.image_url ||= DEFAULT
+  end
 
 end

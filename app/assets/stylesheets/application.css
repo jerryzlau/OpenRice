@@ -111,3 +111,10 @@ header h2{
   margin-left: 182px;
   margin-right: 182px;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+  /*font-size: 100px;*/
+}
