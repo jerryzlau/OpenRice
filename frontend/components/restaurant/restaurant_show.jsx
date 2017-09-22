@@ -3,15 +3,10 @@ import React from 'react';
 class RestaurantShow extends React.Component {
   constructor(props){
     super(props);
-    this.parsePhoneNum = this.parsePhoneNum.bind(this);
   }
 
   componentWillMount(){
     this.props.requestRestaurant(this.props.match.params.restaurantId);
-  }
-
-  parsePhoneNum(num){
-    return `(${num.slice(1,4)}) ${num.slice(4,7)}-${num.slice(7)}`;
   }
 
   render(){
@@ -82,7 +77,7 @@ class RestaurantShow extends React.Component {
             <div className="rest-show-about-el">
               <i className="fa fa-phone" aria-hidden="true"></i>
               <span> Phone Number: </span>
-              <span> {this.parsePhoneNum(phone_num)}</span>
+              <span> {phone_num}</span>
             </div>
 
             <div className="rest-show-about-el">
@@ -94,7 +89,10 @@ class RestaurantShow extends React.Component {
               <i className="fa fa-home" aria-hidden="true"></i>
               <span> Website: </span>
               {/* TODO: check how to link a website  */}
-              <a href={website}>{website}</a>
+              <a href={website}>
+                <span className="website">
+                {website}</span>
+              </a>
             </div>
 
             <div className="rest-show-about-el">
