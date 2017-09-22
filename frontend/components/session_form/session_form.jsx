@@ -60,12 +60,6 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/home');
-  //   }
-  // }
-
   //handle form actions
   update(field) {
     return e => this.setState({

@@ -136,26 +136,54 @@
   height: 200px;
 }
 
-.rest-show-about-din-style {
+.rest-show-about-el{
   padding: 20px;
 }
 
-.rest-show-about-body{
-  padding: 20px;
+.rest-form{
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 30px;
+  width: 800px;
+  height: 655px;
+  background-color: #FFFFFF;
 }
 
-.rest-show-about-hours{
-  padding: 20px;
+.rest-form h1{
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.rest-show-about-phone{
-  padding: 20px;
+.rest-form-row{
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
 }
 
-.rest-show-about-cusine{
-  padding: 20px;
+.rest-form-capacity{
+  display: flex;
+  justify-content: center;
 }
 
-.rest-show-about-website{
-  padding: 20px;
+.rest-form-body-container{
+  display: flex;
+  justify-content: center;
+}
+
+.rest-form-body{
+  margin: 30px;
+  font-size: 13px;
+  width: 600px;
+  height: 50px;
+}
+
+.rest-form-submit{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.rest-form-background{
+  background-image: url("https://www.craftsy.com/blog/wp-content/uploads/2014/01/pots-and-pans.jpg");
 }

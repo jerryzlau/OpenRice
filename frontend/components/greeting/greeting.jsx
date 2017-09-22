@@ -25,6 +25,10 @@ class Greeting extends React.Component {
       <div className="header-group">
         <button className="header-name">Hi, {currentUser.first_name.capitalize()}!</button>
         <button className="header-button" onClick={logout}>Log Out</button>
+        <button hidden={!this.props.currentUser.owner} className="header-button">
+          <Link to="/restaurants">Join OpenRice</Link>
+        </button>
+
       </div>
     );
   }

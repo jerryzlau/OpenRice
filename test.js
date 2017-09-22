@@ -112,3 +112,10 @@ let restaurant = {
   "open_time":"09:30 AM",
   "close_time":"10:00 PM"
 }
+
+this.props.createRestaurant(this.state)
+          .then(data => {
+                        console.log(data.restaurant.restaurant.id);
+                        return this.props.history.push(`/restaurants/${data.restaurant.restaurant.id}`);
+                        }
+               );
