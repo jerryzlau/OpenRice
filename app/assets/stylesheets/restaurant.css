@@ -70,3 +70,92 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.rest-show{
+  background-color: #F7F7F7;
+}
+
+.rest-show-header img{
+  margin-top: 70px;
+  margin-left: 40px;
+  width: 130px;
+  height: 130px;
+}
+
+.rest-show-header{
+  display: flex;
+  flex-direction: row;
+  background-image: url("http://wpnature.com/wp-content/uploads/2016/09/rainbow-pink-blurry-lights-lovely-christmas-pretty-rose-free-desktop-wallpaper-1920x1080.jpg");
+}
+
+.rest-name{
+  font-size: 35px;
+  color: black;
+}
+
+.rest-show-header-right{
+  margin-top: 80px;
+  margin-left: 50px;
+}
+
+.rest-show-header-right-sub{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.rest-show-header-right-sub span{
+  padding: 5px;
+  color: #84786e;
+}
+
+.heart-button{
+  color: #5b4e43;
+  padding: 1px;
+  border: solid 1px #5b4e43;
+  margin-left: 600px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.rest-show-about h1{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.rest-show-about{
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.rest-show-map{
+  border: 1px solid black;
+  width: auto;
+  height: 200px;
+}
+
+.rest-show-about-din-style {
+  padding: 20px;
+}
+
+.rest-show-about-body{
+  padding: 20px;
+}
+
+.rest-show-about-hours{
+  padding: 20px;
+}
+
+.rest-show-about-phone{
+  padding: 20px;
+}
+
+.rest-show-about-cusine{
+  padding: 20px;
+}
+
+.rest-show-about-website{
+  padding: 20px;
+}
