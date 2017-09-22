@@ -95,7 +95,8 @@ class RestaurantShow extends React.Component {
             <div className="rest-show-about-website">
               <i className="fa fa-home" aria-hidden="true"></i>
               <span> Website: </span>
-              <span>{website}</span>
+              {/* TODO: check how to link a website  */}
+              <a href={website}>{website}</a>
             </div>
 
             <div className="rest-show-about-body">
