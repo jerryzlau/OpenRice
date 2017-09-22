@@ -25,10 +25,10 @@ class RestaurantIndexItem extends React.Component {
       <ul className="rest-index-item-price-range">
         <li style={{color: 'black'}}>$</li>
         <li
-          style={{color: `${diff > 20 ? 'black' : 'grey'}`}}>
+          style={{color: `${diff > 40 ? 'black' : 'grey'}`}}>
           $</li>
         <li
-          style={{color: `${diff > 60 ? 'black' : 'grey'}`}}>
+          style={{color: `${diff > 100 ? 'black' : 'grey'}`}}>
           $</li>
         <li
           style={{color: `${diff > 200 ? 'black' : 'grey'}`}}>

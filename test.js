@@ -119,3 +119,5 @@ this.props.createRestaurant(this.state)
                         return this.props.history.push(`/restaurants/${data.restaurant.restaurant.id}`);
                         }
                );
+
+ b = Restaurant.where("lower(name) like ?", "%urban%") 

@@ -65,3 +65,10 @@ export const editRestaurant = restaurant => dispatch => (
          .then(newRestaurant => (dispatch(receiveRestaurant(newRestaurant))),
           err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
 );
+
+// search for restaurants based on keyword
+export const searchRestaurants = searchKeyword => dispatch => (
+  RestAPI.searchRestaurants(searchKeyword)
+         .then(searchResult => (dispatch(receiveAllRestaurants(searchResult)))),
+         err => (dispatch(receiveRestaurantErrors(err.responseJSON)))
+);

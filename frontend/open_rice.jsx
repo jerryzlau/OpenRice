@@ -12,6 +12,7 @@ window.fetchRestaurant = RestAPI.fetchRestaurant;
 window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
 window.destroyRestaurantajax = RestAPI.destroyRestaurant;
 window.updateRestaurant = RestAPI.updateRestaurant;
+window.searchRestaurants = RestAPI.searchRestaurants;
 
 // test reducers
 // window.restaurantReducer = restaurantReducer;

@@ -3,7 +3,11 @@ class Api::RestaurantsController < ApplicationController
   # before_action :require_login
 
   def index
-    @restaurants = Restaurant.all
+    if params[:searchKeyword]
+      @restaurants = Restaurant.find_by_keyword(params[:searchKeyword]) ? @restaurants : (render json: ["Restaurant not found"], status: 404)
+    else
+      @restaurants = Restaurant.all
+    end
   end
 
   def show
@@ -19,6 +23,7 @@ class Api::RestaurantsController < ApplicationController
     else
       render json: @restaurant.errors.full_messages, status: 422
     end
+
   end
 
   def destroy

@@ -20,6 +20,14 @@ export const fetchAllRestaurants = () => (
   })
 );
 
+export const searchRestaurants = searchKeyword => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/restaurants',
+    data: {searchKeyword}
+  })
+);
+
 export const destroyRestaurant = (restaurantId) => (
   $.ajax({
     method: 'DELETE',

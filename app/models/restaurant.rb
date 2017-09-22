@@ -22,11 +22,13 @@ class Restaurant < ApplicationRecord
 
   DEFAULT = "https://www.deleci.com/assets/images/default-food-image.png"
 
-  validates :owner_id, :capacity, :address, :cusine_type, presence: true
+  validates :owner_id, :capacity, :cusine_type, presence: true
   validates :phone_num, :website, :dining_style, :description, presence: true
   validates :start_price, :end_price, presence: true
-  validates :name, presence: true, uniqueness: true
   validates :open_time, :close_time, presence: true
+  # validation for searching
+  validates :name, presence: true, uniqueness: true, uniqueness: {case_sensitive: false}
+  validates :address, presence: true, uniqueness: true, uniqueness: {case_sensitive: false}
 
   belongs_to :owner,
   primary_key: :id,
@@ -53,5 +55,13 @@ class Restaurant < ApplicationRecord
   def ensure_image_url
     self.image_url ||= DEFAULT
   end
+
+  def self.find_by_keyword(keyword)
+    Restaurant.where("lower(address) like ?", "%#{keyword.downcase}%")
+              .or(Restaurant.where("lower(name) like ?", "%#{keyword.downcase}%"))
+              .or(Restaurant.where("lower(cusine_type) like ?", "%#{keyword.downcase}%"))
+  end
+
+
 
 end
