@@ -1,0 +1,72 @@
+.rest-index-img{
+  width: 150px;
+  height: 150px;
+}
+
+.rest-index-item{
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 0.5px grey;
+  margin: 10px;
+  padding: 5px;
+  width: 750px;
+  height: 150px;
+}
+
+.rest-index-info{
+  width: 580px;
+  height: 150px;
+}
+
+.rest-index{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  cursor: default;
+  margin-left: 300px;
+  margin-right: 335px;
+}
+
+.rest-index h1{
+  border-bottom: solid 0.5px grey;
+}
+
+.rest-index-item-link {
+  font-size: 20px;
+  color: #237B98;
+  font-style: normal;
+}
+
+.rest-index-item-link:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.rest-index-item-cusine{
+  color: #666666;
+}
+
+.rest-index-item-price-range{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.rest-index-item-price-range li{
+  list-style: none;
+}
+
+.rest-index-item-middle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: .875rem;
+}
+
+.rest-index-item-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

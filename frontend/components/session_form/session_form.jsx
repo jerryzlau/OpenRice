@@ -60,11 +60,11 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/home');
+  //   }
+  // }
 
   //handle form actions
   update(field) {
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
     }
 
     this.props.processForm(user)
-    .then(() => this.props.history.push('/'));
+    .then(() => this.props.history.goBack());
   }
 
   handleDemo(e){

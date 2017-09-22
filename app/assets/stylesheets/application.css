@@ -14,9 +14,14 @@
  *= require_self
  */
 
+body{
+  background-color: #F7F7F7;
+}
+
 html, body, div, header{
   padding: 0;
   margin: 0;
+
 }
 
 a:-webkit-any-link{
@@ -95,4 +100,14 @@ header h2{
 
 .login-signup .demo-login{
   color: black;
+}
+
+.home-img{
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar{
+  margin-left: 182px;
+  margin-right: 182px;
 }

@@ -37,6 +37,22 @@ const Root = ({ store }) => (
 
 export default Root;
 
+// this.state = {
+//   name: "",
+//   owner_id: "",
+//   start_price: "",
+//   end_price: "",
+//   capacity: "",
+//   address: "",
+//   cusine_type: "",
+//   phone_num: "",
+//   website: "",
+//   dining_style: "",
+//   description: "",
+//   open_time: "",
+//   close_time: ""
+// };
+
 
 
 const createRestaurant = restaurant => (
