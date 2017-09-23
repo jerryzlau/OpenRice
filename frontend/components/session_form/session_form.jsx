@@ -88,10 +88,23 @@ class SessionForm extends React.Component {
 
   handleDemo(e){
     e.preventDefault();
-    let demo = {email: 'demo@demo.com', password: '123456'};
+    let email = 'demo@demo.com'.split("");
+    let password = '123456'.split("");
+    this.setState({email: "", password: ""});
+    const shiftFunction = function(){
+      if(email.length > 0){
+        this.setState({email: this.state.email.concat(email.shift())});
+      }else if (password.length > 0){
+        this.setState({password: this.state.password.concat(password.shift())});
+      }else{
+        clearInterval(stop);
+        this.props.processForm(this.state)
+        .then(() => this.props.history.push('/'));
+      }}.bind(this);
+    const stop = setInterval(shiftFunction, 60);
+    // let demo = {email: 'demo@demo.com', password: '123456'};
     // this.setState(demo); //make an animation to input credentials
-    this.props.processForm(demo)
-    .then(() => this.props.history.push('/'));
+
   }
 
   signUpForm(){

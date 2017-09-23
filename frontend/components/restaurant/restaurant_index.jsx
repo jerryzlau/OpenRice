@@ -4,8 +4,6 @@ import RestaurantSearch from './restaurant_search/restaurant_search';
 import RestaurantSearchContainer from './restaurant_search/restaurant_search_container';
 import { Route, Switch, withRouter} from 'react-router-dom';
 
-
-
 class RestaurantIndex extends React.Component {
   constructor(props){
     super(props);
