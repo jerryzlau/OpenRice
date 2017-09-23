@@ -16,7 +16,6 @@ class Main extends React.Component {
             component={RestaurantShowContainer}/>
           <Route exact path='/' component={RestaurantIndexContainer} />
           <Route exact path='/restaurants' component={RestaurantFormContainer}/>
-
       </div>
     );
   }

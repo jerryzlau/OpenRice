@@ -200,6 +200,7 @@
 .search-bar{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .search-input{

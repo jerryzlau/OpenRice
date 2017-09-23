@@ -19,7 +19,8 @@ class restaurantSearch extends React.Component  {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.searchRestaurants(this.state); //returns search results
+    this.props.searchRestaurants(this.state.searchKeyword);
+    //returns search results
   }
 
   render(){
