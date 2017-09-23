@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+gem 'faker'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'faker'
   gem 'binding_of_caller'
   gem 'annotate'
 end
