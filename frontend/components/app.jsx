@@ -6,7 +6,7 @@ import { Route, Switch} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import RestaurantIndexContainer from './restaurant/restaurant_index_container';
 import RestaurantShowContainer from './restaurant/restaurant_show_container';
-
+import RestaurantSearch from './restaurant/restaurant_search/restaurant_search';
 
 const App = () => (
   <div className="app-page">
