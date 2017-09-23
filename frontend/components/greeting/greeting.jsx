@@ -14,6 +14,7 @@ class Greeting extends React.Component {
       <nav className="login-signup">
         <button className="signup"><Link to="/signup">Sign up</Link></button>
         <button className="login"><Link to="/login">Login</Link></button>
+        {/* <button className="login"><Link to="/">Login</Link></button> */}
       </nav>
     );
   }

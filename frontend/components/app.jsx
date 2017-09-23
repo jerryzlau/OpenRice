@@ -18,6 +18,7 @@ const App = () => (
       <h2><GreetingContainer/></h2>
     </header>
       <AuthRoute path="/login" component={SessionFormContainer} />
+      {/* <AuthRoute path="/" component={SessionFormContainer} /> */}
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </nav>
 

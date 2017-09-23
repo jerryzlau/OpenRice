@@ -10,19 +10,10 @@ blockquote dd div dl dt form h1 h2 h3 h4 h5 h6 li ol p pre td th ul span{
 
 .session-page {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 665px;
-}
-
-.session-form-border{
-  background-color: white;
-}
-
-.session-form{
-  margin: 10px;
-  display: block;
-  cursor: auto;
+  justify-content: start;
+  align-content: flex-start;
+  height: 750px;
+  background-image: url("https://www.revealnews.org/wp-content/uploads/2015/03/shutterstock_102426532-web-1031x675.jpg");
 }
 
 .signup-form h3{

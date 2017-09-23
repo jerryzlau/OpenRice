@@ -253,8 +253,7 @@ class SessionForm extends React.Component {
                       contentLabel="Sign up Form"
                       onRequestClose={this.handleCloseModal}
                       style={customStyles}
-                  >
-                  {this.signUpForm()}
+                  >{this.signUpForm()}
                 </ReactModal>
                 ) : (
                   <ReactModal
@@ -262,8 +261,7 @@ class SessionForm extends React.Component {
                       contentLabel="Login Form"
                       onRequestClose={this.handleCloseModal}
                       style={customStyles}
-                  >
-                    {this.loginForm()}
+                  >{this.loginForm()}
                 </ReactModal>
                 )
               }
