@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      //TODO: confirm_password: '',
+      confirm_password: '',
       first_name: '',
       last_name: '',
       owner: false,
@@ -36,10 +36,11 @@ class SessionForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
 
     //form actions
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.signUpForm = this.signUpForm.bind(this);
     this.loginForm = this.loginForm.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
 
     //Modal stuff
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -67,21 +68,26 @@ class SessionForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSignUp(e){
     e.preventDefault();
-    let user;
-    if(this.props.formType === 'signup'){
-      user = {first_name: this.state.first_name,
-              last_name: this.state.last_name,
-              password: this.state.password,
-              email: this.state.email,
-              owner: this.state.owner,
-              primary_city: this.state.primary_city};
+    let user = {first_name: this.state.first_name,
+                last_name: this.state.last_name,
+                password: this.state.password,
+                email: this.state.email,
+                owner: this.state.owner,
+                primary_city: this.state.primary_city};
 
+    if(this.state.password === this.state.confirm_password){
+      this.props.processForm(user)
+      .then(() => this.props.history.goBack());
     }else{
-      user = {email: this.state.email, password: this.state.password};
+      alert("Password do not match");
     }
+  }
 
+  handleLogIn(e){
+    e.preventDefault();
+    let user = {email: this.state.email, password: this.state.password};
     this.props.processForm(user)
     .then(() => this.props.history.goBack());
   }
@@ -102,8 +108,6 @@ class SessionForm extends React.Component {
         .then(() => this.props.history.push('/'));
       }}.bind(this);
     const stop = setInterval(shiftFunction, 60);
-    // let demo = {email: 'demo@demo.com', password: '123456'};
-    // this.setState(demo); //make an animation to input credentials
 
   }
 
@@ -148,14 +152,14 @@ class SessionForm extends React.Component {
         placeholder="Enter Password:"
       />
 
-      {/* <br/>
+      <br/>
 
       <input type="password"
         value={this.state.confirm_password}
         onChange={this.update('confirm_password')}
         className="signup-input"
         placeholder="Confirm Password:"
-      /> */}
+      />
 
       <br/>
 
@@ -178,7 +182,7 @@ class SessionForm extends React.Component {
       <br/>
 
       <input
-        onClick={this.handleSubmit}
+        onClick={this.handleSignUp}
         className="button"
         type="submit"
         value="Create Account" />
@@ -208,7 +212,7 @@ class SessionForm extends React.Component {
         />
 
         <br/>
-        <input onClick={this.handleSubmit}
+        <input onClick={this.handleLogIn}
               className="button"
               type="submit"
               value="Sign In" />

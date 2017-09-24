@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './main';
 import SessionFormContainer from './session_form/session_form_container';
 import GreetingContainer from './greeting/greeting_container';
-import { Route, Switch} from 'react-router-dom';
+import { Route, Switch, Link} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import RestaurantIndexContainer from './restaurant/restaurant_index_container';
 import RestaurantShowContainer from './restaurant/restaurant_show_container';
@@ -12,9 +12,9 @@ const App = () => (
   <div className="app-page">
     <nav className="nav-bar">
       <header>
-        <a href='/' >
+        <Link to="/">
         <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1505869835/openrice_logo_qusua1.png" />
-      </a>
+        </Link>
       <h2><GreetingContainer/></h2>
     </header>
       <AuthRoute path="/login" component={SessionFormContainer} />
