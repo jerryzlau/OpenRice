@@ -62,6 +62,4 @@ class Restaurant < ApplicationRecord
               .or(Restaurant.where("lower(cusine_type) like ?", "%#{keyword.downcase}%"))
   end
 
-
-
 end
