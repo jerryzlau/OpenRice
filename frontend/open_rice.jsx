@@ -2,16 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import restaurantReducer from './reducers/restaurant_reducer';
 // import * as Actions from './actions/restaurant_actions';
 import * as reservationAPI from './util/reservation_api_util';
+import * as resActions from './actions/reservation_actions';
 
 
 // test ajax
-
-
-//reservation ajax test
-
 
 // test reducers
 // window.restaurantReducer = restaurantReducer;
@@ -21,7 +17,11 @@ import * as reservationAPI from './util/reservation_api_util';
 // window.removeRestaurant = Actions.removeRestaurant;
 // window.editRestaurant = Actions.editRestaurant;
 // reservation actions
-
+// window.createReservation = resActions.createReservation;
+// window.requestReservation = resActions.requestReservation;
+// window.requestRestaurantReservations = resActions.requestRestaurantReservations;
+// window.destroyReservation = resActions.destroyReservation;
+// window.editReservation = resActions.editReservation;
 
 document.addEventListener('DOMContentLoaded', () => {
 

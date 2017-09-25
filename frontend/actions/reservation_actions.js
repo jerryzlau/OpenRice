@@ -6,7 +6,6 @@ export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 export const RECEIVE_RESERVATION_ERRORS = 'RECEIVE_RESERVATION_ERRORS';
 export const CLEAR_RESERVATION_ERRORS = 'CLEAR_RESERVATION_ERRORS';
 
-
 // actions handling
 export const receiveReservations = reservations => ({
   type: RECEIVE_RESERVATIONS,
@@ -48,7 +47,7 @@ export const requestReservation = reservationId => dispatch => (
 );
 
 // fetch all of current restaurant's reservations
-export const requestRestaurantReservations = (userId, restaurantId) => dispatch => (
+export const requestRestaurantReservations = ({userId, restaurantId}) => dispatch => (
   ReservationAPI.fetchRestaurantReservations(userId, restaurantId)
                 .then(reservations => (dispatch(receiveReservations(reservations))),
                  err => (dispatch(receiveReservationErrors(err.responseJSON))))
@@ -56,12 +55,12 @@ export const requestRestaurantReservations = (userId, restaurantId) => dispatch 
 
 // cancel a reservation
 export const destroyReservation = reservationId => dispatch => (
-  ReservationAPI.destroyRestaurant(reservationId)
+  ReservationAPI.destroyReservation(reservationId)
                 .then(reservation => (dispatch(removeReservation(reservation))),
                  err => dispatch(receiveReservationErrors(err.responseJSON)))
 );
 
-// modify a reservaiton 
+// modify a reservaiton
 export const editReservation = reservation => dispatch => (
   ReservationAPI.updateReservation(reservation)
                 .then(newReservation => (dispatch(receiveReservation(newReservation))),

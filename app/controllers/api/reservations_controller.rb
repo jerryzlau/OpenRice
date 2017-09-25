@@ -10,7 +10,7 @@ class Api::ReservationsController < ApplicationController
         # show all the reservaitons of that restaurant
         @reservations = current_restaurant.reservations
       else
-        render json: ["Restaurant not found"], status: 404
+        render json: ["Don't have owner access right"], status: 404
       end
     else
       # user profile reservation index

@@ -6,10 +6,6 @@ import {RECEIVE_RESTAURANT,
       } from '../actions/restaurant_actions';
 import merge from 'lodash/merge';
 
-
-// const initialRestaurantState = {};
-
-// TODO: revisit this to make sure the state is what was expected
 const restaurantReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
@@ -26,7 +22,6 @@ const restaurantReducer = (state = {}, action) => {
       return newState;
     default:
       return state;
-
   }
 };
 

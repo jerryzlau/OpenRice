@@ -120,4 +120,6 @@ this.props.createRestaurant(this.state)
                         }
                );
 
- b = Restaurant.where("lower(name) like ?", "%urban%") 
+ b = Restaurant.where("lower(name) like ?", "%urban%")
+
+ dispatch(reservationActions(object)); //this is how to test actions in window
