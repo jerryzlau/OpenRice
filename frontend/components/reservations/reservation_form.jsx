@@ -13,7 +13,7 @@ class ReservationForm extends React.Component {
       book_date: moment().format("MMM Do YY"),
       notes: "No special request at the moment."
     };
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -56,8 +56,6 @@ class ReservationForm extends React.Component {
             value="Book a Table"
             className="submit-button reservation-submit"
           /><br/>
-
-
         </form>
       </div>
     );
