@@ -2,11 +2,12 @@ import {connect} from 'react-redux';
 import {createReservation,
         editReservation,
         destroyReservation} from '../../actions/reservation_actions';
-import ReservationForm from './restaurant_form';
+import ReservationForm from './reservation_form';
 
-const mapStateToProps = ({reservation, session}) => {
+const mapStateToProps = ({restaurants, session}) => {
   return {
-    currentUser: session.currentUser
+    currentUser: session.currentUser,
+    restaurants: restaurants
   };
 };
 

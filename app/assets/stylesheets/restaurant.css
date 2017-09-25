@@ -85,7 +85,7 @@
 .rest-show-header{
   display: flex;
   flex-direction: row;
-  background-image: url("http://wpnature.com/wp-content/uploads/2016/09/rainbow-pink-blurry-lights-lovely-christmas-pretty-rose-free-desktop-wallpaper-1920x1080.jpg");
+  background-image: url("http://res.cloudinary.com/jerryzlau/image/upload/v1506355484/715965d4a2470d2_1_oo4qhg.jpg");
 }
 
 .rest-name{
@@ -106,26 +106,36 @@
 
 .rest-show-header-right-sub span{
   padding: 5px;
-  color: #84786e;
+  /*color: #84786e;*/
+  color: black;
 }
 
 .heart-button{
-  color: #5b4e43;
+  /*color: #5b4e43;*/
+  color: black;
   padding: 1px;
-  border: solid 1px #5b4e43;
-  margin-left: 600px;
+  /*border: solid 1px #5b4e43;*/
+  border: solid 1px black;
+  margin-left: 500px;
   padding: 5px;
   cursor: pointer;
 }
+
+.rest-show-body{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+}
+
 
 .rest-show-about h1{
   padding-bottom: 20px;
   border-bottom: 1px solid #EBEBEB;
 }
 
-.rest-show-about{
-  margin-left: 15%;
-  margin-right: 15%;
+.rest-show-background{
   background-color: white;
   border-radius: 5px;
 }
@@ -193,6 +203,7 @@
 }
 
 .search-bar-form{
+  width: 95%;
   background-color: white;
   padding: 20px;
 }
@@ -200,6 +211,7 @@
 .search-bar{
   display: flex;
   flex-direction: row;
+  margin: auto;
   justify-content: space-around;
 }
 
@@ -210,7 +222,7 @@
   height: 50px;
 }
 
-.search-button{
+.submit-button{
   margin: 0;
   padding: 0;
   background-color: #DA3743;
@@ -223,5 +235,8 @@
   cursor: pointer;
   width: 310px;
   height: 53px;
+}
 
+.rest-index{
+  min-width: 750px;
 }

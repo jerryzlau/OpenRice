@@ -56,7 +56,7 @@ class RestaurantForm extends React.Component {
               />
               <br/>
 
-              <input type="text"
+              <input type="tel"
                 value={this.state.phone_num}
                 onChange={this.update('phone_num')}
                 className="signup-input"
@@ -66,7 +66,7 @@ class RestaurantForm extends React.Component {
             </div>
 
             <div className="rest-form-row">
-              <input type="text"
+              <input type="time"
                 value={this.state.open_time}
                 onChange={this.update('open_time')}
                 className="signup-input"
@@ -74,7 +74,7 @@ class RestaurantForm extends React.Component {
               />
               <br/>
 
-              <input type="text"
+              <input type="time"
                 value={this.state.close_time}
                 onChange={this.update('close_time')}
                 className="signup-input"
@@ -102,7 +102,7 @@ class RestaurantForm extends React.Component {
             </div>
 
             <div className="rest-form-row">
-              <input type="text"
+              <input type="number"
                 value={this.state.start_price}
                 onChange={this.update('start_price')}
                 className="signup-input"
@@ -110,7 +110,7 @@ class RestaurantForm extends React.Component {
               />
               <br/>
 
-              <input type="text"
+              <input type="number"
                 value={this.state.end_price}
                 onChange={this.update('end_price')}
                 className="signup-input"
@@ -128,7 +128,7 @@ class RestaurantForm extends React.Component {
               />
               <br/>
 
-              <input type="text"
+              <input type="url"
                 value={this.state.website}
                 onChange={this.update('website')}
                 className="signup-input"
@@ -138,7 +138,7 @@ class RestaurantForm extends React.Component {
             </div>
 
             <div className="rest-form-capacity">
-              <input type="text"
+              <input type="number"
                 value={this.state.capacity}
                 onChange={this.update('capacity')}
                 className="signup-input"

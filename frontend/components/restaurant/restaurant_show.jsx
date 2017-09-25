@@ -1,4 +1,6 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
+import ReservationFormContainer from '../reservations/reservation_form_container';
 
 class RestaurantShow extends React.Component {
   constructor(props){
@@ -59,47 +61,53 @@ class RestaurantShow extends React.Component {
             </div>
           </div>
 
-          <div className="rest-show-about">
-            <h1>About {name}</h1>
+          <div className="rest-show-body">
+            <Route path={`/restaurants/:restaurantId`} component={ReservationFormContainer} />
 
-            <div className="rest-show-about-el">
-              <i className="fa fa-bell" aria-hidden="true" />
-              <span> Dining Style:</span>
-              <span> {dining_style}</span>
-            </div>
+            <div className="rest-show-about rest-show-background">
+              <h1>About {name}</h1>
 
-            <div className="rest-show-about-el">
-              <i className="fa fa-clock-o" aria-hidden="true"></i>
-              <span> Hours of Operation:</span>
-              <span> Daily: {open_time.slice(11,16)} - {close_time.slice(11,16)}</span>
-            </div>
+              <div className="rest-show-about-el">
+                <i className="fa fa-bell" aria-hidden="true" />
+                <span> Dining Style:</span>
+                <span> {dining_style}</span>
+              </div>
 
-            <div className="rest-show-about-el">
-              <i className="fa fa-phone" aria-hidden="true"></i>
-              <span> Phone Number: </span>
-              <span> {phone_num}</span>
-            </div>
+              <div className="rest-show-about-el">
+                <i className="fa fa-clock-o" aria-hidden="true"></i>
+                <span> Hours of Operation:</span>
+                <span> Daily: {open_time.slice(11,16)} - {close_time.slice(11,16)}</span>
+              </div>
 
-            <div className="rest-show-about-el">
-              <span>Cusines:</span>
-              <span>{cusine_type}</span>
-            </div>
+              <div className="rest-show-about-el">
+                <i className="fa fa-phone" aria-hidden="true"></i>
+                <span> Phone Number: </span>
+                <span> {phone_num}</span>
+              </div>
 
-            <div className="rest-show-about-el">
-              <i className="fa fa-home" aria-hidden="true"></i>
-              <span> Website: </span>
-              {/* TODO: check how to link a website  */}
-              <a href={website}>
-                <span className="website">
-                {website}</span>
-              </a>
-            </div>
+              <div className="rest-show-about-el">
+                <span>Cusines:</span>
+                <span>{cusine_type}</span>
+              </div>
 
-            <div className="rest-show-about-el">
-              <span>{description}</span>
-            </div>
+              <div className="rest-show-about-el">
+                <i className="fa fa-home" aria-hidden="true"></i>
+                <span> Website: </span>
+                {/* TODO: check how to link a website  */}
+                <a href={website}>
+                  <span className="website">
+                    {website}</span>
+                  </a>
+                </div>
 
-            <div className="rest-show-map">
+                <div className="rest-show-about-el">
+                  <span>{description}</span>
+                </div>
+
+                <div className="rest-show-map">
+
+                </div>
+
 
             </div>
           </div>

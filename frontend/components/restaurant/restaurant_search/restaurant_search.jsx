@@ -20,7 +20,6 @@ class restaurantSearch extends React.Component  {
   handleSubmit(e){
     e.preventDefault();
     this.props.searchRestaurants(this.state.searchKeyword);
-    //returns search results
   }
 
   render(){
@@ -28,12 +27,13 @@ class restaurantSearch extends React.Component  {
       <form className="search-bar-form">
         <h1>Make restaurant reservations the easy way</h1>
         <div className="search-bar">
-          <input className="search-input"
+          <input type="text"
+            className="search-input"
             value={this.state.searchKeyword}
             onChange={this.update('searchKeyword')}
             placeholder="Location, Restaurant, or Cuisine"/>
 
-          <input className="search-button"
+          <input className="submit-button"
             onClick={this.handleSubmit}
             type="submit"
             value="Find a Rice Bowl" />
