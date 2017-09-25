@@ -1,19 +1,26 @@
 class Api::ReservationsController < ApplicationController
 
   def index
-    current_restaurant = Restaurant.find(params[:restaurantId])
+    current_restaurant = Restaurant.find(params[:restaurantId]) if params[:restaurantId]
     if current_restaurant
-      if params[:userId] == current_restaurant.owner_id
+      if params[:userId].to_i == current_restaurant.owner_id
         # restaurant owner reservation index
         # pass in the current user_id and restaurant_id to check if
         # current user is the owner of current restaurant show page, if yes,
         # show all the reservaitons of that restaurant
-        @reservations = Reservation.find_by(restaurant_id: params[:restaurantId])
+        @reservations = current_restaurant.reservations
+      else
+        render json: ["Restaurant not found"], status: 404
       end
     else
       # user profile reservation index
       # pass in the current user id to fetch
-      @reservations = Reservation.find_by(customer_id: params[:userId])
+      user = User.find_by(id: params[:userId])
+      if user
+        @reservations = user.reservations
+      else
+        render json: ["User not found"], status: 404
+      end
     end
   end
 
@@ -37,12 +44,12 @@ class Api::ReservationsController < ApplicationController
       render json: reservation
     else
       render json: ["Reservation doesn't exist"], status: 404
-    end 
+    end
   end
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update_attributes(reservation)
+    if @reservation.update_attributes(reservation_params)
       render :show
     else
       render json: @reservation.errors.full_messages, status: 422

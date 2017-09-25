@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       resources :reservations, only: [:index]
     end
 
-    resources :reservations, only: [:create, :update, :destroy, :show]
+    resources :reservations, except: [:new, :edit]
   end
 end

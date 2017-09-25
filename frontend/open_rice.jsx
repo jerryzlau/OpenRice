@@ -2,28 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import * as RestAPI from './util/restaurant_api_util';
 import restaurantReducer from './reducers/restaurant_reducer';
-import * as Actions from './actions/restaurant_actions';
+// import * as Actions from './actions/restaurant_actions';
+import * as reservationAPI from './util/reservation_api_util';
+
 
 // test ajax
-window.createRestaurantajax = RestAPI.createRestaurant;
-window.fetchRestaurant = RestAPI.fetchRestaurant;
-window.fetchAllRestaurants = RestAPI.fetchAllRestaurants;
-window.destroyRestaurantajax = RestAPI.destroyRestaurant;
-window.updateRestaurant = RestAPI.updateRestaurant;
-window.searchRestaurants = RestAPI.searchRestaurants;
+
+
+//reservation ajax test
+
 
 // test reducers
 // window.restaurantReducer = restaurantReducer;
 
 //test actions
-window.receiveAllRestaurants = Actions.receiveAllRestaurants;
-window.receiveRestaurant = Actions.receiveRestaurant;
-window.requestRestaurant = Actions.requestRestaurant;
-window.createRestaurant = Actions.createRestaurant;
-window.removeRestaurant = Actions.removeRestaurant;
-window.editRestaurant = Actions.editRestaurant;
+// restaurant actions test these after MVP
+// window.removeRestaurant = Actions.removeRestaurant;
+// window.editRestaurant = Actions.editRestaurant;
+// reservation actions
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
