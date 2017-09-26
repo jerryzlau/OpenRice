@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     end
 
     resources :reservations, except: [:new, :edit]
+
+    resources :reviews, except: [:new, :edit]
   end
 end

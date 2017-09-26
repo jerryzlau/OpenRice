@@ -11,7 +11,7 @@ class ReservationForm extends React.Component {
       restaurant_id: this.props.match.params.restaurantId,
       num_ppl: 2,
       book_time: "19:00",
-      book_date: moment(),
+      book_date: "",
       notes: "No special request at the moment.",
       booking: ""
     };
@@ -28,8 +28,9 @@ class ReservationForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.state.booking = this.state.book_date + " " + this.state.book_time;
-
-    if(this.props.currentUser){
+    if(this.state.book_date === ""){
+      return alert("You need to choose a date");
+    }else if(this.props.currentUser){
       this.state.customer_id = this.props.currentUser.id;
     }else{
       return alert("You need to be logged on to make reservation");
