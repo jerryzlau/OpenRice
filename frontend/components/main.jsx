@@ -3,6 +3,7 @@ import RestaurantIndexContainer from './restaurant/restaurant_index_container';
 import RestaurantShowContainer from './restaurant/restaurant_show_container';
 import RestaurantFormContainer from './restaurant/restaurant_form_container';
 import RestaurantSearch from './restaurant/restaurant_search/restaurant_search';
+import UserProfileContainer from './profile/user_profile_container';
 import { Route, Switch, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -11,11 +12,21 @@ class Main extends React.Component {
   render(){
     return(
       <div className="main-component">
-          <Route
-            path='/restaurants/:restaurantId'
-            component={RestaurantShowContainer}/>
-          <Route exact path='/' component={RestaurantIndexContainer} />
-          <Route exact path='/restaurants' component={RestaurantFormContainer}/>
+          <Route path='/restaurants/:restaurantId'
+                 component={RestaurantShowContainer}
+          />
+
+          <Route exact path='/'
+                 component={RestaurantIndexContainer}
+          />
+
+          <Route exact path='/restaurants'
+                 component={RestaurantFormContainer}
+          />
+
+          <Route path='/my/profile/info'
+                component={UserProfileContainer}
+          />
       </div>
     );
   }

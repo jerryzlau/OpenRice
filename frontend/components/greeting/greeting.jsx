@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 
 class Greeting extends React.Component {
@@ -14,7 +14,6 @@ class Greeting extends React.Component {
       <nav className="login-signup">
         <button className="signup"><Link to="/signup">Sign up</Link></button>
         <button className="login"><Link to="/login">Login</Link></button>
-        {/* <button className="login"><Link to="/">Login</Link></button> */}
       </nav>
     );
   }
@@ -28,6 +27,9 @@ class Greeting extends React.Component {
         <button className="header-button" onClick={logout}>Log Out</button>
         <button hidden={!this.props.currentUser.owner} className="header-button">
           <Link to="/restaurants">Join OpenRice</Link>
+        </button>
+        <button className="header-button">
+          <Link to="/my/profile/info">My Profile</Link>
         </button>
       </div>
     );
