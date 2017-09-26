@@ -29,10 +29,11 @@ class Greeting extends React.Component {
         <button hidden={!this.props.currentUser.owner} className="header-button">
           <Link to="/restaurants">Join OpenRice</Link>
         </button>
-
       </div>
     );
   }
+
+
 
   render(){
     let {currentUser, logout} = this.props;

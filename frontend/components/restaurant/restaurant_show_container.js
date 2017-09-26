@@ -8,7 +8,8 @@ import RestaurantShow from './restaurant_show';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    restaurant: state.restaurants[ownProps.match.params.restaurantId]
+    restaurant: state.restaurants[ownProps.match.params.restaurantId],
+    currentUser: state.session.currentUser
   };
 };
 

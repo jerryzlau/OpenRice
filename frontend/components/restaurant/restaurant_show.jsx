@@ -35,7 +35,8 @@ class RestaurantShow extends React.Component {
         close_time,
         start_price,
         end_price,
-        owner} = this.props.restaurant;
+        owner,
+        owner_id} = this.props.restaurant;
 
         cusine_type = cusine_type.capitalize();
         name = name.capitalize();
@@ -51,9 +52,11 @@ class RestaurantShow extends React.Component {
                 </span><br/>
 
               <div className="rest-show-header-right-sub">
-                <span>{cusine_type}</span>
-                <span>{address}</span><br/>
-                <span>${end_price} and under</span><br/>
+                <div className="rest-show-header-right-left">
+                  <span>{cusine_type}</span>
+                  <span>{address}</span><br/>
+                  <span>${end_price} and under</span>
+                </div>
                 {/* change this to Link when favorite is set up */}
                 <div className="heart-button">
                   <i className="fa fa-heart-o">Add to favorite</i>
@@ -63,8 +66,18 @@ class RestaurantShow extends React.Component {
           </div>
 
           <div className="rest-show-body">
-            <Route path={`/restaurants/:restaurantId`} component={ReservationFormContainer} />
-            <Route path={'/restaurants/:restaurantId'} component={ReservationIndexContainer}/>
+            {
+              (this.props.currentUser && this.props.currentUser.id === owner_id) ?
+              <Route
+                path={'/restaurants/:restaurantId'}
+                component={ReservationIndexContainer}
+              />
+              :
+              <Route
+                path={`/restaurants/:restaurantId`}
+                component={ReservationFormContainer}
+              />
+            }
 
             <div className="rest-show-about rest-show-background">
               <h1>About {name}</h1>
@@ -95,8 +108,7 @@ class RestaurantShow extends React.Component {
               <div className="rest-show-about-el">
                 <i className="fa fa-home" aria-hidden="true"></i>
                 <span> Website: </span>
-                {/* TODO: check how to link a website  */}
-                <a href={website}>
+                <a href={website} title={name}>
                   <span className="website">
                     {website}</span>
                   </a>

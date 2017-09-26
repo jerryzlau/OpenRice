@@ -1,6 +1,7 @@
 .reservation-form{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .reservation-input{

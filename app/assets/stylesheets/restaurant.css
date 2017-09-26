@@ -85,7 +85,15 @@
 .rest-show-header{
   display: flex;
   flex-direction: row;
-  background-image: url("http://res.cloudinary.com/jerryzlau/image/upload/v1506355484/715965d4a2470d2_1_oo4qhg.jpg");
+  max-height: 200px;
+  background-color: #ABD1EF;
+}
+
+.rest-show-header img{
+  position: absolute;
+  left: 0px;
+  top: 80px;
+  z-index: 1;
 }
 
 .rest-name{
@@ -96,12 +104,17 @@
 .rest-show-header-right{
   margin-top: 80px;
   margin-left: 50px;
+  margin-left: 200px;
 }
 
 .rest-show-header-right-sub{
   display: flex;
+  justify-content: space-around;
+}
+
+.rest-show-header-right-left{
+  display: flex;
   flex-direction: row;
-  margin-top: 30px;
 }
 
 .rest-show-header-right-sub span{
@@ -113,7 +126,10 @@
   color: black;
   padding: 1px;
   border: solid 1px black;
-  margin-left: 500px;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  width: 150px;
+  max-height: 30px;
   padding: 5px;
   cursor: pointer;
 }
@@ -123,9 +139,8 @@
   margin: auto;
   justify-content: center;
   flex-direction: column;
-  width: 60%;
+  width: 63%;
 }
-
 
 .rest-show-about h1{
   padding-bottom: 20px;
@@ -200,12 +215,12 @@
 }
 
 .search-bar-form{
-  width: 791px;
+  width: 60%;
   height: 150px;
   background-color: white;
   padding: 20px;
   position: absolute;
-  left: 285px;
+  left: 16%;
   top: 370px;
   z-index: 1;
 }

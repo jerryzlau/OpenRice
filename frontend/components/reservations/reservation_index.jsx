@@ -25,7 +25,9 @@ class ReservationIndex extends React.Component {
     return(
       <div className="reservation-index">
         <h1>Reservations</h1><hr/>
-        {this.indexEl()}
+        {
+          (this.indexEl() === []) ? this.indexEl() : <p>You don't have any reservations at the moment</p>
+        }
       </div>
     );
   }

@@ -4,8 +4,8 @@ class ReservationIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.reservation = this.props.reservation;
-    // this.stringToDate = stringToDate.bind(this);
-    // this.stringToTime = stringToTime.bind(this);
+    this.stringToDate = this.stringToDate.bind(this);
+    this.stringToTime = this.stringToTime.bind(this);
   }
 
   stringToTime(time){
@@ -17,7 +17,7 @@ class ReservationIndexItem extends React.Component {
   }
 
   render(){
-    let {book_time, book_date, notes, num_ppl} = this.reservation;
+    let {booking, notes, num_ppl} = this.reservation;
     let {first_name, last_name, email} = this.reservation.customer;
     return(
       <div className="reservation-index-item">
@@ -33,8 +33,8 @@ class ReservationIndexItem extends React.Component {
 
         <div className="reservation-stats">
           <span>Number of people: {num_ppl}</span>
-          <span>Date: {this.stringToDate(book_date)}</span>
-          <span>Time: {this.stringToTime(book_time)}</span>
+          <span>Date: {this.stringToDate(booking)}</span>
+          <span>Time: {this.stringToTime(booking)}</span>
           <span>Special request: {notes}</span>
         </div>
       </div>

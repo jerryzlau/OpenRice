@@ -123,3 +123,12 @@ this.props.createRestaurant(this.state)
  b = Restaurant.where("lower(name) like ?", "%urban%")
 
  dispatch(reservationActions(object)); //this is how to test actions in window
+
+reservation = {
+   customer_id: 1,
+   restaurant_id: 1,
+   num_ppl: 2,
+   book_time: "7:00 PM",
+   book_date: "Sun, 01 Jan 2017",
+   notes: "No special request at the moment."
+ };
