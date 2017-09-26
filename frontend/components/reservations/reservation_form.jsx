@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import TimePicker from 'rc-time-picker';
+import DatePicker from 'react-datepicker';
 
 class ReservationForm extends React.Component {
   constructor(props){
@@ -10,7 +11,7 @@ class ReservationForm extends React.Component {
       restaurant_id: this.props.match.params.restaurantId,
       num_ppl: 2,
       book_time: "7:00 PM",
-      book_date: moment().format("MMM Do YY"),
+      book_date: moment(),
       notes: "No special request at the moment."
     };
 
@@ -24,6 +25,7 @@ class ReservationForm extends React.Component {
   }
 
   handleSubmit(e){
+    console.log(this.state);
     e.preventDefault();
     this.props.createReservation(this.state);
   }
@@ -43,13 +45,25 @@ class ReservationForm extends React.Component {
             value={this.state.book_time}
             onChange={this.update('book_time')}
             className="reservation-input"
-          /><br/>
+          />
+
+          {/* <TimePicker
+            defaultValue={moment()}
+            onChange={this.update('book_time')}
+            // className="reservation-input"
+          /> */}
 
           <input type="date"
             value={this.state.book_date}
             onChange={this.update('book_date')}
             className="reservation-input"
-          /><br/>
+          />
+
+          {/* <DatePicker
+              selected={this.state.book_date}
+              onChange={this.update('book_date')}
+              // className="reservation-input"
+          /> */}
 
           <input type="submit"
             onClick={this.handleSubmit}

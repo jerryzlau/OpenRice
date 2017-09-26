@@ -8,7 +8,7 @@ class Api::ReservationsController < ApplicationController
         # pass in the current user_id and restaurant_id to check if
         # current user is the owner of current restaurant show page, if yes,
         # show all the reservaitons of that restaurant
-        @reservations = current_restaurant.reservations
+        @reservations = current_restaurant.reservations.order(:book_date)
       else
         render json: ["Don't have owner access right"], status: 404
       end
@@ -17,7 +17,7 @@ class Api::ReservationsController < ApplicationController
       # pass in the current user id to fetch
       user = User.find_by(id: params[:userId])
       if user
-        @reservations = user.reservations
+        @reservations = user.reservations.order(:book_date)
       else
         render json: ["User not found"], status: 404
       end
@@ -30,6 +30,7 @@ class Api::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.book_date = Date.parse(reservation_params[:book_date])
     if @reservation.save
       render :show
     else

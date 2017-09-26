@@ -22,7 +22,7 @@ class RestaurantIndex extends React.Component {
     return(
       <div className="rest-index">
         <div className="home-img">
-          <img src="http://media.otstatic.com/img/start_hero_images/us-hero-1040-b6f1b6d8171974a2ae4256a619fd5030.jpg"/>
+          <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506382488/home_page_image_deu2vc.jpg"/>
         </div>
         <Route path='/' component={RestaurantSearchContainer} />
         <h1>Restaurants</h1>

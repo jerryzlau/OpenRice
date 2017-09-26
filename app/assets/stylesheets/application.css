@@ -48,8 +48,6 @@ button{
 }
 
 header{
-  /*padding-left: 20px;
-  padding-right: 20px;*/
   font-size: 12px;
   display: flex;
   justify-content: space-between;
@@ -107,9 +105,15 @@ header h2{
   justify-content: center;
 }
 
+.home-img img{
+  width: 150%;
+  height: 350px;
+  object-fit: cover;
+  margin-bottom: 120px;
+}
+
 .loading {
   display: flex;
   justify-content: center;
   margin-top: 20%;
-  /*font-size: 100px;*/
 }

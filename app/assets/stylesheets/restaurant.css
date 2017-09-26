@@ -106,15 +106,12 @@
 
 .rest-show-header-right-sub span{
   padding: 5px;
-  /*color: #84786e;*/
   color: black;
 }
 
 .heart-button{
-  /*color: #5b4e43;*/
   color: black;
   padding: 1px;
-  /*border: solid 1px #5b4e43;*/
   border: solid 1px black;
   margin-left: 500px;
   padding: 5px;
@@ -203,9 +200,14 @@
 }
 
 .search-bar-form{
-  width: 95%;
+  width: 791px;
+  height: 150px;
   background-color: white;
   padding: 20px;
+  position: absolute;
+  left: 285px;
+  top: 370px;
+  z-index: 1;
 }
 
 .search-bar{

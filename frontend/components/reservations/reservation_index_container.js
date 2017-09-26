@@ -3,10 +3,11 @@ import {requestRestaurantReservations
        } from '../../actions/reservation_actions';
 import ReservationIndex from './reservation_index';
 
-const mapStateToProps = ({restaurants, session}) => {
+const mapStateToProps = ({restaurants, session, reservations}) => {
   return{
     currentUser: session.currentUser,
-    restaurants: restaurants
+    restaurants: restaurants,
+    reservations: reservations
   };
 };
 

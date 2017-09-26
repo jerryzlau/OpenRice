@@ -9,3 +9,22 @@
   width: 200px;
   height: 50px;
 }
+
+.reservation-index{
+  background-color: white;
+}
+
+.reservation-index-item{
+  padding: 10px;
+}
+
+.reservation-customer-info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.reservation-stats{
+  display: flex;
+  flex-direction: column;
+}

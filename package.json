@@ -9,6 +9,7 @@
     "moment": "^2.18.1",
     "rc-time-picker": "^2.4.1",
     "react": "^15.6.1",
+    "react-datepicker": "^0.55.0",
     "react-dom": "^15.6.1",
     "react-modal": "^2.3.2",
     "react-redux": "^5.0.6",

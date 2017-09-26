@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import ReservationFormContainer from '../reservations/reservation_form_container';
+import ReservationIndexContainer from '../reservations/reservation_index_container';
 
 class RestaurantShow extends React.Component {
   constructor(props){
@@ -63,6 +64,7 @@ class RestaurantShow extends React.Component {
 
           <div className="rest-show-body">
             <Route path={`/restaurants/:restaurantId`} component={ReservationFormContainer} />
+            <Route path={'/restaurants/:restaurantId'} component={ReservationIndexContainer}/>
 
             <div className="rest-show-about rest-show-background">
               <h1>About {name}</h1>
