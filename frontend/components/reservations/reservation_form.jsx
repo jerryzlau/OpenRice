@@ -1,7 +1,7 @@
 import React from 'react';
-import moment from 'moment';
-import TimePicker from 'rc-time-picker';
-import DatePicker from 'react-datepicker';
+// import moment from 'moment';
+// import TimePicker from 'rc-time-picker';
+// import DatePicker from 'react-datepicker';
 
 class ReservationForm extends React.Component {
   constructor(props){

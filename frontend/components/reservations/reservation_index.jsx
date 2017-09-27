@@ -5,13 +5,12 @@ class ReservationIndex extends React.Component {
   constructor(props){
     super(props);
 
-    // this.indexEl = this.indexEl.bind(this);
   }
 
   componentWillMount(){
     let fetchInfo = {
       userId: this.props.currentUser.id,
-      restaurantId: this.props.match.params.restaurantId
+      restaurantId: this.props.restaurantId
     };
     this.props.requestRestaurantReservations(fetchInfo);
   }
@@ -36,7 +35,6 @@ class ReservationIndex extends React.Component {
   }
 
   render(){
-
     return(
       <div className="reservation-index">
         <h1>Reservations</h1><hr/>

@@ -10,10 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
+ /**= require_tree .*/
 *{font-family: Arial;}
 
 body{
@@ -124,4 +124,29 @@ header h2{
   display: flex;
   justify-content: center;
   margin-top: 20%;
+  background-color: white;
+}
+
+.logo{
+  margin-left: 5px;
+  width: 170px;
+  height: 80px;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: white;
+}
+
+.nav-bar-right{
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+.main-component{
+  background-color: #F7F7F7;
+  height: auto;
+  min-height: 700px;
 }

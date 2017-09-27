@@ -13,7 +13,8 @@
 #
 
 class Reservation < ApplicationRecord
-  validates :customer_id, :restaurant_id, :num_ppl, :booking, :notes, presence: true
+  validates :customer_id, :restaurant_id, :booking, :notes, presence: true
+  validates :num_ppl, numericality: { less_than_or_equal_to: 20 }, presence: true
 
   belongs_to :customer,
   primary_key: :id,

@@ -1,12 +1,25 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-
+import { Dropdown,
+         DropdownToggle,
+         DropdownMenu,
+         DropdownItem } from 'reactstrap';
 
 class Greeting extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      dropdownOpen: false
+    };
 
+    this.toggle = this.toggle.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
   }
 
   sessionLinks(){
@@ -18,24 +31,21 @@ class Greeting extends React.Component {
     );
   }
 
-
   personalGreeting(currentUser, logout){
     //TODO: make this group into a drop down
     return(
-      <div className="header-group">
-        <button className="header-name">Hi, {currentUser.first_name.capitalize()}!</button>
-        <button className="header-button" onClick={logout}>Log Out</button>
-        <button hidden={!this.props.currentUser.owner} className="header-button">
-          <Link to="/restaurants">Join OpenRice</Link>
-        </button>
-        <button className="header-button">
-          <Link to="/my/profile/info">My Profile</Link>
-        </button>
-      </div>
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <DropdownToggle caret>
+          Hi, {currentUser.first_name.capitalize()}!
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem><Link to="/my/profile/info">My Profile</Link></DropdownItem>
+          <DropdownItem><Link to="/restaurants">Join OpenRice</Link></DropdownItem>
+          <DropdownItem onClick={logout}>Log Out</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     );
   }
-
-
 
   render(){
     let {currentUser, logout} = this.props;

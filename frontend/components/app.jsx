@@ -11,20 +11,21 @@ import RestaurantSearch from './restaurant/restaurant_search/restaurant_search';
 const App = () => (
   <div className="app-page">
     <nav className="nav-bar">
-      <header>
+      <div className="nav-bar-left">
         <Link to="/">
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1505869835/openrice_logo_qusua1.png" />
+        <img className="logo"
+             src="http://res.cloudinary.com/jerryzlau/image/upload/v1505869835/openrice_logo_qusua1.png" />
         </Link>
-      <h2><GreetingContainer/></h2>
-    </header>
-      <AuthRoute path="/login" component={SessionFormContainer} />
-      {/* <AuthRoute path="/" component={SessionFormContainer} /> */}
-      <AuthRoute path="/signup" component={SessionFormContainer} />
+      </div>
+
+      <div className="nav-bar-right">
+        <GreetingContainer/>
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
+      </div>
     </nav>
 
     <Main />
-
-
     {/* <ProtectedRoute path='/' component={GreetingContainer} /> */}
   </div>
 );

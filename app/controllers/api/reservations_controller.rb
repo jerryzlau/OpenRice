@@ -17,7 +17,7 @@ class Api::ReservationsController < ApplicationController
       # pass in the current user id to fetch
       user = User.find_by(id: params[:userId])
       if user
-        @reservations = user.reservations.order(:book_date)
+        @reservations = user.reservations.order(:booking)
       else
         render json: ["User not found"], status: 404
       end

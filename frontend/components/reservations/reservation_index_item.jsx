@@ -22,10 +22,12 @@ class ReservationIndexItem extends React.Component {
     return(
       <div className="reservation-index-item">
         <div className="reservation-customer-info">
+
           <div className="reservation-cusomter-name">
             <span>Customer: {first_name}</span>
             <span> {last_name}</span>
           </div>
+
           <a href={`mailto:${email}`} title={email}>
             <i className="fa fa-envelope" aria-hidden="true"></i>
           </a>

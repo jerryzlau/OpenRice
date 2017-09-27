@@ -1,7 +1,7 @@
 import * as ReservationAPI from '../util/reservation_api_util';
 
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
-export const RECEIVE_RESERVATIONS = 'RECEIVE_RESTAURANTS';
+export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 export const RECEIVE_RESERVATION_ERRORS = 'RECEIVE_RESERVATION_ERRORS';
 export const CLEAR_RESERVATION_ERRORS = 'CLEAR_RESERVATION_ERRORS';
@@ -49,6 +49,13 @@ export const requestReservation = reservationId => dispatch => (
 // fetch all of current restaurant's reservations
 export const requestRestaurantReservations = ({userId, restaurantId}) => dispatch => (
   ReservationAPI.fetchRestaurantReservations(userId, restaurantId)
+                .then(reservations => (dispatch(receiveReservations(reservations))),
+                 err => (dispatch(receiveReservationErrors(err.responseJSON))))
+);
+
+// fetch all current user's reservations
+export const requestUserReservations = userId => dispatch => (
+  ReservationAPI.fetchUserReservations(userId)
                 .then(reservations => (dispatch(receiveReservations(reservations))),
                  err => (dispatch(receiveReservationErrors(err.responseJSON))))
 );

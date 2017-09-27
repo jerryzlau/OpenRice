@@ -1,14 +1,13 @@
 .rest-index-img{
   width: 150px;
   height: 150px;
+  padding: 8px;
 }
 
 .rest-index-item{
   display: flex;
   justify-content: space-around;
   border-bottom: solid 0.5px grey;
-  margin: 10px;
-  padding: 5px;
   width: 750px;
   height: 150px;
 }
@@ -33,6 +32,7 @@
 }
 
 .rest-index-item-link {
+  margin-top: 10px;
   font-size: 20px;
   color: #237B98;
   font-style: normal;
@@ -167,7 +167,7 @@
   margin-right: 20%;
   padding: 30px;
   width: 800px;
-  height: 655px;
+  height: 100%;
   background-color: #FFFFFF;
 }
 
@@ -220,7 +220,7 @@
   background-color: white;
   padding: 20px;
   position: absolute;
-  left: 16%;
+  left: 18%;
   top: 370px;
   z-index: 1;
 }

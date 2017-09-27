@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import ReservationFormContainer from '../reservations/reservation_form_container';
 import ReservationIndexContainer from '../reservations/reservation_index_container';
+import ReviewFormContainer from '../review/review_form_container';
 
 class RestaurantShow extends React.Component {
   constructor(props){
@@ -13,6 +14,7 @@ class RestaurantShow extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     if (!this.props.restaurant){
       return(
         <div className="loading">
@@ -78,7 +80,7 @@ class RestaurantShow extends React.Component {
                 component={ReservationFormContainer}
               />
             }
-
+{/* #################################################################################### */}
             <div className="rest-show-about rest-show-background">
               <h1>About {name}</h1>
 
@@ -122,7 +124,11 @@ class RestaurantShow extends React.Component {
 
                 </div>
 
+{/* #################################################################################### */}
 
+                <Route path={'/restaurants/:restaurantId'}
+                       component={ReviewFormContainer}
+                />
             </div>
           </div>
         </div>

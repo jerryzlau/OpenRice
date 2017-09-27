@@ -1,17 +1,21 @@
 import {connect} from 'react-redux';
 import UserProfile from './user_profile';
+import {requestUserReservations,
+        requestRestaurantReservations} from '../../actions/reservation_actions';
 
-const mapStateToProps = ({session}) => {
+const mapStateToProps = ({reservations, session}) => {
   return{
-    currentUser: session.currentUser
+    currentUser: session.currentUser,
+    reservations
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-
+  requestUserReservations: userId => dispatch(requestUserReservations(userId)),
+  requestRestaurantReservations: reservations => dispatch(requestRestaurantReservations(reservations))
 });
 
 export default connect(
-  mapDispatchToProps,
+  mapStateToProps,
   mapDispatchToProps
 )(UserProfile);

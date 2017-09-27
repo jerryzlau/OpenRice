@@ -24,7 +24,7 @@ class Main extends React.Component {
                  component={RestaurantFormContainer}
           />
 
-          <Route path='/my/profile/info'
+          <Route exact path='/my/profile/info'
                 component={UserProfileContainer}
           />
       </div>

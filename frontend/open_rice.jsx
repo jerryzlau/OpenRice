@@ -19,7 +19,7 @@ import * as resActions from './actions/reservation_actions';
 // reservation actions
 // window.createReservation = resActions.createReservation;
 // window.requestReservation = resActions.requestReservation;
-// window.requestRestaurantReservations = resActions.requestRestaurantReservations;
+// window.requestUserReservations = resActions.requestUserReservations;
 // window.destroyReservation = resActions.destroyReservation;
 // window.editReservation = resActions.editReservation;
 
