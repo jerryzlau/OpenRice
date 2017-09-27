@@ -6,10 +6,19 @@ form .stars {
 
 form .stars input[type="radio"] {
   position: absolute;
+  margin-top: 7px;
+  margin-left: 7px;
+
   opacity: 0;
+
   filter: alpha(opacity=0);
 }
-form .stars input[type="radio"].star-5:checked ~ span {
+
+form .stars input[type="radio"]:hover {
+  cursor: pointer;
+}
+
+form .stars input[type="radio"].star-5:checked ~ span  {
   width: 100%;
 }
 form .stars input[type="radio"].star-4:checked ~ span {
@@ -33,7 +42,7 @@ form .stars label {
   text-indent: -999em;
   float: left;
   position: relative;
-  z-index: 10;
+  z-index: -10;
   background: transparent!important;
   cursor: pointer;
 }
