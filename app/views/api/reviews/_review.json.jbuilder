@@ -5,4 +5,5 @@ json.extract! review, :author_id,
                       :ambience,
                       :service,
                       :value,
-                      :id
+                      :id,
+                      :author

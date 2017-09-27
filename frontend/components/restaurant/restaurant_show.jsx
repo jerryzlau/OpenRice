@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import ReservationFormContainer from '../reservations/reservation_form_container';
 import ReservationIndexContainer from '../reservations/reservation_index_container';
 import ReviewFormContainer from '../review/review_form_container';
+import ReviewIndex from '../review/review_index';
 
 class RestaurantShow extends React.Component {
   constructor(props){
@@ -126,7 +127,6 @@ class RestaurantShow extends React.Component {
 {/* #################################################################################### */}
 
                 {
-
                   (this.props.currentUser
                     && this.props.currentUser.id !== owner_id) ?
                     <Route path={'/restaurants/:restaurantId'}
@@ -134,6 +134,8 @@ class RestaurantShow extends React.Component {
                     :
                     <p>Can't write review</p>
                 }
+
+                <ReviewIndex reviews={this.props.restaurant.reviews}/>
             </div>
           </div>
         </div>
