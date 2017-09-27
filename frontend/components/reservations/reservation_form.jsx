@@ -45,6 +45,7 @@ class ReservationForm extends React.Component {
     };
 
     this.props.createReservation(fetchInfo);
+    this.props.history.push("/my/profile/info");
   }
 
   render(){

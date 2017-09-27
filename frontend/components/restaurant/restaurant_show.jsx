@@ -14,7 +14,6 @@ class RestaurantShow extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     if (!this.props.restaurant){
       return(
         <div className="loading">
@@ -126,9 +125,15 @@ class RestaurantShow extends React.Component {
 
 {/* #################################################################################### */}
 
-                <Route path={'/restaurants/:restaurantId'}
-                       component={ReviewFormContainer}
-                />
+                {
+
+                  (this.props.currentUser
+                    && this.props.currentUser.id !== owner_id) ?
+                    <Route path={'/restaurants/:restaurantId'}
+                    component={ReviewFormContainer}/>
+                    :
+                    <p>Can't write review</p>
+                }
             </div>
           </div>
         </div>

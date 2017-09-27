@@ -19,14 +19,27 @@ class ReviewForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    };
+  }
+
+
+  updateRadio(field) {
+    return e => {
+      this.setState({
+        [field]: e.currentTarget.id.slice(-1)
+      });
+    };
   }
 
   handleSubmit(e){
     e.preventDefault();
-    if(this.props.restaurant.owner_id === this.props.currentUser.id){
+    if(!this.props.currentUser){
+      return alert("You need to log in");
+    }else if(this.props.restaurant.owner_id === this.props.currentUser.id){
       return alert("Owner cannot make bias reviews about his own restauarnt");
     }else{
       this.state.author_id = this.props.currentUser.id;
@@ -38,37 +51,47 @@ class ReviewForm extends React.Component {
   reviewRadio(category){
     return(
       <div className="review-radio">
-        <input type="radio"
-                value={this.state[category]}
-                onChange={this.update(category)}
-                name="star"
-                className="star-1"
-                id="star-1" />
-        <input type="radio"
-                value={this.state[category]}
-                onChange={this.update(category)}
-                name="star"
-                className="star-2"
-                id="star-2" />
-        <input type="radio"
-                value={this.state[category]}
-                onChange={this.update(category)}
-                name="star"
-                className="star-3"
-                id="star-3" />
-        <input type="radio"
-                value={this.state[category]}
-                onChange={this.update(category)}
-                name="star"
-                className="star-4"
-                id="star-4" />
-        <input type="radio"
-                value={this.state[category]}
-                onChange={this.update(category)}
-                name="star"
-                className="star-5"
-                id="star-5" />
+        {category.capitalize()}
+        <div className="stars">
+          <input type="radio"
+                  value={this.state[category]}
+                  onChange={this.updateRadio(category)}
+                  name="star"
+                  className="star-1"
+                  id="star-1" />
+          <label className="star-1" htmlFor="star-1">1</label>
+          <input type="radio"
+                  value={this.state[category]}
+                  onChange={this.updateRadio(category)}
+                  name="star"
+                  className="star-2"
+                  id="star-2" />
+          <label className="star-2" htmlFor="star-2">2</label>
+          <input type="radio"
+                  value={this.state[category]}
+                  onChange={this.updateRadio(category)}
+                  name="star"
+                  className="star-3"
+                  id="star-3" />
+          <label className="star-3" htmlFor="star-3">3</label>
+          <input type="radio"
+                  value={this.state[category]}
+                  onChange={this.updateRadio(category)}
+                  name="star"
+                  className="star-4"
+                  id="star-4" />
+          <label className="star-4" htmlFor="star-4">4</label>
+          <input type="radio"
+                  value={this.state[category]}
+                  onChange={this.updateRadio(category)}
+                  name="star"
+                  className="star-5"
+                  id="star-5" />
+          <label className="star-5" htmlFor="star-5">5</label>
+          <span></span>
+        </div>
       </div>
+
     );
   }
 
@@ -77,19 +100,10 @@ class ReviewForm extends React.Component {
       <div className="review-form-container">
         <form className="review-form">
 
-          <div class="stars">
-            <input type="radio" name="star" class="star-1" id="star-1" />
-            <label class="star-1" for="star-1">1</label>
-            <input type="radio" name="star" class="star-2" id="star-2" />
-            <label class="star-2" for="star-2">2</label>
-            <input type="radio" name="star" class="star-3" id="star-3" />
-            <label class="star-3" for="star-3">3</label>
-            <input type="radio" name="star" class="star-4" id="star-4" />
-            <label class="star-4" for="star-4">4</label>
-            <input type="radio" name="star" class="star-5" id="star-5" />
-            <label class="star-5" for="star-5">5</label>
-            <span></span>
-        </div>
+          {this.reviewRadio("food")}
+          {this.reviewRadio("ambience")}
+          {this.reviewRadio("service")}
+          {this.reviewRadio("value")}
 
           <input type="text"
             value={this.state.comment}

@@ -1,7 +1,7 @@
 form .stars {
   background: url("stars.png") repeat-x 0 0;
   width: 150px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
 form .stars input[type="radio"] {

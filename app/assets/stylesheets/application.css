@@ -11,9 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ *= require profile.css
+ *= require reservation.css
+ *= require restaurant.css
+ *= require review.css
+ *= require session_form.css
+ *= require radio_star.css
  */
 
- /**= require_tree .*/
 *{font-family: Arial;}
 
 body{
