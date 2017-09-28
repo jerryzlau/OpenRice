@@ -20,7 +20,11 @@ class RestaurantForm extends React.Component {
       image_url: ""
     };
 
+    //form action
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    //error handling
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field) {
@@ -35,17 +39,34 @@ class RestaurantForm extends React.Component {
               .then(data => this.props.history.push(`/restaurants/${data.restaurant.restaurant.id}`));
   }
 
+  renderErrors() {
+    if (this.props.errors !== []){
+      return(
+        <ul className="rest-errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} >
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return;
+    }
+  }
+
   render(){
     let {first_name, id} = this.props.currentUser;
     return(
       <div className="rest-form-background">
         <div className="rest-form">
-          <h1>Hello {first_name.capitalize()}! Let's get you started with OpenRice</h1>
+          <h2>Hello {first_name.capitalize()}! Let's get you started with OpenRice</h2>
           <p>Tell us a little about you and your restaurant, and
             we'll provide you with information
           about OpenRice's products and services.
-          Or, give us a ring at (123)456-7890</p>
+          Or, give us a ring at (123)456-7890</p><hr/>
 
+          {this.renderErrors()}
           <form className="rest-form-input">
             <div className="rest-form-row">
               <input type="text"

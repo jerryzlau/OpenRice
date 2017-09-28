@@ -5,10 +5,11 @@ import {createReservation,
 import ReservationForm from './reservation_form';
 
 //TODO: take out restaurants later if it's not used
-const mapStateToProps = ({restaurants, session}) => {
+const mapStateToProps = ({restaurants, session, errors}) => {
   return {
     currentUser: session.currentUser,
-    restaurants: restaurants
+    restaurants: restaurants,
+    errors: errors.reservations
   };
 };
 

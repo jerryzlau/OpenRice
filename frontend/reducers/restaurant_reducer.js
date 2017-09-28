@@ -1,6 +1,6 @@
 import {RECEIVE_RESTAURANT,
         RECEIVE_ALL_RESTAURANTS,
-        // RECEIVE_RESTAURANT_ERRORS, TODO: omit errors for now
+        // RECEIVE_RESTAURANT_ERRORS, 
         // CLEAR_RESTAURANT_ERRORS,
         REMOVE_RESTAURANT
       } from '../actions/restaurant_actions';

@@ -46,6 +46,10 @@
   text-decoration: underline;
 }
 
+.reservation-index-item-link p{
+  color: #3D7A95;
+}
+
 .rest-index-item-cusine{
   color: #666666;
 }
@@ -106,13 +110,13 @@
 
 .rest-show-header-right{
   margin-top: 80px;
-  margin-left: 50px;
   margin-left: 200px;
+  min-width: 1160px;
 }
 
 .rest-show-header-right-sub{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .rest-show-header-right-left{
@@ -125,13 +129,29 @@
   color: black;
 }
 
+.rest-show-header-cusine{
+  min-width: 230px;
+  max-width: 330px;
+  max-height: 60px;
+}
+
+.rest-show-header-address{
+  max-width: 370px;
+  max-height: 60px;
+}
+
+.rest-show-header-price{
+  min-width: 230px;
+  max-width: 330px;
+  max-height: 60px;
+}
+
 .heart-button-short{
   color: white;
   padding: 1px;
   border: solid 1px white;
-  margin-left: 300px;
   margin-bottom: 10px;
-  width: 100px;
+  max-width: 200px;
   max-height: 30px;
   padding: 5px;
   cursor: pointer;
@@ -141,10 +161,9 @@
   color: white;
   padding: 1px;
   border: solid 1px white;
-  margin-left: 300px;
   margin-bottom: 10px;
   width: 150px;
-  max-height: 30px;
+  max-height: 50px;
   padding: 5px;
   cursor: pointer;
 }
@@ -174,6 +193,9 @@
   background-color: white;
   border-radius: 5px;
   padding: 10px;
+  margin: 10px;
+  margin-left: 0;
+  min-width: 880px;
 }
 
 .rest-show-map{
@@ -192,6 +214,7 @@
   padding: 30px;
   width: 800px;
   height: 100%;
+  min-height: 734px;
   background-color: #FFFFFF;
 }
 
@@ -267,7 +290,7 @@
 .submit-button{
   margin: 0;
   padding: 0;
-  background-color: #DA3743;
+  background-color: #4d93d1;
   border: none;
   color: white;
   text-align: center;
@@ -276,7 +299,11 @@
   font-size: 16px;
   cursor: pointer;
   width: 310px;
-  height: 53px;
+  height: 49px;
+}
+
+.submit-button:focus{
+  outline: none;
 }
 
 .rest-index{
@@ -284,11 +311,22 @@
 }
 
 .rest-show-name-reviews{
-  width: 270px;
-  display: flex;
-  justify-content: space-between;
+  max-width: 817px;
+  /*display: flex;
+  justify-content: space-between;*/
 }
 
 .rest-show-num-reviews{
   margin-top: 15px;
+  margin-right: 45%;
+}
+
+.rest-errors{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.rest-errors li{
+  color: red;
 }

@@ -5,7 +5,7 @@ export const RECEIVE_ALL_RESTAURANTS = 'RECEIVE_ALL_RESTAURANTS';
 export const REMOVE_RESTAURANT = 'REMOVE_RESTAURANT';
 export const CLEAR_RESTAURANT_ERRORS = 'CLEAR_RESTAURANT_ERRORS';
 export const RECEIVE_RESTAURANT_ERRORS = 'RECEIVE_RESTAURANT_ERRORS';
-//TODO: do restaurant error handling later 
+
 
 export const receiveAllRestaurants = restaurants => ({
   type: RECEIVE_ALL_RESTAURANTS,
@@ -34,8 +34,7 @@ export const clearRestaurantErrors = () => ({
 // request all restaurants (index)
 export const requestAllRestaurants = () => dispatch => (
   RestAPI.fetchAllRestaurants()
-            .then(restaurants => (dispatch(receiveAllRestaurants(restaurants))),
-             err => (dispatch(receiveRestaurantErrors(err.responseJSON))))
+            .then(restaurants => (dispatch(receiveAllRestaurants(restaurants))))
 );
 
 // request one restaurant (show)

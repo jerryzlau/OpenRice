@@ -3,11 +3,11 @@
   margin: auto;
   flex-direction: column;
   width: 65%;
+  min-height: 640px;
   height: 100%;
 }
 
 .profile-components{
-  border: 1px solid black;
   background-color: white;
   margin: 10px;
   border-radius: 5px;

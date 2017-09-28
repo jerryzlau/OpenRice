@@ -10,13 +10,20 @@ class ReservationForm extends React.Component {
       customer_id: "",
       restaurant_id: this.props.match.params.restaurantId,
       num_ppl: 2,
-      book_time: "19:00",
+      book_time: "",
       book_date: "",
       notes: "No special request at the moment.",
       booking: ""
     };
 
+    //form action
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    //error handling
+    this.renderErrors = this.renderErrors.bind(this);
+
+    //helper methods
+    this.timePickerBuilder = this.timePickerBuilder.bind(this);
   }
 
   update(field) {
@@ -27,13 +34,13 @@ class ReservationForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
+
+
     this.state.booking = this.state.book_date + " " + this.state.book_time;
-    if(this.state.book_date === ""){
-      return alert("You need to choose a date");
-    }else if(this.props.currentUser){
+
+    console.log(this.state.booking);
+    if(this.props.currentUser){
       this.state.customer_id = this.props.currentUser.id;
-    }else{
-      return alert("You need to be logged on to make reservation");
     }
 
     let fetchInfo = {
@@ -45,7 +52,67 @@ class ReservationForm extends React.Component {
     };
 
     this.props.createReservation(fetchInfo);
-    this.props.history.push("/my/profile/info");
+    // this.props.history.push("/my/profile/info");
+  }
+
+  renderErrors() {
+    if (this.props.errors !== []){
+      return(
+        <ul className="reservation-errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} >
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return;
+    }
+  }
+
+  timePickerBuilder(){
+    let dayTime = [];
+    let nightTime = [];
+
+    for(let i = 0; i < 12; i++){
+      if (i === 0){
+        dayTime.push(12);
+        nightTime.push(12);
+      } else {
+        dayTime.push(i);
+        nightTime.push(i);
+      }
+    }
+
+    let newDayTime = dayTime.map(time => (
+      <option
+        key={time+12}
+        value={time < 10 ? (time + 12 + ":00") : (time + 12 + ":00")}
+        // onChange={this.update('book_time')}
+        >
+        {time < 10 ? ("0" + time + ":00") : (time + ":00")} PM
+      </option>
+    ));
+
+    let newNightTime = nightTime.map(time => (
+      <option
+        key={time}
+        value={
+                (time === 12) ?
+                  "00:00" : (
+                    time < 10 ?
+                    ("0" + time + ":00") :
+                    (time + ":00")
+                  )
+              }
+        // onChange={this.update('book_time')}
+        >
+        {time < 10 ? ("0" + time + ":00") : (time + ":00")} AM
+      </option>
+    ));
+
+    return newNightTime.concat(newDayTime);
   }
 
   render(){
@@ -54,6 +121,7 @@ class ReservationForm extends React.Component {
     return(
       <div className="rest-show-background">
         <h1>Make a reservation</h1>
+        {this.renderErrors()}
         <form className="reservation-form">
           <input type="number"
             min="1"
@@ -62,11 +130,10 @@ class ReservationForm extends React.Component {
             className="reservation-input"
           /><br/>
 
-          <input type="time"
-            value={this.state.book_time}
-            onChange={this.update('book_time')}
-            className="reservation-input"
-          />
+          <select className="reservation-input"
+                  onChange={this.update('book_time')}>
+            {this.timePickerBuilder()}
+          </select>
 
           <input type="date"
             min={minDate}

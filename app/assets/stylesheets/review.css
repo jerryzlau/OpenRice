@@ -95,3 +95,17 @@
   padding: 10px;
   padding-top: 0px;
 }
+
+.review-errors{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.review-errors li{
+  color: red;
+}
+
+.review-index-item-left-bottom span{
+  white-space: pre-line;
+}

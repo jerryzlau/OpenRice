@@ -48,20 +48,24 @@ class RestaurantShow extends React.Component {
   }
 
   heartButton(){
-    if(this.state.liked){
-      return(
-        <div className="heart-button-short" onClick={this.toggle}>
-          <i className="fa fa-heart"></i>
-          Favorited
-        </div>
-      );
+    if (this.props.currentUser){
+      if(this.state.liked){
+        return(
+          <div className="heart-button-short" onClick={this.toggle}>
+            <i className="fa fa-heart"></i>
+            Favorited
+          </div>
+        );
+      }else{
+        return(
+          <div className="heart-button-long" onClick={this.toggle}>
+            <i className="fa fa-heart"></i>
+            Add to Favorites
+          </div>
+        );
+      }
     }else{
-      return(
-        <div className="heart-button-long" onClick={this.toggle}>
-          <i className="fa fa-heart"></i>
-          Add to Favorites
-        </div>
-      );
+      return;
     }
   }
 
@@ -105,18 +109,15 @@ class RestaurantShow extends React.Component {
             <div className="rest-show-header-right">
               <div className="rest-show-name-reviews">
                 <span className="rest-name">{name}
-                </span><br/>
-
-                <span className="rest-show-num-reviews">
-                  {num_reviews} {num_reviews < 2 ? "review" : "reviews"}
-                </span>
+                </span>&nbsp;&nbsp;&nbsp;
+                {num_reviews} {num_reviews < 2 ? "review" : "reviews"}
               </div>
 
               <div className="rest-show-header-right-sub">
                 <div className="rest-show-header-right-left">
-                  <span>{cusine_type}</span>
-                  <span>{address}</span><br/>
-                  <span>${end_price} and under</span>
+                  <span className="rest-show-header-cusine">{cusine_type}</span>
+                  <span className="rest-show-header-address">{address}</span><br/>
+                  <span className="rest-show-header-price">${end_price} and under</span>
                 </div>
                 {this.heartButton()}
               </div>

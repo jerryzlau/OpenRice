@@ -8,7 +8,8 @@ import ReviewForm from './review_form';
 const mapStateToProps = (state, ownProps) => {
   return {
     restaurant: state.restaurants[ownProps.match.params.restaurantId],
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    errors: state.errors.reviews
   };
 };
 

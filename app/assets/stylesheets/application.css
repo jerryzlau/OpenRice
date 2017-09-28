@@ -159,3 +159,7 @@ header h2{
   height: auto;
   min-height: 700px;
 }
+
+.home-page{
+  min-height: 740px;
+}

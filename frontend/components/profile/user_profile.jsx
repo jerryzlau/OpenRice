@@ -36,8 +36,9 @@ class UserProfile extends React.Component {
         <div className="profile-reservations-top">
           <Link
             key={idx}
-            to={`/restaurants/${this.props.reservations[idx].restaurant.id}`}>
-            {this.props.reservations[idx].restaurant.name}
+            to={`/restaurants/${this.props.reservations[idx].restaurant.id}`}
+            className="reservation-index-item-link">
+            <p>{this.props.reservations[idx].restaurant.name}</p>
           </Link>
           <button type="button"
                   onClick={this.destroyReservation(idx)}

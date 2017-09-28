@@ -19,7 +19,7 @@
 
 .reservation-index-item{
   padding: 10px;
-  border: 1px solid black;
+  border-top: 0.3px solid grey;
 }
 
 .reservation-customer-info{
@@ -37,4 +37,26 @@
   background-color: white;
   color: #7BA4B7;
   cursor: pointer;
+}
+
+.reservation-errors{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.reservation-errors li{
+  color: red;
+}
+
+.reservation-index-item-link {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #237B98;
+  font-style: normal;
+}
+
+.reservation-index-item-link:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }

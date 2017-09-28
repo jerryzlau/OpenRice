@@ -14,9 +14,15 @@ class ReviewForm extends React.Component {
       comment: ""
     };
 
+    //form actions
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.reviewRadio = this.reviewRadio.bind(this);
     this.updateRadio = this.updateRadio.bind(this);
+
+    //radio star builder
+    this.reviewRadio = this.reviewRadio.bind(this);
+
+    //error handling
+    this.renderErrors = this.renderErrors.bind(this);
 
   }
 
@@ -102,12 +108,28 @@ class ReviewForm extends React.Component {
     );
   }
 
+  renderErrors() {
+    if (this.props.errors !== []){
+      return(
+        <ul className="review-errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} >
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    } else {
+      return;
+    }
+  }
+
   render(){
     return(
       <div className="review-form-container">
         <h1>Review Form</h1>
+        {this.renderErrors()}
         <form className="review-form">
-
           <div className="review-form-top">
             {this.reviewRadio("food")}
             {this.reviewRadio("ambience")}
@@ -119,7 +141,7 @@ class ReviewForm extends React.Component {
             Your Review
           </h3>
           <div className="review-form-middle">
-            <textarea 
+            <textarea
               value={this.state.comment}
               onChange={this.update('comment')}
               className="review-text-input"
