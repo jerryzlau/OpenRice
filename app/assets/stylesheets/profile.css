@@ -4,4 +4,26 @@
   flex-direction: column;
   width: 65%;
   height: 100%;
+  border: 1px solid black;
+}
+
+.profile-components{
+  border: 1px solid black;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.profile-header{
+  border: 0.5px solid #EBEBEB;
+  background-color: white;
+  width: 100%;
+  min-height: 80px;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.profile-reservations-top{
+  display: flex;
+  justify-content: space-between;
 }

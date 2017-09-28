@@ -25,6 +25,10 @@
   cursor: default;
   margin-left: 300px;
   margin-right: 335px;
+  background-color: white;
+  /*border: 1px solid black;*/
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .rest-index h1{
@@ -134,11 +138,19 @@
   cursor: pointer;
 }
 
+.rest-show-review-component{
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
 .rest-show-body{
   display: flex;
   margin: auto;
   justify-content: center;
   flex-direction: column;
+  border-radius: 5px;
+  padding: 10px;
   width: 63%;
 }
 
@@ -150,6 +162,7 @@
 .rest-show-background{
   background-color: white;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .rest-show-map{
@@ -216,11 +229,12 @@
 
 .search-bar-form{
   width: 60%;
+  min-width: 855px;
   height: 150px;
   background-color: white;
   padding: 20px;
   position: absolute;
-  left: 18%;
+  left: 19%;
   top: 370px;
   z-index: 1;
 }

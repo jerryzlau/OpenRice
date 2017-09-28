@@ -16,11 +16,11 @@ export const fetchReview = reviewId => (
 );
 
 //get user profile reviews
-export const fetchUserReviews = (userId, restaurantId) => (
+export const fetchUserReviews = (userId) => (
   $.ajax({
     method: 'GET',
     url: '/api/reviews',
-    data: {userId, restaurantId}
+    data: {userId}
   })
 );
 
@@ -41,7 +41,7 @@ export const destroyReview = reviewId => (
   })
 );
 
-//update a review 
+//update a review
 export const updateReview = review => (
   $.ajax({
     method: 'PATCH',

@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 import ReservationFormContainer from '../reservations/reservation_form_container';
 import ReservationIndexContainer from '../reservations/reservation_index_container';
 import ReviewFormContainer from '../review/review_form_container';
-import ReviewIndex from '../review/review_index';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class RestaurantShow extends React.Component {
   constructor(props){
@@ -68,18 +68,20 @@ class RestaurantShow extends React.Component {
           </div>
 
           <div className="rest-show-body">
-            {
-              (this.props.currentUser && this.props.currentUser.id === owner_id) ?
-              <Route
-                path={'/restaurants/:restaurantId'}
-                component={ReservationIndexContainer}
-              />
-              :
-              <Route
-                path={`/restaurants/:restaurantId`}
-                component={ReservationFormContainer}
-              />
-            }
+            <div className="rest-show-reservation">
+              {
+                (this.props.currentUser && this.props.currentUser.id === owner_id) ?
+                <Route
+                  path={'/restaurants/:restaurantId'}
+                  component={ReservationIndexContainer}
+                />
+                :
+                <Route
+                  path={`/restaurants/:restaurantId`}
+                  component={ReservationFormContainer}
+                />
+              }
+            </div>
 {/* #################################################################################### */}
             <div className="rest-show-about rest-show-background">
               <h1>About {name}</h1>
@@ -123,20 +125,23 @@ class RestaurantShow extends React.Component {
                 <div className="rest-show-map">
 
                 </div>
-
+              </div>
 {/* #################################################################################### */}
 
-                {
-                  (this.props.currentUser
-                    && this.props.currentUser.id !== owner_id) ?
-                    <Route path={'/restaurants/:restaurantId'}
-                    component={ReviewFormContainer}/>
-                    :
-                    <p>Can't write review</p>
-                }
+                <div className="rest-show-review-component">
+                  {
+                    (this.props.currentUser
+                      && this.props.currentUser.id !== owner_id) ?
+                      <Route path={'/restaurants/:restaurantId'}
+                      component={ReviewFormContainer}/>
+                      :
+                      <p></p>
+                    }
 
-                <ReviewIndex reviews={this.props.restaurant.reviews}/>
-            </div>
+                    <Route path={'/restaurants/:restaurantId'}
+                    component={ReviewIndexContainer} />
+                </div>
+
           </div>
         </div>
       );

@@ -3,21 +3,13 @@ class Api::ReviewsController < ApplicationController
   def index
     current_restaurant = Restaurant.find(params[:restaurantId]) if params[:restaurantId]
     if current_restaurant
-      if params[:userId].to_i == current_restaurant.owner_id
-        # restaurant owner reservation index
-        # pass in the current user_id and restaurant_id to check if
-        # current user is the owner of current restaurant show page, if yes,
-        # show all the reservaitons of that restaurant
-        @reviews = current_restaurant.reviews.order(:created_at)
-      else
-        render json: ["Don't have owner access right"], status: 404
-      end
+      @reviews = current_restaurant.reviews.order(:created_at)
     else
-      # user profile reservation index
+      # user profile review index
       # pass in the current user id to fetch
       user = User.find_by(id: params[:userId])
       if user
-        @reviews = user.review.order(:created_at)
+        @reviews = user.reviews.order(:created_at)
       else
         render json: ["User not found"], status: 404
       end
@@ -63,6 +55,10 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(:author_id,
                                     :restaurant_id,
                                     :rating,
-                                    :comment)
+                                    :comment,
+                                    :food,
+                                    :service,
+                                    :ambience,
+                                    :value)
   end
 end

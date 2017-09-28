@@ -1,18 +1,22 @@
 import {connect} from 'react-redux';
 import UserProfile from './user_profile';
 import {requestUserReservations,
-        requestRestaurantReservations} from '../../actions/reservation_actions';
+        requestRestaurantReservations,
+        destroyReservation} from '../../actions/reservation_actions';
+import {requestUserReviews} from '../../actions/review_actions';
 
-const mapStateToProps = ({reservations, session}) => {
+const mapStateToProps = ({reservations, session, reviews}) => {
   return{
     currentUser: session.currentUser,
-    reservations
+    reservations,
+    reviews
   };
 };
 
 const mapDispatchToProps = dispatch => ({
   requestUserReservations: userId => dispatch(requestUserReservations(userId)),
-  requestRestaurantReservations: reservations => dispatch(requestRestaurantReservations(reservations))
+  requestUserReviews: userId => dispatch(requestUserReviews(userId)),
+  destroyReservation: reservationId => dispatch(destroyReservation(reservationId))
 });
 
 export default connect(

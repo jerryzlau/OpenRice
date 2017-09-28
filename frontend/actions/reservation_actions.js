@@ -19,7 +19,7 @@ export const receiveReservation = reservation => ({
 
 export const removeReservation = reservation => ({
   type: REMOVE_RESERVATION,
-  reservation
+  reservationId: reservation.id
 });
 
 // error handling

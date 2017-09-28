@@ -1,7 +1,6 @@
 form .stars {
   background: url("stars.png") repeat-x 0 0;
   width: 150px;
-  /*margin: 0 auto;*/
 }
 
 form .stars input[type="radio"] {
@@ -54,7 +53,7 @@ form .stars label.star-5:hover ~ span {
 }
 form .stars label.star-4:hover ~ span {
   width: 80% !important;
-}
+}a
 form .stars label.star-3:hover ~ span {
   width: 60% !important;
 }
@@ -68,6 +67,7 @@ form .stars span {
   display: block;
   width: 0;
   position: relative;
+  margin-left: 0px;
   top: 0;
   left: 0;
   height: 30px;

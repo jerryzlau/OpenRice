@@ -23,8 +23,8 @@ class ReservationIndexItem extends React.Component {
       <div className="reservation-index-item">
         <div className="reservation-customer-info">
 
-          <div className="reservation-cusomter-name">
-            <span>Customer: {first_name}</span>
+          <div className="reservation-customer-name">
+            <span>Customer: {first_name.capitalize()}</span>
             <span> {last_name}</span>
           </div>
 

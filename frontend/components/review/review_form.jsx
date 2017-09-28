@@ -29,12 +29,11 @@ class ReviewForm extends React.Component {
   }
 
   updateRadio(field) {
-
     return e => {
-      console.log(field);
+      console.log(field, e.currentTarget.id.slice(-1));
 
       this.setState({
-        [field]: e.currentTarget.id.slice(-1)
+        [field]: parseInt(e.currentTarget.id.slice(-1))
       });
     };
   }
@@ -55,7 +54,11 @@ class ReviewForm extends React.Component {
   reviewRadio(category){
     return(
       <div className="review-radio">
-        {category.capitalize()}
+
+        <div className="review-radio-title">
+          {category.capitalize()}
+        </div>
+
         <div className="stars">
           <input type="radio"
                   value={this.state[category]}
@@ -105,24 +108,31 @@ class ReviewForm extends React.Component {
         <h1>Review Form</h1>
         <form className="review-form">
 
-          {this.reviewRadio("food")}
-          {this.reviewRadio("ambience")}
+          <div className="review-form-top">
+            {this.reviewRadio("food")}
+            {this.reviewRadio("ambience")}
+            {this.reviewRadio("service")}
+            {this.reviewRadio("value")}
+          </div>
 
+          <h3 className="review-text-input-title">
+            Your Review
+          </h3>
+          <div className="review-form-middle">
+            <input type="text"
+              value={this.state.comment}
+              onChange={this.update('comment')}
+              className="review-text-input"
+            />
+          </div>
 
-          {this.reviewRadio("service")}
-          {this.reviewRadio("value")}
-
-          <input type="text"
-            value={this.state.comment}
-            onChange={this.update('comment')}
-            className="review-input"
-          />
-
-          <input type="submit"
-            onClick={this.handleSubmit}
-            value="Submit Review"
-            className="review-submit"
-          /><br/>
+          <div className="review-form-bottom">
+            <input type="submit"
+              onClick={this.handleSubmit}
+              value="Submit Review"
+              className="submit-button"
+            /><br/>
+          </div>
         </form>
       </div>
     );

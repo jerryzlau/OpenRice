@@ -53,6 +53,13 @@ export const requestRestaurantReviews = ({userId, restaurantId}) => dispatch => 
                  err => (dispatch(receiveReviewErrors(err.responseJSON))))
 );
 
+// fetch all of current user's reviews
+export const requestUserReviews = userId => dispatch => (
+  ReviewAPI.fetchUserReviews(userId)
+                .then(reviews => (dispatch(receiveReviews(reviews))),
+                 err => (dispatch(receiveReviewErrors(err.responseJSON))))
+);
+
 // cancel a review
 export const destroyReview = reviewId => dispatch => (
   ReviewAPI.destroyReview(reviewId)

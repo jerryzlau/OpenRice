@@ -1,0 +1,97 @@
+.review-index-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+}
+
+.review-index-item-left{
+  width: 75%;
+  height: 135px;
+  margin: 5px;
+}
+
+.review-index-item-right{
+  width: 25%;
+  height: 135px;
+  margin: 5px;
+  color: grey;
+}
+
+.review-index-item-left-top img{
+  width: 112px;
+  height: 26px;
+}
+
+.review-index-item-left-top{
+  display: flex;
+  flex-direction: row;
+}
+
+.review-index-item-left-top-item{
+  margin: 3px;
+}
+
+.review-radio{
+  /*border: 1px solid black;*/
+}
+
+.review-radio-title{
+  display: flex;
+  justify-content: center;
+  /*border: 1px solid black;*/
+}
+
+.review-form-top{
+  display: flex;
+  flex-direction: row;
+  /*border: 1px solid black;*/
+  justify-content: center;
+}
+
+.review-form-container{
+  padding: 10px;
+}
+
+.review-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form *{
+  margin: 10px;
+}
+
+.review-form-top * {
+  margin: 10px;
+}
+
+.review-text-input-title{
+  margin-bottom: 0;
+  margin-left: 77px;
+}
+
+.review-text-input{
+  margin-top: 0;
+  width: 750px;
+  height: 180px;
+}
+
+.review-form-middle{
+  display: flex;
+  justify-content: center;
+}
+
+.review-form-bottom{
+  display: flex;
+  justify-content: center;
+}
+
+.review-index{
+  background-color: white;
+  padding: 10px;
+  padding-top: 0px;
+}

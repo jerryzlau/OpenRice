@@ -13,10 +13,13 @@
 
 .reservation-index{
   background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .reservation-index-item{
   padding: 10px;
+  border: 1px solid black;
 }
 
 .reservation-customer-info{
@@ -28,4 +31,10 @@
 .reservation-stats{
   display: flex;
   flex-direction: column;
+}
+
+.cancel-reservation{
+  background-color: white;
+  color: #7BA4B7;
+  cursor: pointer;
 }

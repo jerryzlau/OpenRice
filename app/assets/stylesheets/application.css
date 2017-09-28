@@ -93,7 +93,7 @@ header h2{
 }
 
 .login-signup{
-  margin: 15px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   width: 165px;
@@ -102,11 +102,15 @@ header h2{
 .login-signup .signup{
   color: #fff!important;
   background-color: #237B98;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .login-signup .login{
   background-color: transparent;
   color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .login-signup .demo-login{

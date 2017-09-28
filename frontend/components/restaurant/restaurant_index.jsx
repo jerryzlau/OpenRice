@@ -20,13 +20,15 @@ class RestaurantIndex extends React.Component {
     ));
 
     return(
-      <div className="rest-index">
+      <div className="home-page">
         <div className="home-img">
           <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506382488/home_page_image_deu2vc.jpg"/>
         </div>
         <Route path='/' component={RestaurantSearchContainer} />
-        <h1>Restaurants</h1>
-        {index}
+        <div className="rest-index">
+          <h1>Restaurants</h1>
+          {index}
+        </div>
       </div>
     );
   }

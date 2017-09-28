@@ -1,16 +1,20 @@
-import {connect} from './react-redux';
+import {connect} from 'react-redux';
 import {requestRestaurantReviews} from '../../actions/review_actions';
 import ReviewIndex from './review_index';
 
-const mapStateToProps = ({restaurant, session}) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    restaurant: restaurant,
-    currentUser: session.currentUser
+    reviews: state.reviews,
+    restaurantId: ownProps.match.params.restaurantId,
+    restaurant: state.restaurants[ownProps.match.params.restaurantId],
+    currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestRestaurantReviews: reviews => dispatch(requestRestaurantReviews(reviews))
+  requestRestaurantReviews: (fetchInfo) => (
+    dispatch(requestRestaurantReviews(fetchInfo))
+  )
 });
 
 export default connect(
