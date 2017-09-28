@@ -125,7 +125,19 @@
   color: black;
 }
 
-.heart-button{
+.heart-button-short{
+  color: white;
+  padding: 1px;
+  border: solid 1px white;
+  margin-left: 300px;
+  margin-bottom: 10px;
+  width: 100px;
+  max-height: 30px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.heart-button-long{
   color: white;
   padding: 1px;
   border: solid 1px white;
@@ -269,4 +281,14 @@
 
 .rest-index{
   min-width: 750px;
+}
+
+.rest-show-name-reviews{
+  width: 270px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rest-show-num-reviews{
+  margin-top: 15px;
 }

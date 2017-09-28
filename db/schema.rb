@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926231001) do
+ActiveRecord::Schema.define(version: 20170928160632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170926231001) do
     t.integer "ambience", default: 1
     t.integer "service", default: 1
     t.integer "value", default: 1
+    t.index ["restaurant_id", "author_id"], name: "index_reviews_on_restaurant_id_and_author_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

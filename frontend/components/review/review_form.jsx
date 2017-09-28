@@ -119,7 +119,7 @@ class ReviewForm extends React.Component {
             Your Review
           </h3>
           <div className="review-form-middle">
-            <input type="text"
+            <textarea 
               value={this.state.comment}
               onChange={this.update('comment')}
               className="review-text-input"

@@ -9,7 +9,8 @@ const mapStateToProps = ({reservations, session, reviews}) => {
   return{
     currentUser: session.currentUser,
     reservations,
-    reviews
+    reviews,
+    favoriteRestaurants: session.currentUser.favorite_restaurants
   };
 };
 

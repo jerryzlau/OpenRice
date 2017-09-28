@@ -5,11 +5,9 @@ form .stars {
 
 form .stars input[type="radio"] {
   position: absolute;
-  margin-top: 7px;
-  margin-left: 7px;
-
+  /*margin-top: 7px;
+  margin-left: 7px;*/
   opacity: 0;
-
   filter: alpha(opacity=0);
 }
 

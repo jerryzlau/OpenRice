@@ -1,20 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import ReservationIndexItem from '../reservations/reservation_index_item';
-// import ReservationIndex from '../reservations/reservation_index';
 import ReviewIndexItem from '../review/review_index_item';
+import RestaurantIndexItem from '../restaurant/restaurant_index_item';
 
 class UserProfile extends React.Component {
   constructor(props){
     super(props);
-    // this.state = {
-    //   reservations: this.props.reservations
-    // };
 
     this.reservationIndex = this.reservationIndex.bind(this);
     this.reservationChecker = this.reservationChecker.bind(this);
     this.reviewIndex = this.reviewIndex.bind(this);
     this.reviewChecker = this.reviewChecker.bind(this);
+    this.favoriteIndex = this.favoriteIndex.bind(this);
+    this.favoriteChecker = this.favoriteChecker.bind(this);
   }
 
   componentWillMount(){
@@ -25,13 +24,9 @@ class UserProfile extends React.Component {
   }
 
   destroyReservation(idx){
-    //Find a way to re-render after delete
     return (e) => {
       e.preventDefault();
       this.props.destroyReservation(idx);
-      // let reservations = this.state.reservations;
-      // delete reservations[idx];
-      // this.setState({reservations});
     };
   }
 
@@ -40,6 +35,7 @@ class UserProfile extends React.Component {
       <div className="profile-reservations">
         <div className="profile-reservations-top">
           <Link
+            key={idx}
             to={`/restaurants/${this.props.reservations[idx].restaurant.id}`}>
             {this.props.reservations[idx].restaurant.name}
           </Link>
@@ -67,7 +63,6 @@ class UserProfile extends React.Component {
   }
 
   reviewIndex(){
-    console.log(this.props.reviews);
     return Object.keys(this.props.reviews).map(idx => (
       <div className="profile-user-reviews">
         <Link to={`/restaurants/${this.props.reviews[idx].restaurant.id}`}>
@@ -86,6 +81,29 @@ class UserProfile extends React.Component {
     }else{
       return(
         <p>You didn't make any reviews</p>
+      );
+    }
+  }
+
+  favoriteIndex(){
+    let restaurants = [];
+    this.props.favoriteRestaurants.forEach(restaurant => (
+      restaurants.push(
+      <RestaurantIndexItem
+        key={restaurant.id}
+        restaurant={restaurant} />
+      )
+    ));
+    return restaurants;
+  }
+
+  favoriteChecker(){
+    let restaurants = this.favoriteIndex();
+    if (restaurants.length > 0){
+      return restaurants;
+    }else{
+      return(
+        <p>You didn't favorite any restaurants</p>
       );
     }
   }
@@ -118,6 +136,11 @@ class UserProfile extends React.Component {
             {this.reviewChecker()}
           </div>
 
+          <div className="profile-components">
+            <h2>Favorite Restaurants</h2><hr/>
+            {this.favoriteChecker()}
+          </div>
+
         </div>
       </div>
     );
@@ -126,9 +149,3 @@ class UserProfile extends React.Component {
 }
 
 export default UserProfile;
-
-{/* <ReservationIndex
-  reservations={this.props.reservations}
-  currentUser={this.props.currentUser}
-  restaurantId={this.props.reservations.restaurant_id}
-  requestRestaurantReservations={this.props.requestRestaurantReservations}/> */}

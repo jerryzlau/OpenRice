@@ -103,6 +103,7 @@ class RestaurantForm extends React.Component {
 
             <div className="rest-form-row">
               <input type="number"
+                min="1"
                 value={this.state.start_price}
                 onChange={this.update('start_price')}
                 className="signup-input"
@@ -111,6 +112,7 @@ class RestaurantForm extends React.Component {
               <br/>
 
               <input type="number"
+                min="1"
                 value={this.state.end_price}
                 onChange={this.update('end_price')}
                 className="signup-input"
@@ -139,6 +141,7 @@ class RestaurantForm extends React.Component {
 
             <div className="rest-form-capacity">
               <input type="number"
+                min="1"
                 value={this.state.capacity}
                 onChange={this.update('capacity')}
                 className="signup-input"

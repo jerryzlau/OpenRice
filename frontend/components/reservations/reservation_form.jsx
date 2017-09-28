@@ -49,11 +49,14 @@ class ReservationForm extends React.Component {
   }
 
   render(){
+    let date = new Date();
+    let minDate = date.toISOString().slice(0,10);
     return(
       <div className="rest-show-background">
         <h1>Make a reservation</h1>
         <form className="reservation-form">
           <input type="number"
+            min="1"
             value={this.state.num_ppl}
             onChange={this.update('num_ppl')}
             className="reservation-input"
@@ -66,6 +69,7 @@ class ReservationForm extends React.Component {
           />
 
           <input type="date"
+            min={minDate}
             value={this.state.book_date}
             onChange={this.update('book_date')}
             className="reservation-input"

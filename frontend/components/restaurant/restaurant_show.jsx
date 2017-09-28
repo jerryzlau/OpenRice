@@ -27,7 +27,7 @@ class RestaurantShow extends React.Component {
                 return(this.setState({
                 liked: restaurant.restaurant.restaurant.favorited
               }));});
-
+    window.scrollTo(0,0);
   }
 
   toggle(){
@@ -50,14 +50,14 @@ class RestaurantShow extends React.Component {
   heartButton(){
     if(this.state.liked){
       return(
-        <div className="heart-button" onClick={this.toggle}>
+        <div className="heart-button-short" onClick={this.toggle}>
           <i className="fa fa-heart"></i>
           Favorited
         </div>
       );
     }else{
       return(
-        <div className="heart-button" onClick={this.toggle}>
+        <div className="heart-button-long" onClick={this.toggle}>
           <i className="fa fa-heart"></i>
           Add to Favorites
         </div>
@@ -103,8 +103,14 @@ class RestaurantShow extends React.Component {
             <img src={image_url} />
 
             <div className="rest-show-header-right">
-              <span className="rest-name">{name}
+              <div className="rest-show-name-reviews">
+                <span className="rest-name">{name}
                 </span><br/>
+
+                <span className="rest-show-num-reviews">
+                  {num_reviews} {num_reviews < 2 ? "review" : "reviews"}
+                </span>
+              </div>
 
               <div className="rest-show-header-right-sub">
                 <div className="rest-show-header-right-left">
@@ -132,7 +138,8 @@ class RestaurantShow extends React.Component {
                 />
               }
             </div>
-{/* #################################################################################### */}
+
+
             <div className="rest-show-about rest-show-background">
               <h1>About {name}</h1>
 
@@ -172,11 +179,10 @@ class RestaurantShow extends React.Component {
                   <span>{description}</span>
                 </div>
 
-                <div className="rest-show-map">
+                {/* <div className="rest-show-map">
 
-                </div>
+                </div> */}
               </div>
-{/* #################################################################################### */}
 
                 <div className="rest-show-review-component">
                   {

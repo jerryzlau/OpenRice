@@ -11,6 +11,7 @@ class RestaurantIndex extends React.Component {
 
   componentDidMount(){
     this.props.requestAllRestaurants();
+    window.scrollTo(0,0);
   }
 
   indexEl(){
