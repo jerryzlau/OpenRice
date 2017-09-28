@@ -20,7 +20,7 @@
 
 class Restaurant < ApplicationRecord
 
-  DEFAULT = "https://www.deleci.com/assets/images/default-food-image.png"
+  DEFAULT = "http://res.cloudinary.com/jerryzlau/image/upload/v1506558455/default-food-image_jrdevc.png"
 
   validates :owner_id, :capacity, :cusine_type, presence: true
   validates :phone_num, :website, :dining_style, :description, presence: true

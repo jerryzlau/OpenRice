@@ -3,4 +3,5 @@ json.extract! user, :id,
                     :last_name,
                     :email,
                     :owner,
-                    :primary_city
+                    :primary_city,
+                    :favorite_restaurants

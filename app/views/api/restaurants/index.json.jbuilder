@@ -19,5 +19,6 @@
                               :reservations,
                               :reviews
     json.likes restaurant.favorites.count
+    json.favorited current_user.favorited?(@restaurant)
   end
 end

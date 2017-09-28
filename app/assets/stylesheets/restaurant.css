@@ -23,7 +23,6 @@
   flex-direction: column;
   margin-left: 20%;
   cursor: default;
-  margin-left: 300px;
   margin-right: 335px;
   background-color: white;
   /*border: 1px solid black;*/
@@ -127,9 +126,9 @@
 }
 
 .heart-button{
-  color: black;
+  color: white;
   padding: 1px;
-  border: solid 1px black;
+  border: solid 1px white;
   margin-left: 300px;
   margin-bottom: 10px;
   width: 150px;

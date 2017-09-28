@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :reservations, except: [:new, :edit]
 
     resources :reviews, except: [:new, :edit]
+
+    resources :favorites, only: [:create, :destroy]
   end
 end

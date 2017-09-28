@@ -4,14 +4,65 @@ import ReservationFormContainer from '../reservations/reservation_form_container
 import ReservationIndexContainer from '../reservations/reservation_index_container';
 import ReviewFormContainer from '../review/review_form_container';
 import ReviewIndexContainer from '../review/review_index_container';
+import {createFavorite,
+        destroyFavorite,
+        fetchFavorite} from '../../util/favorite_api_util';
+
 
 class RestaurantShow extends React.Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      liked: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+    this.heartButton = this.heartButton.bind(this);
   }
 
   componentWillMount(){
-    this.props.requestRestaurant(this.props.match.params.restaurantId);
+    this.props.requestRestaurant(this.props.match.params.restaurantId)
+              .then(restaurant => {
+                return(this.setState({
+                liked: restaurant.restaurant.restaurant.favorited
+              }));});
+
+  }
+
+  toggle(){
+    this.setState({
+      liked: !this.state.liked
+    });
+
+    let favorite = {
+      restaurant_id: this.props.restaurant.id,
+      customer_id: this.props.currentUser.id
+    };
+
+    if (!this.state.liked){
+      createFavorite(favorite);
+    }else{
+      destroyFavorite(favorite);
+    }
+  }
+
+  heartButton(){
+    if(this.state.liked){
+      return(
+        <div className="heart-button" onClick={this.toggle}>
+          <i className="fa fa-heart"></i>
+          Favorited
+        </div>
+      );
+    }else{
+      return(
+        <div className="heart-button" onClick={this.toggle}>
+          <i className="fa fa-heart"></i>
+          Add to Favorites
+        </div>
+      );
+    }
   }
 
   render(){
@@ -44,6 +95,8 @@ class RestaurantShow extends React.Component {
         name = name.capitalize();
         dining_style = dining_style.capitalize();
 
+        let num_reviews = this.props.restaurant.reviews.length;
+
       return(
         <div className="rest-show">
           <div className="rest-show-header">
@@ -59,10 +112,7 @@ class RestaurantShow extends React.Component {
                   <span>{address}</span><br/>
                   <span>${end_price} and under</span>
                 </div>
-                {/* change this to Link when favorite is set up */}
-                <div className="heart-button">
-                  <i className="fa fa-heart-o">Add to favorite</i>
-                </div>
+                {this.heartButton()}
               </div>
             </div>
           </div>

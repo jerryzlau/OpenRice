@@ -40,7 +40,7 @@ class RestaurantForm extends React.Component {
     return(
       <div className="rest-form-background">
         <div className="rest-form">
-          <h1>Hello {first_name}! Let's get you started with OpenRice</h1>
+          <h1>Hello {first_name.capitalize()}! Let's get you started with OpenRice</h1>
           <p>Tell us a little about you and your restaurant, and
             we'll provide you with information
           about OpenRice's products and services.

@@ -73,4 +73,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def favorited?(restaurant)
+    self.favorite_restaurants.include?(restaurant)
+  end
+
 end
