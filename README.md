@@ -54,10 +54,12 @@ end
 
 ## Features to Further Implement and Improve
 ### Maps 
-Implementation of restaurant locations on maps 
+* Restaurant show page has interactive map for restaurant 
+* Search results pinpoint all restaurant locations on map 
 
-### Restaurant Image upload 
-Implementation of restaurant image upload 
+### Image upload 
+* User profile picture upload
+* Restaurant profile picture upload 
 
 ### Restaurant creation validation 
-Approval process for restaurant creation to ensure restaurants created are real 
+* Approval process for restaurant creation to ensure restaurants created are real 
