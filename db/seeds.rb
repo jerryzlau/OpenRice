@@ -7,25 +7,40 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(first_name: 'Demo',
+User.create(first_name: 'OwnerDemo',
          last_name: 'openRice',
          password: '123456',
-         email: "demo@demo.com",
+         email: "ownerdemo@demo.com",
          owner: true,
          primary_city: 'San Francisco')
 
-5.times do |i|
-  name = Faker::GameOfThrones.character
-  first = name.split[0]
-  last = name.split[1]
+User.create(first_name: 'tommy',
+        last_name: 'openRice',
+        password: '123456',
+        email: "tommy@demo.com",
+        owner: false,
+        primary_city: 'San Francisco')
 
-  User.create(first_name: first,
-              last_name: last,
-              password: '123456',
-              email: "#{first}@got.com",
-              owner: false,
-              primary_city: 'San Francisco')
-end
+User.create(first_name: 'rebekah',
+        last_name: 'openRice',
+        password: '123456',
+        email: "rebekah@demo.com",
+        owner: false,
+        primary_city: 'San Francisco')
+
+User.create(first_name: 'brian',
+        last_name: 'openRice',
+        password: '123456',
+        email: "brian@demo.com",
+        owner: false,
+        primary_city: 'San Francisco')
+
+User.create(first_name: 'nixon',
+        last_name: 'openRice',
+        password: '123456',
+        email: "nixon@demo.com",
+        owner: false,
+        primary_city: 'San Francisco')
 
 NAME = ["Urban Curry",
         "Omakase",
@@ -77,3 +92,206 @@ IMAGE = ["https://resizer.otstatic.com/v2/profiles/legacy/48718.jpg",
                image_url: IMAGE[i]}
   Restaurant.create(restaurant)
 end
+
+# first restaurant review
+Review.create(author_id: 2,
+              restaurant_id: 1,
+              comment: "Great experience and even got to meet the two friendly owners this time. I am a local and live in North Beach so often go there as its great tasty food and excellent service.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 3,
+              restaurant_id: 1,
+              comment: "It is not a place for a romantic gathering, business, impress your companion, etc. Tired furniture, bad lighting, the kitchen is not separated from the dining room so, the smell is strong. Pretty decent Indian meals, reasonable prices. Servers do their job, but don't expect all-smiles staff.",
+              food: 3,
+              ambience: 2,
+              service: 2,
+              value: 4)
+
+Review.create(author_id: 4,
+              restaurant_id: 1,
+              comment: "The food was very tasty!! The service was very good as well. Recommended!!",
+              food: 4,
+              ambience: 4,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 5,
+              restaurant_id: 1,
+              comment: "Got there early on a Sunday, so there were only one or two tables occupied. Friendly servers and efficient service. The menu had the usual curry dishes, but sadly no peshwari naan. We had garlic naan, which was good nonetheless. The chicken jalfrezi was tasty with chicken breast and thigh meat and plenty of peppers. No green chill is though, although the spice level was good. Overall, this was a good curry experience.",
+              food: 4,
+              ambience: 4,
+              service: 4,
+              value: 1)
+
+# second restaurant review
+Review.create(author_id: 2,
+              restaurant_id: 2,
+              comment: "It's been a while since I've had fish that I've never had before as well as tasted food that were completely new! Sake list is also incredible.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 3,
+              restaurant_id: 2,
+              comment: "I am not a foodie. This was the most amazing meal of my life.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 4,
+              restaurant_id: 2,
+              comment: "Great food but expensive. First course was a little slimy and totally turned off the girlfriend.",
+              food: 5,
+              ambience: 4,
+              service: 5,
+              value: 3)
+
+Review.create(author_id: 5,
+              restaurant_id: 2,
+              comment: "First, the quality of the sushi was fantastic. So was the waitress that served us. Why the bad rating then? We were absolutely treated like second class citizens by the host for some unknown reason.
+
+Despite arriving early and requesting bar seats (it is a sushi bar with 12 bar seats and only 2 tables) we were ignored for 20 minutes then told we had to sit at a table... being seated last and about 30 minutes after our reservation despite the restaurant having a policy of 2 nightly seatings (5:30 and 8:30)
+
+We missed out on getting to see the chefs work, talk to them, and have interaction with other patrons.
+
+I think the worst part was that the host made some lame excuse as to why we were relegated to the table, which was clearly BS.
+
+Such a shame because the food was exceptional. Will definitely not be going back.",
+              food: 5,
+              ambience: 1,
+              service: 1,
+              value: 4)
+
+# third restaurant review
+Review.create(author_id: 2,
+              restaurant_id: 3,
+              comment: "They were very helpful accommodating our two kids and stroller, and had berry pancakes that were the bomb.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 3,
+              restaurant_id: 3,
+              comment: "This has been our Go-To before we hit the bridge happy hour or quick dinner for years now.
+Love the place.
+Great tastes, however, this time the tofu appetizer (delicious) but was heavy on salt.
+Better next time, I am sure.",
+              food: 3,
+              ambience: 4,
+              service: 3,
+              value: 4)
+
+Review.create(author_id: 4,
+              restaurant_id: 3,
+              comment: "Great pizza, wonderful salad. Salmon was a little dry.",
+              food: 4,
+              ambience: 4,
+              service: 4,
+              value: 4)
+
+Review.create(author_id: 5,
+              restaurant_id: 3,
+              comment: "Friendly service, helpful with recommendations and lovely atmosphere!",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 4)
+
+# fourth restaurant
+Review.create(author_id: 2,
+              restaurant_id: 4,
+              comment: "I've been walking past Michael Mina SF for years on my way to its neighbor, the longstanding city favorite Tadich Grill. My curiosity prevailed after looking inside through the front windows many times and I made a reservation for lunch with my wife. I had heard good thing about the restaurant and wasn't disappointed in the five course tasting menu; they met my high expectations and a little bit more. The staff were friendly and professional and every one of them who came to our table seemed interested in our enjoyment. The only minor glitch was a course they delivered to me without replacing my utensils. A man saw me looking around for staff and came to the table. He immediately saw what was missing and utensils were dispatched. The man turned out to be the general manager. He returned to the table as we finished dessert and poured us each a glass of Very Nice Port and gave us his card and said he hoped to see us again. He will. The food. The food. The food. All of it flavorful and presented beautifully. The tuna tartar was finished at the table and topped with a fresh quail egg; the peach gazpacho served with a tender prawn had layers of flavor and a texture enhanced by leaving the peel on the bits of peach; the beef was a small cut of Wagyu beef cooked rare and silky as each bite seemed to dissolve in my mouth; dessert managed to combine a medley of chocolate flavors and textures. Expect to spend some money, even before seeing the extensive wine list, but Michael Mina SF is worth what it costs when one considers the complete experience.",
+              food: 5,
+              ambience: 5,
+              service: 4,
+              value: 3)
+
+Review.create(author_id: 3,
+              restaurant_id: 4,
+              comment: "Poor website does not make it clear that Michael Mina has several different restairants. VERY CONFUSING.
+Staff rushed each course and left food to get cold. After asking to take our dishes 4-5 times, the next course was presented within seconds after we finished the previous course, indicating that it had been sitting ready for some time. Hot food was nearly cold when served.",
+              food: 2,
+              ambience: 5,
+              service: 3,
+              value: 2)
+
+Review.create(author_id: 4,
+              restaurant_id: 4,
+              comment: "This place continues to impress. The flavors were fresh, creative, and beautifully plated. The staff is very attentive without being overbearing and is very knowledgeable. The five course meal was a perfect amount, especially with the occasional additional items the chef offers between courses. Michael Mina is a special place that is always high on our list for a special occasion. It deserves another Michelin star.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+Review.create(author_id: 5,
+              restaurant_id: 4,
+              comment: "Perfect. The most interesting food combinations I've seen. Creative. The staff were kind, engaging, and friendly. It really doesn't get better than this. The noise level never got ridiculous. The music level was perfect. Beautiful place. Don't miss it.",
+              food: 5,
+              ambience: 5,
+              service: 5,
+              value: 5)
+
+# first restaurant reservation
+Reservation.create(customer_id: 2,
+                   restaurant_id: 1,
+                   num_ppl: 5,
+                   notes: "nothing special",
+                   booking: "2017-10-06 19:00")
+# second restaurant Reservation
+Reservation.create(customer_id: 2,
+                   restaurant_id: 2,
+                   num_ppl: 3,
+                   notes: "nothing special",
+                   booking: "2017-05-18 13:00")
+
+Reservation.create(customer_id: 3,
+                  restaurant_id: 2,
+                  num_ppl: 3,
+                  notes: "it's maple's birthday",
+                  booking: "2017-10-06 19:00")
+# third restaurant Reservation
+Reservation.create(customer_id: 4,
+                   restaurant_id: 1,
+                   num_ppl: 3,
+                   notes: "nothing special",
+                   booking: "2017-12-07 17:00")
+# fourth restaurant Reservation
+Reservation.create(customer_id: 5,
+                   restaurant_id: 4,
+                   num_ppl: 5,
+                   notes: "nothing special",
+                   booking: "2017-12-10 20:00")
+
+# first restaurant like
+Favorite.create(restaurant_id: 1,
+                customer_id: 2)
+
+Favorite.create(restaurant_id: 1,
+                customer_id: 3)
+# second restaurant like
+Favorite.create(restaurant_id: 2,
+                customer_id: 2)
+
+Favorite.create(restaurant_id: 2,
+                customer_id: 4)
+# third restaurant like
+Favorite.create(restaurant_id: 3,
+                customer_id: 3)
+
+Favorite.create(restaurant_id: 3,
+                customer_id: 2)
+
+Favorite.create(restaurant_id: 3,
+                customer_id: 5)
+# fourth restaurant like
+Favorite.create(restaurant_id: 4,
+                customer_id: 4)
+
+Favorite.create(restaurant_id: 4,
+                customer_id: 5)

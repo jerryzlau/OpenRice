@@ -52,7 +52,7 @@ class ReviewIndexItem extends React.Component {
 
             <div className="review-index-item-left-top-item">
               <i className="fa fa-user" aria-hidden="true"></i>
-              <span> OpenRice Diner({primary_city}) ·</span>
+              <span> {first_name}({primary_city}) ·</span>
             </div>
 
             <div className="review-index-item-left-top-item">

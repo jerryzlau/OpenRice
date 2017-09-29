@@ -192,7 +192,7 @@ class RestaurantShow extends React.Component {
                       <Route path={'/restaurants/:restaurantId'}
                       component={ReviewFormContainer}/>
                       :
-                      <p></p>
+                      ""
                     }
 
                     <Route path={'/restaurants/:restaurantId'}

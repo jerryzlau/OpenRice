@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
       first_name: '',
       last_name: '',
       owner: false,
-      primary_city: '', 
+      primary_city: '',
       showModal: true
 
     };
@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
 
   handleDemo(e){
     e.preventDefault();
-    let email = 'demo@demo.com'.split("");
+    let email = 'ownerdemo@demo.com'.split("");
     let password = '123456'.split("");
     this.setState({email: "", password: ""});
     const shiftFunction = function(){
