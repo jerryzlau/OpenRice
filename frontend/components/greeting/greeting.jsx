@@ -14,6 +14,7 @@ class Greeting extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.sessionLinks = this.sessionLinks.bind(this);
+    this.join = this.join.bind(this);
   }
 
   toggle() {
@@ -31,6 +32,16 @@ class Greeting extends React.Component {
     );
   }
 
+  join(){
+    if(this.props.currentUser.owner){
+      return(
+        <DropdownItem><Link to="/restaurants">Join OpenRice</Link></DropdownItem>
+      );
+    }else{
+      return;
+    }
+  }
+
   personalGreeting(currentUser, logout){
     //TODO: make this group into a drop down
     return(
@@ -40,7 +51,7 @@ class Greeting extends React.Component {
         </DropdownToggle>
         <DropdownMenu>
           <DropdownItem><Link to="/my/profile/info">My Profile</Link></DropdownItem>
-          <DropdownItem><Link to="/restaurants">Join OpenRice</Link></DropdownItem>
+          {this.join()}
           <DropdownItem onClick={logout}>Log Out</DropdownItem>
         </DropdownMenu>
       </Dropdown>
