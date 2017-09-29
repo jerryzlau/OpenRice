@@ -6,23 +6,6 @@ import Root from './components/root';
 import * as reservationAPI from './util/reservation_api_util';
 import * as resActions from './actions/reservation_actions';
 
-
-// test ajax
-
-// test reducers
-// window.restaurantReducer = restaurantReducer;
-
-//test actions
-// restaurant actions test these after MVP
-// window.removeRestaurant = Actions.removeRestaurant;
-// window.editRestaurant = Actions.editRestaurant;
-// reservation actions
-// window.createReservation = resActions.createReservation;
-// window.requestReservation = resActions.requestReservation;
-// window.requestUserReservations = resActions.requestUserReservations;
-// window.destroyReservation = resActions.destroyReservation;
-// window.editReservation = resActions.editReservation;
-
 document.addEventListener('DOMContentLoaded', () => {
 
   let store;
@@ -34,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}  />, root);
 });
