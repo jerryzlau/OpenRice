@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import {createReview,
         editReview,
-        destroyReview} from '../../actions/review_actions';
+        destroyReview,
+        clearReviewErrors} from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  clearReviewErrors: () => dispatch(clearReviewErrors())
 });
 
 export default connect(

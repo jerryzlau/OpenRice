@@ -52,8 +52,7 @@ class ReservationForm extends React.Component {
       booking: this.state.book_date + " " + this.state.book_time
     };
 
-    this.props.createReservation(fetchInfo);
-    // this.props.history.push("/my/profile/info");
+    this.props.createReservation(fetchInfo).then(() => this.props.history.push("/my/profile/info"));
   }
 
   renderErrors() {

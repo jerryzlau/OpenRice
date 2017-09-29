@@ -34,7 +34,7 @@ class ReviewIndex extends React.Component {
     if (reviews.length){
       return(
         <div className="review-index">
-          <h1>{this.props.restaurant.name} Ratings and Reviews</h1>
+          <h1>{this.props.restaurant.name} Ratings and Reviews</h1><hr/>
           {reviews}
         </div>
       );

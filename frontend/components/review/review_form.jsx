@@ -26,6 +26,10 @@ class ReviewForm extends React.Component {
 
   }
 
+  componentDidMount(){
+    this.props.clearReviewErrors();
+  }
+
   update(field) {
     return e => {
       this.setState({
@@ -54,7 +58,17 @@ class ReviewForm extends React.Component {
       this.state.author_id = this.props.currentUser.id;
     }
 
-    this.props.createReview(this.state);
+    this.props.createReview(this.state).then(() => window.scrollTo(0,document.body.scrollHeight));
+    this.setState({
+      author_id: "",
+      //restaurant_id subject to change depends on container
+      restaurant_id: this.props.match.params.restaurantId,
+      food: 1,
+      ambience: 1,
+      service: 1,
+      value: 1,
+      comment: ""
+    });
   }
 
   reviewRadio(category){

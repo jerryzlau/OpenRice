@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
       first_name: '',
       last_name: '',
       owner: false,
-      primary_city: '', //TODO: make this into a dropdown
+      primary_city: '', 
       showModal: true
 
     };
