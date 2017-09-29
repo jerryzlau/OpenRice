@@ -15,30 +15,30 @@ User.create(first_name: 'OwnerDemo',
          primary_city: 'San Francisco')
 
 User.create(first_name: 'tommy',
-        last_name: 'openRice',
+        last_name: 'kilmer',
         password: '123456',
         email: "tommy@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
 User.create(first_name: 'rebekah',
-        last_name: 'openRice',
+        last_name: 'liu',
         password: '123456',
         email: "rebekah@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
-User.create(first_name: 'brian',
-        last_name: 'openRice',
+User.create(first_name: 'maple',
+        last_name: 'law',
         password: '123456',
-        email: "brian@demo.com",
+        email: "maple@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
-User.create(first_name: 'nixon',
-        last_name: 'openRice',
+User.create(first_name: 'jack',
+        last_name: 'lau',
         password: '123456',
-        email: "nixon@demo.com",
+        email: "jack@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
