@@ -89,7 +89,6 @@ class ReservationForm extends React.Component {
       <option
         key={time+12}
         value={time < 10 ? (time + 12 + ":00") : (time + 12 + ":00")}
-        // onChange={this.update('book_time')}
         >
         {time < 10 ? ("0" + time + ":00") : (time + ":00")} PM
       </option>
@@ -106,7 +105,6 @@ class ReservationForm extends React.Component {
                     (time + ":00")
                   )
               }
-        // onChange={this.update('book_time')}
         >
         {time < 10 ? ("0" + time + ":00") : (time + ":00")} AM
       </option>

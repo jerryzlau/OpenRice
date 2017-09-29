@@ -25,6 +25,9 @@ class RestaurantForm extends React.Component {
 
     //error handling
     this.renderErrors = this.renderErrors.bind(this);
+
+    //helper methods
+    this.timePickerBuilder = this.timePickerBuilder.bind(this);
   }
 
   update(field) {
@@ -55,6 +58,48 @@ class RestaurantForm extends React.Component {
     }
   }
 
+  timePickerBuilder(){
+    let dayTime = [];
+    let nightTime = [];
+
+    for(let i = 0; i < 12; i++){
+      if (i === 0){
+        dayTime.push(12);
+        nightTime.push(12);
+      } else {
+        dayTime.push(i);
+        nightTime.push(i);
+      }
+    }
+
+    let newDayTime = dayTime.map(time => (
+      <option
+        key={time+12}
+        value={time < 10 ? (time + 12 + ":00") : (time + 12 + ":00")}
+        >
+        {time < 10 ? ("0" + time + ":00") : (time + ":00")} PM
+      </option>
+    ));
+
+    let newNightTime = nightTime.map(time => (
+      <option
+        key={time}
+        value={
+                (time === 12) ?
+                  "00:00" : (
+                    time < 10 ?
+                    ("0" + time + ":00") :
+                    (time + ":00")
+                  )
+              }
+        >
+        {time < 10 ? ("0" + time + ":00") : (time + ":00")} AM
+      </option>
+    ));
+
+    return newNightTime.concat(newDayTime);
+  }
+
   render(){
     let {first_name, id} = this.props.currentUser;
     return(
@@ -82,24 +127,6 @@ class RestaurantForm extends React.Component {
                 onChange={this.update('phone_num')}
                 className="signup-input"
                 placeholder="Restaurant Phone Number"
-              />
-              <br/>
-            </div>
-
-            <div className="rest-form-row">
-              <input type="time"
-                value={this.state.open_time}
-                onChange={this.update('open_time')}
-                className="signup-input"
-                placeholder="Open Hour"
-              />
-              <br/>
-
-              <input type="time"
-                value={this.state.close_time}
-                onChange={this.update('close_time')}
-                className="signup-input"
-                placeholder="Close Hour"
               />
               <br/>
             </div>
@@ -158,6 +185,24 @@ class RestaurantForm extends React.Component {
                 placeholder="Restaurant Website"
               />
               <br/>
+            </div>
+
+            <div className="rest-form-row-time">
+              <div className="rest-form-row-time-col">
+                <p className="rest-form-time">Open Time:</p><br/>
+                <select className="reservation-input rest-form-time-selector"
+                  onChange={this.update('open_time')}>
+                  {this.timePickerBuilder()}
+                </select>
+              </div>
+
+              <div className="rest-form-row-time-col">
+                <p className="rest-form-time">Close Time:</p><br/>
+                <select className="reservation-input rest-form-time-selector"
+                  onChange={this.update('close_time')}>
+                  {this.timePickerBuilder()}
+                </select>
+              </div>
             </div>
 
             <div className="rest-form-capacity">

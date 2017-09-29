@@ -228,6 +228,7 @@
   display: flex;
   justify-content: space-around;
   margin: 5px;
+  /*border: 1px solid black;*/
 }
 
 .rest-form-capacity{
@@ -329,4 +330,28 @@
 
 .rest-errors li{
   color: red;
+}
+
+.rest-form-time{
+  margin: 0;
+  margin-left: 40px;
+}
+
+
+.rest-form-row-time{
+  display: flex;
+  justify-content: space-around;
+  min-height: 100px;
+  margin-bottom: 20px;
+  /*border: 1px solid black;*/
+}
+
+.rest-form-row-time-col{
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid black;*/
+}
+
+.rest-form-time-selector{
+  margin-right: 20px;
 }
