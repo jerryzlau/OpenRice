@@ -24,6 +24,7 @@ class ReservationForm extends React.Component {
 
     //helper methods
     this.timePickerBuilder = this.timePickerBuilder.bind(this);
+    this.numPeopleBuilder = this.numPeopleBuilder.bind(this);
   }
 
   update(field) {
@@ -113,20 +114,38 @@ class ReservationForm extends React.Component {
     return newNightTime.concat(newDayTime);
   }
 
+  numPeopleBuilder(){
+    let numPpl = [];
+
+    for(let i = 1; i < 21; i++){
+      numPpl.push(i);
+    }
+
+    let numList = numPpl.map(num => (
+      <option
+        key={num}
+        value={num}
+        selected={num === 2 ? "selected" : ""}
+        >
+        {num}
+      </option>
+    ));
+
+    return numList;
+  }
+
   render(){
     let date = new Date();
     let minDate = date.toISOString().slice(0,10);
     return(
       <div className="rest-show-background">
-        <h1>Make a reservation</h1>
+        <h1>Make a reservation</h1><hr/>
         {this.renderErrors()}
         <form className="reservation-form">
-          <input type="number"
-            min="1"
-            value={this.state.num_ppl}
-            onChange={this.update('num_ppl')}
-            className="reservation-input"
-          /><br/>
+          <select className="reservation-input"
+                  onChange={this.update('num_ppl')}>
+            {this.numPeopleBuilder()}
+          </select>
 
           <select className="reservation-input"
                   onChange={this.update('book_time')}>

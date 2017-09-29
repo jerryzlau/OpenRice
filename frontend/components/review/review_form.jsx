@@ -127,7 +127,7 @@ class ReviewForm extends React.Component {
   render(){
     return(
       <div className="review-form-container">
-        <h1>Review Form</h1>
+        <h1>Review Form</h1><hr/>
         {this.renderErrors()}
         <form className="review-form">
           <div className="review-form-top">

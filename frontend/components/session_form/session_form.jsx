@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
         value={this.state.first_name}
         onChange={this.update('first_name')}
         className="signup-input"
-        placeholder="First Name:"
+        placeholder="First Name*"
       />
 
       <br/>
@@ -132,7 +132,7 @@ class SessionForm extends React.Component {
         value={this.state.last_name}
         onChange={this.update('last_name')}
         className="signup-input"
-        placeholder="Last Name:"
+        placeholder="Last Name*"
       />
 
 
@@ -141,7 +141,7 @@ class SessionForm extends React.Component {
         value={this.state.email}
         onChange={this.update('email')}
         className="signup-input"
-        placeholder="Enter Email:"
+        placeholder="Enter Email*"
       />
       <br/>
 
@@ -149,7 +149,7 @@ class SessionForm extends React.Component {
         value={this.state.password}
         onChange={this.update('password')}
         className="signup-input"
-        placeholder="Enter Password:"
+        placeholder="Enter Password*"
       />
 
       <br/>
@@ -158,7 +158,7 @@ class SessionForm extends React.Component {
         value={this.state.confirm_password}
         onChange={this.update('confirm_password')}
         className="signup-input"
-        placeholder="Confirm Password:"
+        placeholder="Confirm Password*"
       />
 
       <br/>
@@ -167,7 +167,7 @@ class SessionForm extends React.Component {
         value={this.state.primary_location}
         onChange={this.update('primary_city')}
         className="signup-input"
-        placeholder="Primary Dining Location:"
+        placeholder="Primary Dining Location*"
       />
       <br/>
 
@@ -200,7 +200,7 @@ class SessionForm extends React.Component {
           value={this.state.email}
           onChange={this.update('email')}
           className="signup-input"
-          placeholder="Email"
+          placeholder="Email*"
         />
         <br/>
 
@@ -208,7 +208,7 @@ class SessionForm extends React.Component {
           value={this.state.password}
           onChange={this.update('password')}
           className="signup-input"
-          placeholder="Password"
+          placeholder="Password*"
         />
 
         <br/>

@@ -282,10 +282,14 @@
 }
 
 .search-input{
-  padding: 0;
+  padding: 5px;
   margin: 0;
   width: 310px;
   height: 50px;
+}
+
+.search-input:focus{
+  outline: none;
 }
 
 .submit-button{
