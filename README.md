@@ -56,6 +56,7 @@ end
 ### Maps 
 * Restaurant show page has interactive map for restaurant 
 * Search results pinpoint all restaurant locations on map 
+* Grab user current location for relevant restaurants
 
 ### Image upload 
 * User profile picture upload
