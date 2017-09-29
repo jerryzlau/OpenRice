@@ -30,6 +30,10 @@ class RestaurantForm extends React.Component {
     this.timePickerBuilder = this.timePickerBuilder.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearRestaurantErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value

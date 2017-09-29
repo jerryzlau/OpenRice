@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {createRestaurant} from '../../actions/restaurant_actions';
+import {createRestaurant, clearRestaurantErrors} from '../../actions/restaurant_actions';
 import RestaurantForm from './restaurant_form';
 
 const mapStateToProps = ({ restaurants, session, errors }) => {
@@ -10,7 +10,8 @@ const mapStateToProps = ({ restaurants, session, errors }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createRestaurant: restaurant => dispatch(createRestaurant(restaurant))
+  createRestaurant: restaurant => dispatch(createRestaurant(restaurant)),
+  clearRestaurantErrors: () => dispatch(clearRestaurantErrors())
 });
 
 export default connect(
