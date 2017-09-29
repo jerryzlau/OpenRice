@@ -6,17 +6,17 @@ class RestaurantForm extends React.Component {
     this.state = {
       name: "",
       owner_id: this.props.currentUser.id,
-      start_price: "",
-      end_price: "",
-      capacity: "",
+      start_price: 0,
+      end_price: 0,
+      capacity: 10,
       address: "",
       cusine_type: "",
       phone_num: "",
       website: "",
       dining_style: "",
       description: "",
-      open_time: "",
-      close_time: "",
+      open_time: "00:00",
+      close_time: "00:00",
       image_url: ""
     };
 
