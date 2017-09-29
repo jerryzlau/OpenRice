@@ -6,9 +6,9 @@ class RestaurantForm extends React.Component {
     this.state = {
       name: "",
       owner_id: this.props.currentUser.id,
-      start_price: 0,
-      end_price: 0,
-      capacity: 10,
+      start_price: "",
+      end_price: "",
+      capacity: "",
       address: "",
       cusine_type: "",
       phone_num: "",
