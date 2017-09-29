@@ -42,7 +42,7 @@ class RestaurantIndexItem extends React.Component {
     let {name, cusine_type, address, id, image_url} = this.restaurant;
     return(
       <div className="rest-index-item">
-        <div>
+        <div className="rest-index-item-left">
           <img
             className="rest-index-img"
             src={image_url}/>
