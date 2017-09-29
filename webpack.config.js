@@ -20,12 +20,12 @@ var prodPlugins = [
 
 plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
-);
+)
 
 // include plugins config
 module.exports = {
   context: __dirname,
-  entry: "./frontend/<name of entry file>",
+  entry: './frontend/open_rice.jsx',
   output: {
     path: path.resolve(__dirname, "app", "assets", "javascripts"),
     filename: "bundle.js"
