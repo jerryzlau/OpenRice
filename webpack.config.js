@@ -1,24 +1,50 @@
-var path = require('path');
+// webpack.config.js
+var path = require("path");
+var webpack = require("webpack");
 
+var plugins = []; // if using any plugins for both dev and production
+var devPlugins = []; // if using any plugins for development
+
+var prodPlugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  }),
+  new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: true
+    }
+  })
+];
+
+plugins = plugins.concat(
+  process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
+);
+
+// include plugins config
 module.exports = {
-  entry: './frontend/open_rice.jsx',
+  context: __dirname,
+  entry: "./frontend/<name of entry file>",
   output: {
-    filename: './app/assets/javascripts/bundle.js',
+    path: path.resolve(__dirname, "app", "assets", "javascripts"),
+    filename: "bundle.js"
   },
+  plugins: plugins,
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: [".js", ".jsx", "*"]
   }
 };
