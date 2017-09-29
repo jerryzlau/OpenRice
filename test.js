@@ -115,7 +115,6 @@ let restaurant = {
 
 this.props.createRestaurant(this.state)
           .then(data => {
-                        console.log(data.restaurant.restaurant.id);
                         return this.props.history.push(`/restaurants/${data.restaurant.restaurant.id}`);
                         }
                );

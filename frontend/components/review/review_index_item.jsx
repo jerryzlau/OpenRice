@@ -34,7 +34,6 @@ class ReviewIndexItem extends React.Component {
   }
 
   render(){
-    // console.log(this.props.review);
     let {food, ambience, service, value, comment} = this.props.review;
     let {first_name,
          last_name,

@@ -43,7 +43,6 @@ class ReservationForm extends React.Component {
 
     this.state.booking = this.state.book_date + " " + this.state.book_time;
 
-    console.log(this.state.booking);
     if(this.props.currentUser){
       this.state.customer_id = this.props.currentUser.id;
     }

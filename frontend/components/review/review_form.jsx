@@ -40,8 +40,6 @@ class ReviewForm extends React.Component {
 
   updateRadio(field) {
     return e => {
-      console.log(field, e.currentTarget.id.slice(-1));
-
       this.setState({
         [field]: parseInt(e.currentTarget.id.slice(-1))
       });

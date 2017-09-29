@@ -12,7 +12,6 @@ const RestaurantErrorsReducer = (state = [], action) => {
     case RECEIVE_RESTAURANT:
       return [];
     case RECEIVE_RESTAURANT_ERRORS:
-      console.log(action);
       return action.errors;
     default:
       return state;
