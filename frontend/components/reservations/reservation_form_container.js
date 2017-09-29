@@ -1,7 +1,8 @@
 import {connect} from 'react-redux';
 import {createReservation,
         editReservation,
-        destroyReservation} from '../../actions/reservation_actions';
+        destroyReservation,
+        clearReservationErrors} from '../../actions/reservation_actions';
 import ReservationForm from './reservation_form';
 
 //TODO: take out restaurants later if it's not used
@@ -14,7 +15,8 @@ const mapStateToProps = ({restaurants, session, errors}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createReservation: reservation => dispatch(createReservation(reservation))
+  createReservation: reservation => dispatch(createReservation(reservation)),
+  clearReservationErrors: () => dispatch(clearReservationErrors())
 });
 
 export default connect(

@@ -27,6 +27,10 @@ class ReservationForm extends React.Component {
     this.numPeopleBuilder = this.numPeopleBuilder.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearReservationErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
