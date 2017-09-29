@@ -26,7 +26,7 @@ A user will only have the right to create a restaurant on openRice if he is a re
 ![Restaurant_Form](https://github.com/jerryzlau/OpenRice/blob/master/docs/readme_images/owner/restaurant_create.png)
 
 ## Restaurant Search 
-User can search restaurants by name, address, or cusine. Search keyword will be passed down to controller which calls an activerecord sql call to return an array of search result to the frontend. All the heavy lifting is done in the backend to ensure efficiency. 
+User can search restaurants by name, address, or cusine. Search keyword will be passed down to controller by ajax request, which calls an activerecord sql call to return an array of search result to the frontend. All the heavy lifting is done in the backend to ensure efficiency. 
 ```ruby 
 #restaurant controller 
 def index
