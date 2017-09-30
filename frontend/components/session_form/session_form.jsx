@@ -38,9 +38,10 @@ class SessionForm extends React.Component {
     //form actions
     this.signUpForm = this.signUpForm.bind(this);
     this.loginForm = this.loginForm.bind(this);
-    this.handleDemo = this.handleDemo.bind(this);
+    this.handleOwnerDemo = this.handleOwnerDemo.bind(this);
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleCustomerDemo = this.handleCustomerDemo.bind(this);
 
     //Modal stuff
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -92,7 +93,7 @@ class SessionForm extends React.Component {
     .then(() => this.props.history.push("/"));
   }
 
-  handleDemo(e){
+  handleOwnerDemo(e){
     e.preventDefault();
     let email = 'ownerdemo@demo.com'.split("");
     let password = '123456'.split("");
@@ -108,7 +109,24 @@ class SessionForm extends React.Component {
         .then(() => this.props.history.push('/'));
       }}.bind(this);
     const stop = setInterval(shiftFunction, 60);
+  }
 
+  handleCustomerDemo(e){
+    e.preventDefault();
+    let email = 'customerdemo@demo.com'.split("");
+    let password = '123456'.split("");
+    this.setState({email: "", password: ""});
+    const shiftFunction = function(){
+      if(email.length > 0){
+        this.setState({email: this.state.email.concat(email.shift())});
+      }else if (password.length > 0){
+        this.setState({password: this.state.password.concat(password.shift())});
+      }else{
+        clearInterval(stop);
+        this.props.processForm(this.state)
+        .then(() => this.props.history.push('/'));
+      }}.bind(this);
+    const stop = setInterval(shiftFunction, 60);
   }
 
   signUpForm(){
@@ -219,10 +237,17 @@ class SessionForm extends React.Component {
 
         <br />
 
-        <input onClick={this.handleDemo}
+        <input onClick={this.handleOwnerDemo}
                type="submit"
                className="button demo-login"
-               value="Demo Login" />
+               value="Owner Demo Login" />
+
+        <br/>
+
+       <input onClick={this.handleCustomerDemo}
+              type="submit"
+              className="button demo-login"
+              value="Customer Demo Login" />
       </div>
     );
   }

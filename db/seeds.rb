@@ -14,10 +14,10 @@ User.create(first_name: 'OwnerDemo',
          owner: true,
          primary_city: 'San Francisco')
 
-User.create(first_name: 'tommy',
-        last_name: 'kilmer',
+User.create(first_name: 'CustomerDemo',
+        last_name: 'openRice',
         password: '123456',
-        email: "tommy@demo.com",
+        email: "customerdemo@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
