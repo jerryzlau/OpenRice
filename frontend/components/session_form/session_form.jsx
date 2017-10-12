@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
 
   handleOwnerDemo(e){
     e.preventDefault();
-    let email = 'ownerdemo@demo.com'.split("");
+    let email = 'customerDemo@demo.com'.split("");
     let password = '123456'.split("");
     this.setState({email: "", password: ""});
     const shiftFunction = function(){

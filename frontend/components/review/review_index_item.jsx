@@ -12,23 +12,23 @@ class ReviewIndexItem extends React.Component {
     let average = (food + ambience + service + value)/4;
     if (average < 2){
       return(
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.21_AM_k9rjyb.png"/>
+        <img src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.21_AM_k9rjyb.png"/>
       );
     }else if(average < 3){
       return(
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.29_AM_dckc6z.png" />
+        <img src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.29_AM_dckc6z.png" />
       );
     }else if(average < 4){
       return(
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.54_AM_kamgwq.png" />
+        <img src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.54_AM_kamgwq.png" />
       );
     }else if(average < 5){
       return(
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.28.09_AM_z3mldb.png" />
+        <img src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.28.09_AM_z3mldb.png" />
       );
     }else{
       return(
-        <img src="http://res.cloudinary.com/jerryzlau/image/upload/v1506537154/Screen_Shot_2017-09-27_at_11.32.12_AM_m4hzrn.png" />
+        <img src="https://res.cloudinary.com/jerryzlau/image/upload/v1506537154/Screen_Shot_2017-09-27_at_11.32.12_AM_m4hzrn.png" />
       );
     }
   }
