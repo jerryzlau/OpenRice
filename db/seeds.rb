@@ -17,7 +17,7 @@ User.create(first_name: 'OwnerDemo',
 User.create(first_name: 'CustomerDemo',
         last_name: 'openRice',
         password: '123456',
-        email: "customerDemo@demo.com",
+        email: "customerdemo@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
