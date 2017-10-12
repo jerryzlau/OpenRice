@@ -1,5 +1,5 @@
 form .stars {
-  background: url("http://res.cloudinary.com/jerryzlau/image/upload/v1506712349/stars_h4ahhp.png") repeat-x 0 0;
+  background: url("https://res.cloudinary.com/jerryzlau/image/upload/v1506712349/stars_h4ahhp.png") repeat-x 0 0;
   width: 150px;
 }
 
@@ -67,7 +67,7 @@ form .stars span {
   top: 0;
   left: 0;
   height: 30px;
-  background: url("http://res.cloudinary.com/jerryzlau/image/upload/v1506712349/stars_h4ahhp.png") repeat-x 0 -60px;
+  background: url("https://res.cloudinary.com/jerryzlau/image/upload/v1506712349/stars_h4ahhp.png") repeat-x 0 -60px;
   -webkit-transition: -webkit-width 0.5s;
   -moz-transition: -moz-width 0.5s;
   -ms-transition: -ms-width 0.5s;

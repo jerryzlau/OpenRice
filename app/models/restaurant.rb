@@ -20,7 +20,7 @@
 
 class Restaurant < ApplicationRecord
 
-  DEFAULT = "http://res.cloudinary.com/jerryzlau/image/upload/v1506558455/default-food-image_jrdevc.png"
+  DEFAULT = "https://res.cloudinary.com/jerryzlau/image/upload/v1506558455/default-food-image_jrdevc.png"
 
   validates :owner_id, :capacity, :cusine_type, presence: true
   validates :phone_num, :website, :dining_style, :description, presence: true

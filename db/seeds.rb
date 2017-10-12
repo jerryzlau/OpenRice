@@ -17,7 +17,7 @@ User.create(first_name: 'OwnerDemo',
 User.create(first_name: 'CustomerDemo',
         last_name: 'openRice',
         password: '123456',
-        email: "customerdemo@demo.com",
+        email: "customerDemo@demo.com",
         owner: false,
         primary_city: 'San Francisco')
 
@@ -56,10 +56,10 @@ CUSINE = ["Indian, Nepalese, Vegetarian",
           "Japanese, Sushi",
           "Italian, Contemporary American",
           "American, Contemporary American, Japanese"]
-WEBSITE = ["http://www.urbancurry.com/",
-           "http://omakasesf.com/",
-           "http://www.calzonesf.com/",
-           "http://www.michaelmina.net/restaurants/san-francisco-bay-area/michael-mina/"]
+WEBSITE = ["https://www.urbancurry.com/",
+           "https://omakasesf.com/",
+           "https://www.calzonesf.com/",
+           "https://www.michaelmina.net/restaurants/san-francisco-bay-area/michael-mina/"]
 DINING = ["Casual Dining",
           "Fine Dining",
           "Casual Dining",
