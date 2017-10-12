@@ -14,7 +14,7 @@ const App = () => (
       <div className="nav-bar-left">
         <Link to="/">
         <img className="logo"
-             src="http://res.cloudinary.com/jerryzlau/image/upload/v1506748950/OpenRice_jjyacv.png" />
+             src="https://res.cloudinary.com/jerryzlau/image/upload/v1506748950/OpenRice_jjyacv.png" />
         </Link>
       </div>
 
