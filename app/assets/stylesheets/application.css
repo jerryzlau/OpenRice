@@ -19,7 +19,9 @@
  *= require radio_star.css
  */
 
-*{font-family: Arial;}
+* {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
 
 body{
   background-color: #F7F7F7;
