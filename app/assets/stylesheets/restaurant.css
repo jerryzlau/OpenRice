@@ -309,6 +309,16 @@
   height: 49px;
 }
 
+.submit-button input:hover{
+  background-color: '#1c63a5';
+  color: 'red';
+}
+
+.rest-star{
+  width: 100px;
+  height: 30px;
+}
+
 .submit-button:focus{
   outline: none;
 }
@@ -319,8 +329,6 @@
 
 .rest-show-name-reviews{
   max-width: 817px;
-  /*display: flex;
-  justify-content: space-between;*/
 }
 
 .rest-show-num-reviews{

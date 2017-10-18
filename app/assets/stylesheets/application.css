@@ -51,7 +51,14 @@ button{
   margin-right: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
+}
 
+textarea:focus{
+  outline: none;
+}
+
+select:focus{
+  outline: none;
 }
 
 header{
@@ -104,6 +111,11 @@ header h2{
   background-color: #237B98;
   padding-top: 5px;
   padding-bottom: 5px;
+  text-decoration: none;
+}
+
+.login-signup .signup a:hover{
+  text-decoration: none;
 }
 
 .login-signup .login{
@@ -111,6 +123,10 @@ header h2{
   color: black;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.login-signup .login a:hover {
+  text-decoration: none;
 }
 
 .login-signup .demo-login{

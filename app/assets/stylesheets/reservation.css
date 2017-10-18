@@ -11,6 +11,10 @@
   height: 50px;
 }
 
+.reservation-input:focus{
+  outline: none;
+}
+
 .reservation-index{
   background-color: white;
   padding: 10px;

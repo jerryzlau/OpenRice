@@ -5,6 +5,7 @@ class RestaurantIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.restaurant = this.props.restaurant;
+    this.renderRating = this.renderRating.bind(this);
     this.getTime();
   }
 
@@ -38,6 +39,41 @@ class RestaurantIndexItem extends React.Component {
     );
   }
 
+  renderRating(){ 
+    let average = 0;
+    if (this.props.restaurant.reviews){
+      this.props.restaurant.reviews.forEach(review => {
+        let { food, ambience, service, value } = review;
+        average += (food + ambience + service + value) / 4;
+      });
+  
+      average = average/this.props.restaurant.reviews.length;
+  
+      if (average < 2) {
+        return (
+          <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.21_AM_k9rjyb.png" />
+        );
+      } else if (average < 3) {
+        return (
+          <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.29_AM_dckc6z.png" />
+        );
+      } else if (average < 4) {
+        return (
+          <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.27.54_AM_kamgwq.png" />
+        );
+      } else if (average < 5) {
+        return (
+          <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506536943/Screen_Shot_2017-09-27_at_11.28.09_AM_z3mldb.png" />
+        );
+      } else {
+        return (
+          <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506537154/Screen_Shot_2017-09-27_at_11.32.12_AM_m4hzrn.png" />
+        );
+      }
+
+    }
+  }
+
   render(){
     let {name, cusine_type, address, id, image_url} = this.restaurant;
     return(
@@ -54,7 +90,7 @@ class RestaurantIndexItem extends React.Component {
           </Link><br/>
 
           <div className="rest-index-item-top">
-            <span>Stars</span>
+            <span>Rating: {this.renderRating()}</span>
             {this.getPriceRange()}
           </div>
 
