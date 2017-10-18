@@ -45,35 +45,66 @@ User.create(first_name: 'jack',
 NAME = ["Urban Curry",
         "Omakase",
         "Calzone's Pizza Cucina",
-        "Michael Mina – San Francisco"]
-START_PRICE = [30, 50, 30, 50]
-END_PRICE = [100, 500, 70, 200]
+        "Michael Mina – San Francisco",
+        "Il Fornaio - San Jose",
+        "Birk's",
+        "Firehouse No. 1 Gastropub",
+        "Sociale"]
+START_PRICE = [30, 50, 30, 50, 30, 31, 30, 30]
+END_PRICE = [100, 500, 70, 200, 100, 50, 30, 50]
 ADDRESS = ["523 Broadway San Francisco, CA 94133",
            "665 Townsend Street San Francisco, CA 94103",
            "430 Columbus San Francisco, CA 94133",
-           "252 California Street San Francisco, CA 94111"]
+           "252 California Street San Francisco, CA 94111",
+           "302 South Market St. San Jose, CA 95113",
+           "3955 Freedom Circle Santa Clara, CA 95054",
+           "69 North San Pedro Street San Jose, CA 95110",
+           "3665 Sacramento St. San Francisco, CA 94118"]
 CUSINE = ["Indian, Nepalese, Vegetarian",
           "Japanese, Sushi",
           "Italian, Contemporary American",
-          "American, Contemporary American, Japanese"]
+          "American, Contemporary American, Japanese",
+          "Italian, Vegetarian / Vegan",
+          "American, Steakhouse, Steak",
+          "American, Gastro Pub",
+          "Italian, Californian"]
 WEBSITE = ["https://www.urbancurry.com/",
            "https://omakasesf.com/",
            "https://www.calzonesf.com/",
-           "https://www.michaelmina.net/restaurants/san-francisco-bay-area/michael-mina/"]
+           "https://www.michaelmina.net/restaurants/san-francisco-bay-area/michael-mina/",
+           "https://www.ilfornaio.com/",
+           "https://www.birksrestaurant.com/",
+           "https://firehouse1.com/",
+           "https://www.caffesociale.com/"]
 DINING = ["Casual Dining",
           "Fine Dining",
           "Casual Dining",
+          "Casual Elegant",
+          "Casual Dining",
+          "Casual Elegant",
+          "Casual Dining",
           "Casual Elegant"]
-ABOUT = ["Urban Curry, one of the most prestigious and exciting Indian & Pakistani restaurants, located at 523 Broadway St. San Francisco California. With our warm traditional decoration, pleasant surroundings and our open kitchen, you will enjoy an authentic meal. At Urban Curry we emulate the style elegance and variety reminiscent of the olden ages with the spices specially imported from India & Pakistan, more importantly, we use only Halal meat. Feel free to complement your meals by bringing your own wine or beer (with no corkage fee).", "Omakase offers two different fixed-price tasting menus that will take you through your senses. The culinary journey you experience will introduce you to the many flavors of Japanese cuisine with our fish flown in from the famous Tsukiji Fish Market in Tokyo, Japan. Omakase specializes in Edomae — traditional style sushi. We partner with chefs trained in the top restaurants of Tokyo. Premium sakes are individually selected to complement your meal as you enjoy the day’s best selected fishes. Thank you for entrusting your taste buds to the chefs and for choosing Omakase.", "It doesn’t get more local than Calzone's Pizza Cucina, in the heart of North Beach. Whether you're sitting outside at the heated cafe tables or inside in one of the comfy booths, this sparkling bistro with a decidedly Cal-Euro atmosphere is the perfect place for watching eclectic locals mix with visitors drawn by North Beach's reputation as the hip place to see and be seen. The restaurant has been owned and operated by the same North Beach native since 1986 and is open 365 days a year, serving food continuously from 11:30 am until 1:00 am.", "Michelin-starred MICHAEL MINA is the crowning jewel that captures the core of Michael's philosophy: bold yet balanced flavors achieved through a combination of acidity, sweetness, spice and richness. At the helm, Executive Chef Raj Dixit achieves these bold, balanced flavors in a cuisine, which draws upon global influences, showcasing the highest quality authentic and seasonal ingredients. The 5-course tasting menu invites guests to explore a dynamic expression of Chef Michael Mina’s vast culinary influences while also providing options within each course for the guest to define their ultimate dining experience. The tasting menu is offered for dinner only at $145 per person, with vegetarian options and supplements at an additional cost. A paired down 'a la carte' dinner menu is available at the bar. Lunch is served in the dining room featuring an à la carte menu and at the bar featuring an array of seasonal small plates, as well as salads."
+ABOUT = ["Urban Curry, one of the most prestigious and exciting Indian & Pakistani restaurants, located at 523 Broadway St. San Francisco California. With our warm traditional decoration, pleasant surroundings and our open kitchen, you will enjoy an authentic meal. At Urban Curry we emulate the style elegance and variety reminiscent of the olden ages with the spices specially imported from India & Pakistan, more importantly, we use only Halal meat. Feel free to complement your meals by bringing your own wine or beer (with no corkage fee).", 
+         "Omakase offers two different fixed-price tasting menus that will take you through your senses. The culinary journey you experience will introduce you to the many flavors of Japanese cuisine with our fish flown in from the famous Tsukiji Fish Market in Tokyo, Japan. Omakase specializes in Edomae — traditional style sushi. We partner with chefs trained in the top restaurants of Tokyo. Premium sakes are individually selected to complement your meal as you enjoy the day’s best selected fishes. Thank you for entrusting your taste buds to the chefs and for choosing Omakase.", 
+         "It doesn’t get more local than Calzone's Pizza Cucina, in the heart of North Beach. Whether you're sitting outside at the heated cafe tables or inside in one of the comfy booths, this sparkling bistro with a decidedly Cal-Euro atmosphere is the perfect place for watching eclectic locals mix with visitors drawn by North Beach's reputation as the hip place to see and be seen. The restaurant has been owned and operated by the same North Beach native since 1986 and is open 365 days a year, serving food continuously from 11:30 am until 1:00 am.", 
+         "Michelin-starred MICHAEL MINA is the crowning jewel that captures the core of Michael's philosophy: bold yet balanced flavors achieved through a combination of acidity, sweetness, spice and richness. At the helm, Executive Chef Raj Dixit achieves these bold, balanced flavors in a cuisine, which draws upon global influences, showcasing the highest quality authentic and seasonal ingredients. The 5-course tasting menu invites guests to explore a dynamic expression of Chef Michael Mina’s vast culinary influences while also providing options within each course for the guest to define their ultimate dining experience. The tasting menu is offered for dinner only at $145 per person, with vegetarian options and supplements at an additional cost. A paired down 'a la carte' dinner menu is available at the bar. Lunch is served in the dining room featuring an à la carte menu and at the bar featuring an array of seasonal small plates, as well as salads.",
+         "Il Fornaio means 'The Baker' in Italian. This award-winning restaurant offers an authentic and unique dining experience. Specialties include wood-fired rotisserie and grilled meats, poultry and game; housemade pastas; pizzas from an oak wood burning oven; fresh salads and housemade soups; a wide variety of desserts; and fresh baked bread made daily from scratch. Winner of the Wine Spectator Award of Excellence 2013.",
+         "Birk's proudly offers hardwood grilled steaks, chops and seafood and has served Silicon Valley diners continuously since 1989. Birk's concept is based on the traditional city grill with a contemporary twist that remains one of the most popular dining destinations for lunch and dinner in the area. In addition to the menu of hardwood grilled steaks, chops, fresh fish and seafood, Birk's culinary team creates daily lunch and dinner menu additions. The lively bar is stocked with a complete array of beverages including an award winning wine list, select beers on tap, single malt scotches and full espresso bar. The attentive yet unobtrusive service professionals combined with an elegant facility and consistently executed cuisine make Birk's the ideal location for your next business or casual lunch or dinner, private dining or special occasion event. At your service, Birk's",
+         "Gastropub noun\ˈga-strō-ˌpəb\ : a pub, bar, or tavern that offers exceptional food in a casual and comfortable environment. From succulent pork belly sliders to house made paté on our charcuterie plate and an incredible house-made burger - this is not typical bar food. Paired with hand-made cocktails, exclusive craft beers, and superb wines - Firehouse No. 1 Gastropub offers an experience unlike any other bar. Located in downtown San Jose in San Pedro Square",
+         "Sociale (say - 'SO-SHEE-AH-LAY!') was born in the bistros of Florence and raised here in Presidio heights. Laughter and Italian music are heard floating up from the star-lit, heated patio greeting you from the discreet garden alley below. Families and friends leaving the frenetic pace of the city behind can experience a lighter and decidedly more Italian mood celebrating in our new private dining room, the traditional room or on the patio as the irresistible scents of warm pastas, herb-infused meats, and the sweet honey and nut coated sfingi with vanilla bean gelato shake permeate the surrounding space. Bewitching and eclectic wines from Italy and California complement the weekly changing menus that Chef Tia Harrison crafts with joy and delight for our neighborhood friends!"
           ]
-OPEN_TIME = ["11:00 AM", "5:00 PM", "11:30 AM", "11:30 AM"]
-CLOSE_TIME = ["11:00 PM", "9:00 PM", "1:00 AM", "2:00 PM"]
+OPEN_TIME = ["11:00 AM", "5:00 PM", "11:30 AM", "11:30 AM", "06:30 AM", "11:15 AM", "11:30 AM", "05:00 PM"]
+CLOSE_TIME = ["11:00 PM", "9:00 PM", "1:00 AM", "2:00 PM", "04:00 PM", "09:30 PM", "10:00 PM", "10:00 PM"]
 IMAGE = ["https://resizer.otstatic.com/v2/profiles/legacy/48718.jpg",
          "https://resizer.otstatic.com/v2/profiles/legacy/174622.jpg",
          "https://resizer.otstatic.com/v2/profiles/legacy/60331.jpg",
-         "https://resizer.otstatic.com/v2/profiles/legacy/51049.jpg"]
+         "https://resizer.otstatic.com/v2/profiles/legacy/51049.jpg",
+         "https://resizer.otstatic.com/v2/profiles/legacy/2864.jpg",
+         "https://resizer.otstatic.com/v2/profiles/legacy/147.jpg",
+         "https://resizer.otstatic.com/v2/profiles/legacy/112948.jpg",
+         "https://resizer.otstatic.com/v2/profiles/legacy/2131.jpg"]
 
-4.times do |i|
+8.times do |i|
   Faker::Config.locale = 'en-US'
   phone = "(#{Faker::PhoneNumber.area_code})#{Faker::PhoneNumber.exchange_code}-#{Faker::PhoneNumber.subscriber_number}"
   restaurant = {name: NAME[i],
