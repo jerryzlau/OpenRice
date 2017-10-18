@@ -13,7 +13,7 @@ const App = () => (
     <nav className="nav-bar">
       <div className="nav-bar-left">
         <Link to="/">
-        <img className="logo"
+          <img className="logo"
              src="https://res.cloudinary.com/jerryzlau/image/upload/v1506748950/OpenRice_jjyacv.png" />
         </Link>
       </div>
