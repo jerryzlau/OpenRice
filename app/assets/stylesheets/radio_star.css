@@ -1,4 +1,4 @@
-form .stars {
+/* form .stars {
   background: url("https://res.cloudinary.com/jerryzlau/image/upload/v1506712349/stars_h4ahhp.png") repeat-x 0 0;
   width: 150px;
 }
@@ -73,4 +73,31 @@ form .stars span {
   -ms-transition: -ms-width 0.5s;
   -o-transition: -o-width 0.5s;
   transition: width 0.5s;
+} */
+
+.rating {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rating-input {
+  float: right;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0 0 0 -16px;
+  opacity: 0;
+}
+
+.rating-star {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url('/samples/star-rating/star.png') 0 -16px;
+}
+
+.rating-star:hover {
+  background-position: 0 0;
 }

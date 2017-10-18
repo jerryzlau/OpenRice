@@ -24,15 +24,15 @@ class RestaurantIndexItem extends React.Component {
 
     return(
       <ul className="rest-index-item-price-range">
-        <li style={{color: 'black'}}>$</li>
+        <li style={{color: 'red'}}>$</li>
         <li
-          style={{color: `${diff > 40 ? 'black' : 'grey'}`}}>
+          style={{color: `${diff > 40 ? 'red' : 'grey'}`}}>
           $</li>
         <li
-          style={{color: `${diff > 100 ? 'black' : 'grey'}`}}>
+          style={{color: `${diff > 100 ? 'red' : 'grey'}`}}>
           $</li>
         <li
-          style={{color: `${diff > 200 ? 'black' : 'grey'}`}}>
+          style={{color: `${diff > 200 ? 'red' : 'grey'}`}}>
           $</li>
 
       </ul>
@@ -70,7 +70,10 @@ class RestaurantIndexItem extends React.Component {
           <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506537154/Screen_Shot_2017-09-27_at_11.32.12_AM_m4hzrn.png" />
         );
       }
-
+    }else{
+      return (
+        <img className="rest-star" src="https://res.cloudinary.com/jerryzlau/image/upload/v1506537154/Screen_Shot_2017-09-27_at_11.32.12_AM_m4hzrn.png" />
+      );
     }
   }
 

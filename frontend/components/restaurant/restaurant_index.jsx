@@ -28,7 +28,9 @@ class RestaurantIndex extends React.Component {
         <Route path='/' component={RestaurantSearchContainer} />
         <div className="rest-index">
           <h1>Restaurants</h1>
-          {index}
+          <div className="rest-index-inside">
+            {index}
+          </div>
         </div>
       </div>
     );

@@ -46,7 +46,8 @@ class UserProfile extends React.Component {
                   Cancel
           </button>
         </div>
-        <ReservationIndexItem key={idx}
+        <ReservationIndexItem 
+          key={idx}
           reservation={this.props.reservations[idx]} />
       </div>
     ));
@@ -66,7 +67,8 @@ class UserProfile extends React.Component {
   reviewIndex(){
     return Object.keys(this.props.reviews).map(idx => (
       <div className="profile-user-reviews">
-        <Link to={`/restaurants/${this.props.reviews[idx].restaurant.id}`}>
+        <Link 
+          to={`/restaurants/${this.props.reviews[idx].restaurant.id}`}>
           {this.props.reviews[idx].restaurant.name}
         </Link>
         <ReviewIndexItem key={idx}
@@ -133,7 +135,7 @@ class UserProfile extends React.Component {
           </div>
 
           <div className="profile-components profile-reviews">
-            <h2>Reviews</h2><hr/>
+            <h2>Your Reviews</h2><hr/>
             {this.reviewChecker()}
           </div>
 
