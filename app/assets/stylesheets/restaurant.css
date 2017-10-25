@@ -275,6 +275,7 @@
   left: 19%;
   top: 370px;
   z-index: 1;
+  border-radius: 5px;
 }
 
 .search-bar{
